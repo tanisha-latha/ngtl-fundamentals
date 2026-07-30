@@ -1,0 +1,590 @@
+{
+  "system_monthly": [
+    {
+      "year": 2025,
+      "month": 1,
+      "avg_utilization_pct": 98.97867104854402,
+      "price_gj": 1.62
+    },
+    {
+      "year": 2025,
+      "month": 2,
+      "avg_utilization_pct": 99.68708176132827,
+      "price_gj": 1.75
+    },
+    {
+      "year": 2025,
+      "month": 3,
+      "avg_utilization_pct": 96.14288770113453,
+      "price_gj": 1.64
+    },
+    {
+      "year": 2025,
+      "month": 4,
+      "avg_utilization_pct": 93.03658176037473,
+      "price_gj": 1.79
+    },
+    {
+      "year": 2025,
+      "month": 5,
+      "avg_utilization_pct": 95.66452826467652,
+      "price_gj": 1.65
+    },
+    {
+      "year": 2025,
+      "month": 6,
+      "avg_utilization_pct": 91.45016496505669,
+      "price_gj": 1.05
+    },
+    {
+      "year": 2025,
+      "month": 7,
+      "avg_utilization_pct": 93.32579461265773,
+      "price_gj": 0.9
+    },
+    {
+      "year": 2025,
+      "month": 8,
+      "avg_utilization_pct": 91.27869658578493,
+      "price_gj": 0.61
+    },
+    {
+      "year": 2025,
+      "month": 9,
+      "avg_utilization_pct": 89.0706182383014,
+      "price_gj": 0.5
+    },
+    {
+      "year": 2025,
+      "month": 10,
+      "avg_utilization_pct": 95.02681672560608,
+      "price_gj": 0.95
+    },
+    {
+      "year": 2025,
+      "month": 11,
+      "avg_utilization_pct": 97.96553517511072,
+      "price_gj": 2.04
+    },
+    {
+      "year": 2025,
+      "month": 12,
+      "avg_utilization_pct": 99.7165782807316,
+      "price_gj": 2.71
+    },
+    {
+      "year": 2026,
+      "month": 1,
+      "avg_utilization_pct": 98.93540490058398,
+      "price_gj": 2.46
+    },
+    {
+      "year": 2026,
+      "month": 2,
+      "avg_utilization_pct": 95.45535434381422,
+      "price_gj": 1.95
+    },
+    {
+      "year": 2026,
+      "month": 3,
+      "avg_utilization_pct": 88.39364588101108,
+      "price_gj": 1.69
+    },
+    {
+      "year": 2026,
+      "month": 4,
+      "avg_utilization_pct": 90.365963140023,
+      "price_gj": 1.28
+    },
+    {
+      "year": 2026,
+      "month": 5,
+      "avg_utilization_pct": 87.19470043521602,
+      "price_gj": 1.16
+    }
+  ],
+  "by_zone_monthly": [
+    {
+      "zone": "AB/BC",
+      "year": 2025,
+      "month": 1,
+      "avg_utilization_pct": 100.57471264367817,
+      "price_gj": 1.62
+    },
+    {
+      "zone": "AB/BC",
+      "year": 2025,
+      "month": 2,
+      "avg_utilization_pct": 97.80377668308702,
+      "price_gj": 1.75
+    },
+    {
+      "zone": "AB/BC",
+      "year": 2025,
+      "month": 3,
+      "avg_utilization_pct": 90.66273912028454,
+      "price_gj": 1.64
+    },
+    {
+      "zone": "AB/BC",
+      "year": 2025,
+      "month": 4,
+      "avg_utilization_pct": 84.21328224776501,
+      "price_gj": 1.79
+    },
+    {
+      "zone": "AB/BC",
+      "year": 2025,
+      "month": 5,
+      "avg_utilization_pct": 92.74770512542686,
+      "price_gj": 1.65
+    },
+    {
+      "zone": "AB/BC",
+      "year": 2025,
+      "month": 6,
+      "avg_utilization_pct": 89.75773438410098,
+      "price_gj": 1.05
+    },
+    {
+      "zone": "AB/BC",
+      "year": 2025,
+      "month": 7,
+      "avg_utilization_pct": 86.01608945436668,
+      "price_gj": 0.9
+    },
+    {
+      "zone": "AB/BC",
+      "year": 2025,
+      "month": 8,
+      "avg_utilization_pct": 83.58208516599238,
+      "price_gj": 0.61
+    },
+    {
+      "zone": "AB/BC",
+      "year": 2025,
+      "month": 9,
+      "avg_utilization_pct": 83.35647655102615,
+      "price_gj": 0.5
+    },
+    {
+      "zone": "AB/BC",
+      "year": 2025,
+      "month": 10,
+      "avg_utilization_pct": 90.46082916015915,
+      "price_gj": 0.95
+    },
+    {
+      "zone": "AB/BC",
+      "year": 2025,
+      "month": 11,
+      "avg_utilization_pct": 93.05810303977836,
+      "price_gj": 2.04
+    },
+    {
+      "zone": "AB/BC",
+      "year": 2025,
+      "month": 12,
+      "avg_utilization_pct": 97.39610828633083,
+      "price_gj": 2.71
+    },
+    {
+      "zone": "AB/BC",
+      "year": 2026,
+      "month": 1,
+      "avg_utilization_pct": 96.45037696205661,
+      "price_gj": 2.46
+    },
+    {
+      "zone": "AB/BC",
+      "year": 2026,
+      "month": 2,
+      "avg_utilization_pct": 90.03968253968254,
+      "price_gj": 1.95
+    },
+    {
+      "zone": "AB/BC",
+      "year": 2026,
+      "month": 3,
+      "avg_utilization_pct": 63.633667037449015,
+      "price_gj": 1.69
+    },
+    {
+      "zone": "AB/BC",
+      "year": 2026,
+      "month": 4,
+      "avg_utilization_pct": 60.90013533863251,
+      "price_gj": 1.28
+    },
+    {
+      "zone": "AB/BC",
+      "year": 2026,
+      "month": 5,
+      "avg_utilization_pct": 63.573737514045405,
+      "price_gj": 1.16
+    },
+    {
+      "zone": "EGAT",
+      "year": 2025,
+      "month": 1,
+      "avg_utilization_pct": 106.41891891891892,
+      "price_gj": 1.62
+    },
+    {
+      "zone": "EGAT",
+      "year": 2025,
+      "month": 2,
+      "avg_utilization_pct": 109.41301830386338,
+      "price_gj": 1.75
+    },
+    {
+      "zone": "EGAT",
+      "year": 2025,
+      "month": 3,
+      "avg_utilization_pct": 105.52308129551194,
+      "price_gj": 1.64
+    },
+    {
+      "zone": "EGAT",
+      "year": 2025,
+      "month": 4,
+      "avg_utilization_pct": 104.53089829522338,
+      "price_gj": 1.79
+    },
+    {
+      "zone": "EGAT",
+      "year": 2025,
+      "month": 5,
+      "avg_utilization_pct": 112.44310180860761,
+      "price_gj": 1.65
+    },
+    {
+      "zone": "EGAT",
+      "year": 2025,
+      "month": 6,
+      "avg_utilization_pct": 99.26339841184198,
+      "price_gj": 1.05
+    },
+    {
+      "zone": "EGAT",
+      "year": 2025,
+      "month": 7,
+      "avg_utilization_pct": 102.66196021875604,
+      "price_gj": 0.9
+    },
+    {
+      "zone": "EGAT",
+      "year": 2025,
+      "month": 8,
+      "avg_utilization_pct": 100.07150797064712,
+      "price_gj": 0.61
+    },
+    {
+      "zone": "EGAT",
+      "year": 2025,
+      "month": 9,
+      "avg_utilization_pct": 96.74128910892254,
+      "price_gj": 0.5
+    },
+    {
+      "zone": "EGAT",
+      "year": 2025,
+      "month": 10,
+      "avg_utilization_pct": 102.97472440756594,
+      "price_gj": 0.95
+    },
+    {
+      "zone": "EGAT",
+      "year": 2025,
+      "month": 11,
+      "avg_utilization_pct": 105.1122895119154,
+      "price_gj": 2.04
+    },
+    {
+      "zone": "EGAT",
+      "year": 2025,
+      "month": 12,
+      "avg_utilization_pct": 104.04227221655704,
+      "price_gj": 2.71
+    },
+    {
+      "zone": "EGAT",
+      "year": 2026,
+      "month": 1,
+      "avg_utilization_pct": 105.08789910194457,
+      "price_gj": 2.46
+    },
+    {
+      "zone": "EGAT",
+      "year": 2026,
+      "month": 2,
+      "avg_utilization_pct": 100.3355369765858,
+      "price_gj": 1.95
+    },
+    {
+      "zone": "EGAT",
+      "year": 2026,
+      "month": 3,
+      "avg_utilization_pct": 102.13406037837395,
+      "price_gj": 1.69
+    },
+    {
+      "zone": "EGAT",
+      "year": 2026,
+      "month": 4,
+      "avg_utilization_pct": 111.68487139858848,
+      "price_gj": 1.28
+    },
+    {
+      "zone": "EGAT",
+      "year": 2026,
+      "month": 5,
+      "avg_utilization_pct": 111.92102713102257,
+      "price_gj": 1.16
+    },
+    {
+      "zone": "OSDA",
+      "year": 2025,
+      "month": 1,
+      "avg_utilization_pct": 93.0,
+      "price_gj": 1.62
+    },
+    {
+      "zone": "OSDA",
+      "year": 2025,
+      "month": 2,
+      "avg_utilization_pct": 92.46467882695181,
+      "price_gj": 1.75
+    },
+    {
+      "zone": "OSDA",
+      "year": 2025,
+      "month": 3,
+      "avg_utilization_pct": 91.78885630498534,
+      "price_gj": 1.64
+    },
+    {
+      "zone": "OSDA",
+      "year": 2025,
+      "month": 4,
+      "avg_utilization_pct": 86.93877551020408,
+      "price_gj": 1.79
+    },
+    {
+      "zone": "OSDA",
+      "year": 2025,
+      "month": 5,
+      "avg_utilization_pct": 80.24609245094778,
+      "price_gj": 1.65
+    },
+    {
+      "zone": "OSDA",
+      "year": 2025,
+      "month": 6,
+      "avg_utilization_pct": 84.82638888888889,
+      "price_gj": 1.05
+    },
+    {
+      "zone": "OSDA",
+      "year": 2025,
+      "month": 7,
+      "avg_utilization_pct": 88.76061120543294,
+      "price_gj": 0.9
+    },
+    {
+      "zone": "OSDA",
+      "year": 2025,
+      "month": 8,
+      "avg_utilization_pct": 89.6774193548387,
+      "price_gj": 0.61
+    },
+    {
+      "zone": "OSDA",
+      "year": 2025,
+      "month": 9,
+      "avg_utilization_pct": 85.2412518037518,
+      "price_gj": 0.5
+    },
+    {
+      "zone": "OSDA",
+      "year": 2025,
+      "month": 10,
+      "avg_utilization_pct": 90.44972968565047,
+      "price_gj": 0.95
+    },
+    {
+      "zone": "OSDA",
+      "year": 2025,
+      "month": 11,
+      "avg_utilization_pct": 94.01360544217687,
+      "price_gj": 2.04
+    },
+    {
+      "zone": "OSDA",
+      "year": 2025,
+      "month": 12,
+      "avg_utilization_pct": 98.72922776148582,
+      "price_gj": 2.71
+    },
+    {
+      "zone": "OSDA",
+      "year": 2026,
+      "month": 1,
+      "avg_utilization_pct": 96.16129032258064,
+      "price_gj": 2.46
+    },
+    {
+      "zone": "OSDA",
+      "year": 2026,
+      "month": 2,
+      "avg_utilization_pct": 94.75,
+      "price_gj": 1.95
+    },
+    {
+      "zone": "OSDA",
+      "year": 2026,
+      "month": 3,
+      "avg_utilization_pct": 93.88620860004836,
+      "price_gj": 1.69
+    },
+    {
+      "zone": "OSDA",
+      "year": 2026,
+      "month": 4,
+      "avg_utilization_pct": 93.68149294870585,
+      "price_gj": 1.28
+    },
+    {
+      "zone": "OSDA",
+      "year": 2026,
+      "month": 5,
+      "avg_utilization_pct": 82.72318745169878,
+      "price_gj": 1.16
+    },
+    {
+      "zone": "USJR",
+      "year": 2025,
+      "month": 1,
+      "avg_utilization_pct": 95.92105263157895,
+      "price_gj": 1.62
+    },
+    {
+      "zone": "USJR",
+      "year": 2025,
+      "month": 2,
+      "avg_utilization_pct": 99.06685323141089,
+      "price_gj": 1.75
+    },
+    {
+      "zone": "USJR",
+      "year": 2025,
+      "month": 3,
+      "avg_utilization_pct": 96.59687408375628,
+      "price_gj": 1.64
+    },
+    {
+      "zone": "USJR",
+      "year": 2025,
+      "month": 4,
+      "avg_utilization_pct": 96.46337098830647,
+      "price_gj": 1.79
+    },
+    {
+      "zone": "USJR",
+      "year": 2025,
+      "month": 5,
+      "avg_utilization_pct": 97.22121367372387,
+      "price_gj": 1.65
+    },
+    {
+      "zone": "USJR",
+      "year": 2025,
+      "month": 6,
+      "avg_utilization_pct": 91.9531381753949,
+      "price_gj": 1.05
+    },
+    {
+      "zone": "USJR",
+      "year": 2025,
+      "month": 7,
+      "avg_utilization_pct": 95.86451757207524,
+      "price_gj": 0.9
+    },
+    {
+      "zone": "USJR",
+      "year": 2025,
+      "month": 8,
+      "avg_utilization_pct": 91.7837738516615,
+      "price_gj": 0.61
+    },
+    {
+      "zone": "USJR",
+      "year": 2025,
+      "month": 9,
+      "avg_utilization_pct": 90.94345548950511,
+      "price_gj": 0.5
+    },
+    {
+      "zone": "USJR",
+      "year": 2025,
+      "month": 10,
+      "avg_utilization_pct": 96.22198364904877,
+      "price_gj": 0.95
+    },
+    {
+      "zone": "USJR",
+      "year": 2025,
+      "month": 11,
+      "avg_utilization_pct": 99.67814270657226,
+      "price_gj": 2.04
+    },
+    {
+      "zone": "USJR",
+      "year": 2025,
+      "month": 12,
+      "avg_utilization_pct": 98.69870485855269,
+      "price_gj": 2.71
+    },
+    {
+      "zone": "USJR",
+      "year": 2026,
+      "month": 1,
+      "avg_utilization_pct": 98.0420532157541,
+      "price_gj": 2.46
+    },
+    {
+      "zone": "USJR",
+      "year": 2026,
+      "month": 2,
+      "avg_utilization_pct": 96.69619785898855,
+      "price_gj": 1.95
+    },
+    {
+      "zone": "USJR",
+      "year": 2026,
+      "month": 3,
+      "avg_utilization_pct": 93.92064750817299,
+      "price_gj": 1.69
+    },
+    {
+      "zone": "USJR",
+      "year": 2026,
+      "month": 4,
+      "avg_utilization_pct": 95.19735287416512,
+      "price_gj": 1.28
+    },
+    {
+      "zone": "USJR",
+      "year": 2026,
+      "month": 5,
+      "avg_utilization_pct": 90.56084964409736,
+      "price_gj": 1.16
+    }
+  ],
+  "correlation": 0.676,
+  "n_months": 17,
+  "statistically_meaningful": false,
+  "min_meaningful_months": 24,
+  "note": "Correlation is shown with n = number of months with both a utilization average and a published AER reference price. With n below 24 (two years), this is not statistically meaningful and should be read as directional at most.",
+  "generated_at": "2026-07-30T00:37:20+00:00"
+}

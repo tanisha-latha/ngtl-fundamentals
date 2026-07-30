@@ -1,0 +1,1009 @@
+{
+  "generated_at": "2026-07-30T00:37:20+00:00",
+  "facilities": [
+    {
+      "facility": "Wolf Lake A2",
+      "days_active": 83,
+      "total_impact_e3m3d": 2982000.0,
+      "zones": [
+        "AB/BC",
+        "EGAT",
+        "USJR"
+      ],
+      "activity_types": [
+        "Compressor Station Maintenance"
+      ],
+      "first_seen": "2025-09-15",
+      "last_seen": "2026-07-03"
+    },
+    {
+      "facility": "Otter Lake",
+      "days_active": 29,
+      "total_impact_e3m3d": 1146000.0,
+      "zones": [
+        "AB/BC",
+        "EGAT",
+        "OSDA",
+        "USJR"
+      ],
+      "activity_types": [
+        "Compressor Station Maintenance"
+      ],
+      "first_seen": "2025-03-31",
+      "last_seen": "2026-05-04"
+    },
+    {
+      "facility": "Goodfish A1",
+      "days_active": 24,
+      "total_impact_e3m3d": 924000.0,
+      "zones": [
+        "AB/BC",
+        "EGAT",
+        "USJR"
+      ],
+      "activity_types": [
+        "Compressor Station Maintenance"
+      ],
+      "first_seen": "2025-08-18",
+      "last_seen": "2026-04-17"
+    },
+    {
+      "facility": "Meikle River D5",
+      "days_active": 14,
+      "total_impact_e3m3d": 829000.0,
+      "zones": [
+        "AB/BC",
+        "EGAT",
+        "OSDA",
+        "USJR"
+      ],
+      "activity_types": [
+        "Compressor Station Maintenance"
+      ],
+      "first_seen": "2025-06-23",
+      "last_seen": "2026-06-26"
+    },
+    {
+      "facility": "Berland River A1",
+      "days_active": 33,
+      "total_impact_e3m3d": 797000.0,
+      "zones": [
+        "AB/BC",
+        "EGAT",
+        "USJR"
+      ],
+      "activity_types": [
+        "Compressor Station Maintenance"
+      ],
+      "first_seen": "2025-02-26",
+      "last_seen": "2025-11-09"
+    },
+    {
+      "facility": "Latornell A2",
+      "days_active": 21,
+      "total_impact_e3m3d": 767000.0,
+      "zones": [
+        "AB/BC",
+        "EGAT",
+        "USJR"
+      ],
+      "activity_types": [
+        "Compressor Station Maintenance"
+      ],
+      "first_seen": "2025-09-22",
+      "last_seen": "2026-06-19"
+    },
+    {
+      "facility": "Swartz Creek A1",
+      "days_active": 27,
+      "total_impact_e3m3d": 751000.0,
+      "zones": [
+        "AB/BC",
+        "EGAT",
+        "USJR"
+      ],
+      "activity_types": [
+        "Compressor Station Maintenance"
+      ],
+      "first_seen": "2026-05-06",
+      "last_seen": "2026-06-01"
+    },
+    {
+      "facility": "Swartz Creek",
+      "days_active": 21,
+      "total_impact_e3m3d": 731000.0,
+      "zones": [
+        "AB/BC",
+        "EGAT",
+        "USJR"
+      ],
+      "activity_types": [
+        "Compressor Station Maintenance"
+      ],
+      "first_seen": "2025-09-02",
+      "last_seen": "2026-05-30"
+    },
+    {
+      "facility": "NPS 36 Grande Prairie Mainline",
+      "days_active": 24,
+      "total_impact_e3m3d": 513000.0,
+      "zones": [
+        "AB/BC",
+        "EGAT",
+        "USJR"
+      ],
+      "activity_types": [
+        "Pipeline Maintenance",
+        "Pipeline Modification"
+      ],
+      "first_seen": "2025-01-30",
+      "last_seen": "2025-12-07"
+    },
+    {
+      "facility": "Berland River B2",
+      "days_active": 14,
+      "total_impact_e3m3d": 475000.0,
+      "zones": [
+        "AB/BC",
+        "EGAT",
+        "USJR"
+      ],
+      "activity_types": [
+        "Compressor Station Maintenance"
+      ],
+      "first_seen": "2025-11-10",
+      "last_seen": "2025-11-23"
+    },
+    {
+      "facility": "Berland River",
+      "days_active": 14,
+      "total_impact_e3m3d": 456000.0,
+      "zones": [
+        "AB/BC",
+        "EGAT",
+        "USJR"
+      ],
+      "activity_types": [
+        "Compressor Station Maintenance"
+      ],
+      "first_seen": "2025-07-23",
+      "last_seen": "2026-06-06"
+    },
+    {
+      "facility": "NPS 42 WAS Mainline Loop",
+      "days_active": 19,
+      "total_impact_e3m3d": 449000.0,
+      "zones": [
+        "AB/BC"
+      ],
+      "activity_types": [
+        "Pipeline Maintenance",
+        "Pipeline Modification"
+      ],
+      "first_seen": "2025-05-07",
+      "last_seen": "2026-04-23"
+    },
+    {
+      "facility": "NPS 42 Edson Mainline Loop",
+      "days_active": 17,
+      "total_impact_e3m3d": 441000.0,
+      "zones": [
+        "AB/BC",
+        "EGAT",
+        "USJR"
+      ],
+      "activity_types": [
+        "Pipeline Maintenance"
+      ],
+      "first_seen": "2026-03-16",
+      "last_seen": "2026-06-20"
+    },
+    {
+      "facility": "Nordegg B",
+      "days_active": 12,
+      "total_impact_e3m3d": 399000.0,
+      "zones": [
+        "AB/BC",
+        "EGAT",
+        "USJR"
+      ],
+      "activity_types": [
+        "Compressor Station Maintenance"
+      ],
+      "first_seen": "2025-02-03",
+      "last_seen": "2026-04-02"
+    },
+    {
+      "facility": "Hidden Lake North",
+      "days_active": 13,
+      "total_impact_e3m3d": 392000.0,
+      "zones": [
+        "AB/BC",
+        "EGAT",
+        "OSDA",
+        "USJR"
+      ],
+      "activity_types": [
+        "Compressor Station Maintenance"
+      ],
+      "first_seen": "2025-02-10",
+      "last_seen": "2026-04-17"
+    },
+    {
+      "facility": "Leismer East",
+      "days_active": 7,
+      "total_impact_e3m3d": 370000.0,
+      "zones": [
+        "AB/BC",
+        "EGAT",
+        "USJR"
+      ],
+      "activity_types": [
+        "Compressor Station Maintenance"
+      ],
+      "first_seen": "2025-10-01",
+      "last_seen": "2025-10-07"
+    },
+    {
+      "facility": "NPS 42 Grande Prairie Mainline Loop",
+      "days_active": 7,
+      "total_impact_e3m3d": 363000.0,
+      "zones": [
+        "AB/BC",
+        "EGAT",
+        "USJR"
+      ],
+      "activity_types": [
+        "Pipeline Maintenance"
+      ],
+      "first_seen": "2025-08-08",
+      "last_seen": "2025-08-14"
+    },
+    {
+      "facility": "Elko",
+      "days_active": 22,
+      "total_impact_e3m3d": 358000.0,
+      "zones": [
+        "AB/BC"
+      ],
+      "activity_types": [
+        "Compressor Station Maintenance"
+      ],
+      "first_seen": "2025-08-06",
+      "last_seen": "2025-08-27"
+    },
+    {
+      "facility": "NPS 30 Western Alberta System Mainline",
+      "days_active": 10,
+      "total_impact_e3m3d": 350000.0,
+      "zones": [
+        "AB/BC",
+        "EGAT",
+        "USJR"
+      ],
+      "activity_types": [
+        "Pipeline Modification"
+      ],
+      "first_seen": "2026-07-18",
+      "last_seen": "2026-07-27"
+    },
+    {
+      "facility": "Pipestone Creek",
+      "days_active": 16,
+      "total_impact_e3m3d": 304000.0,
+      "zones": [
+        "AB/BC",
+        "EGAT",
+        "USJR"
+      ],
+      "activity_types": [
+        "Compressor Station Maintenance"
+      ],
+      "first_seen": "2025-07-02",
+      "last_seen": "2025-07-17"
+    },
+    {
+      "facility": "Gold Creek",
+      "days_active": 10,
+      "total_impact_e3m3d": 298000.0,
+      "zones": [
+        "AB/BC",
+        "EGAT",
+        "USJR"
+      ],
+      "activity_types": [
+        "Compressor Station Maintenance"
+      ],
+      "first_seen": "2025-04-28",
+      "last_seen": "2026-07-06"
+    },
+    {
+      "facility": "Alces River",
+      "days_active": 9,
+      "total_impact_e3m3d": 276000.0,
+      "zones": [
+        "AB/BC",
+        "EGAT",
+        "USJR"
+      ],
+      "activity_types": [
+        "Compressor Station Maintenance"
+      ],
+      "first_seen": "2025-02-08",
+      "last_seen": "2025-08-22"
+    },
+    {
+      "facility": "Latornell",
+      "days_active": 5,
+      "total_impact_e3m3d": 264000.0,
+      "zones": [
+        "AB/BC",
+        "EGAT",
+        "USJR"
+      ],
+      "activity_types": [
+        "Compressor Station Maintenance"
+      ],
+      "first_seen": "2025-05-11",
+      "last_seen": "2025-05-15"
+    },
+    {
+      "facility": "Crawling Valley",
+      "days_active": 21,
+      "total_impact_e3m3d": 238000.0,
+      "zones": [
+        "EGAT"
+      ],
+      "activity_types": [
+        "Compressor Station Maintenance"
+      ],
+      "first_seen": "2025-06-02",
+      "last_seen": "2026-07-17"
+    },
+    {
+      "facility": "Emerson Creek A1",
+      "days_active": 17,
+      "total_impact_e3m3d": 236000.0,
+      "zones": [
+        "AB/BC",
+        "EGAT",
+        "USJR"
+      ],
+      "activity_types": [
+        "Compressor Station Maintenance"
+      ],
+      "first_seen": "2025-12-15",
+      "last_seen": "2026-07-12"
+    },
+    {
+      "facility": "Knight",
+      "days_active": 5,
+      "total_impact_e3m3d": 236000.0,
+      "zones": [
+        "AB/BC",
+        "EGAT",
+        "USJR"
+      ],
+      "activity_types": [
+        "Compressor Station Maintenance"
+      ],
+      "first_seen": "2025-08-11",
+      "last_seen": "2025-08-15"
+    },
+    {
+      "facility": "Burton Creek",
+      "days_active": 12,
+      "total_impact_e3m3d": 228000.0,
+      "zones": [
+        "AB/BC"
+      ],
+      "activity_types": [
+        "Compressor Station Maintenance"
+      ],
+      "first_seen": "2025-05-27",
+      "last_seen": "2026-07-24"
+    },
+    {
+      "facility": "Didsbury",
+      "days_active": 17,
+      "total_impact_e3m3d": 222000.0,
+      "zones": [
+        "EGAT"
+      ],
+      "activity_types": [
+        "Compressor Station Maintenance"
+      ],
+      "first_seen": "2025-06-16",
+      "last_seen": "2026-05-21"
+    },
+    {
+      "facility": "Moyie",
+      "days_active": 9,
+      "total_impact_e3m3d": 219000.0,
+      "zones": [
+        "AB/BC"
+      ],
+      "activity_types": [
+        "Compressor Station Maintenance"
+      ],
+      "first_seen": "2025-06-23",
+      "last_seen": "2026-04-24"
+    },
+    {
+      "facility": "NPS 42 Foothills Pipeline Zone 6",
+      "days_active": 11,
+      "total_impact_e3m3d": 209000.0,
+      "zones": [
+        "EGAT"
+      ],
+      "activity_types": [
+        "Pipeline Maintenance"
+      ],
+      "first_seen": "2025-06-02",
+      "last_seen": "2025-11-14"
+    },
+    {
+      "facility": "NPS 36 BC Mainline",
+      "days_active": 10,
+      "total_impact_e3m3d": 199000.0,
+      "zones": [
+        "AB/BC"
+      ],
+      "activity_types": [
+        "Pipeline Modification"
+      ],
+      "first_seen": "2025-09-30",
+      "last_seen": "2025-10-09"
+    },
+    {
+      "facility": "Emerson Creek B2",
+      "days_active": 5,
+      "total_impact_e3m3d": 195000.0,
+      "zones": [
+        "AB/BC",
+        "EGAT",
+        "USJR"
+      ],
+      "activity_types": [
+        "Compressor Station Maintenance"
+      ],
+      "first_seen": "2026-04-08",
+      "last_seen": "2026-04-12"
+    },
+    {
+      "facility": "Meikle River C",
+      "days_active": 5,
+      "total_impact_e3m3d": 185000.0,
+      "zones": [
+        "AB/BC",
+        "EGAT",
+        "USJR"
+      ],
+      "activity_types": [
+        "Compressor Station Maintenance"
+      ],
+      "first_seen": "2025-09-08",
+      "last_seen": "2025-09-12"
+    },
+    {
+      "facility": "NPS 48 Grande Prairie Mainline Loop 2",
+      "days_active": 4,
+      "total_impact_e3m3d": 184000.0,
+      "zones": [
+        "AB/BC",
+        "EGAT",
+        "USJR"
+      ],
+      "activity_types": [
+        "Pipeline Maintenance"
+      ],
+      "first_seen": "2025-07-24",
+      "last_seen": "2025-07-27"
+    },
+    {
+      "facility": "Beiseker B3",
+      "days_active": 11,
+      "total_impact_e3m3d": 171000.0,
+      "zones": [
+        "EGAT"
+      ],
+      "activity_types": [
+        "Compressor Station Maintenance"
+      ],
+      "first_seen": "2025-10-06",
+      "last_seen": "2026-05-08"
+    },
+    {
+      "facility": "Elko C",
+      "days_active": 21,
+      "total_impact_e3m3d": 168000.0,
+      "zones": [
+        "AB/BC"
+      ],
+      "activity_types": [
+        "Compressor Station Maintenance"
+      ],
+      "first_seen": "2025-10-14",
+      "last_seen": "2025-11-03"
+    },
+    {
+      "facility": "NPS 48 Grande Prairie Mainline Loop 4",
+      "days_active": 4,
+      "total_impact_e3m3d": 164000.0,
+      "zones": [
+        "AB/BC",
+        "EGAT",
+        "USJR"
+      ],
+      "activity_types": [
+        "Pipeline Maintenance"
+      ],
+      "first_seen": "2026-05-20",
+      "last_seen": "2026-05-23"
+    },
+    {
+      "facility": "Groundbirch",
+      "days_active": 5,
+      "total_impact_e3m3d": 163000.0,
+      "zones": [
+        "AB/BC",
+        "EGAT",
+        "USJR"
+      ],
+      "activity_types": [
+        "Compressor Station Maintenance"
+      ],
+      "first_seen": "2025-03-31",
+      "last_seen": "2025-04-04"
+    },
+    {
+      "facility": "NPS 36 Western Alberta Mainline Extension",
+      "days_active": 8,
+      "total_impact_e3m3d": 153000.0,
+      "zones": [
+        "AB/BC",
+        "EGAT",
+        "USJR"
+      ],
+      "activity_types": [
+        "Pipeline Maintenance"
+      ],
+      "first_seen": "2025-06-13",
+      "last_seen": "2025-06-20"
+    },
+    {
+      "facility": "NPS 24/30 North Lateral Loop 2",
+      "days_active": 8,
+      "total_impact_e3m3d": 152000.0,
+      "zones": [
+        "OSDA"
+      ],
+      "activity_types": [
+        "Pipeline Maintenance"
+      ],
+      "first_seen": "2025-09-22",
+      "last_seen": "2025-09-29"
+    },
+    {
+      "facility": "Meikle River B2",
+      "days_active": 7,
+      "total_impact_e3m3d": 152000.0,
+      "zones": [
+        "AB/BC",
+        "EGAT",
+        "USJR"
+      ],
+      "activity_types": [
+        "Compressor Station Maintenance"
+      ],
+      "first_seen": "2026-07-11",
+      "last_seen": "2026-07-17"
+    },
+    {
+      "facility": "Goodfish A2",
+      "days_active": 4,
+      "total_impact_e3m3d": 142000.0,
+      "zones": [
+        "AB/BC",
+        "EGAT",
+        "USJR"
+      ],
+      "activity_types": [
+        "Compressor Station Maintenance"
+      ],
+      "first_seen": "2025-08-26",
+      "last_seen": "2026-04-09"
+    },
+    {
+      "facility": "Jenner",
+      "days_active": 14,
+      "total_impact_e3m3d": 134000.0,
+      "zones": [
+        "EGAT"
+      ],
+      "activity_types": [
+        "Compressor Station Maintenance"
+      ],
+      "first_seen": "2025-03-17",
+      "last_seen": "2025-03-30"
+    },
+    {
+      "facility": "Gold Creek B3",
+      "days_active": 5,
+      "total_impact_e3m3d": 130000.0,
+      "zones": [
+        "AB/BC",
+        "EGAT",
+        "USJR"
+      ],
+      "activity_types": [
+        "Compressor Station Maintenance"
+      ],
+      "first_seen": "2025-09-15",
+      "last_seen": "2025-09-19"
+    },
+    {
+      "facility": "NPS 42 Foothills Pipeline Zone 6 and 9",
+      "days_active": 8,
+      "total_impact_e3m3d": 124000.0,
+      "zones": [
+        "EGAT"
+      ],
+      "activity_types": [
+        "Pipeline Maintenance"
+      ],
+      "first_seen": "2025-07-25",
+      "last_seen": "2025-08-01"
+    },
+    {
+      "facility": "Alces River B3",
+      "days_active": 4,
+      "total_impact_e3m3d": 114000.0,
+      "zones": [
+        "AB/BC",
+        "EGAT",
+        "USJR"
+      ],
+      "activity_types": [
+        "Compressor Station Maintenance"
+      ],
+      "first_seen": "2025-04-02",
+      "last_seen": "2026-04-09"
+    },
+    {
+      "facility": "Turner Valley A1 & A2",
+      "days_active": 7,
+      "total_impact_e3m3d": 112000.0,
+      "zones": [
+        "AB/BC"
+      ],
+      "activity_types": [
+        "Compressor Station Maintenance"
+      ],
+      "first_seen": "2025-10-14",
+      "last_seen": "2025-10-20"
+    },
+    {
+      "facility": "Turner Valley A3",
+      "days_active": 11,
+      "total_impact_e3m3d": 109000.0,
+      "zones": [
+        "AB/BC"
+      ],
+      "activity_types": [
+        "Compressor Station Maintenance"
+      ],
+      "first_seen": "2025-11-25",
+      "last_seen": "2025-12-05"
+    },
+    {
+      "facility": "NPS 36 Foothills Zone 8 Segment 4",
+      "days_active": 5,
+      "total_impact_e3m3d": 105000.0,
+      "zones": [
+        "AB/BC"
+      ],
+      "activity_types": [
+        "Pipeline Maintenance"
+      ],
+      "first_seen": "2026-07-20",
+      "last_seen": "2026-07-24"
+    },
+    {
+      "facility": "Hidden Lake North B2",
+      "days_active": 2,
+      "total_impact_e3m3d": 100000.0,
+      "zones": [
+        "AB/BC",
+        "EGAT",
+        "USJR"
+      ],
+      "activity_types": [
+        "Compressor Station Maintenance"
+      ],
+      "first_seen": "2025-10-07",
+      "last_seen": "2025-10-08"
+    },
+    {
+      "facility": "Crowsnest",
+      "days_active": 5,
+      "total_impact_e3m3d": 100000.0,
+      "zones": [
+        "AB/BC"
+      ],
+      "activity_types": [
+        "Compressor Station Maintenance"
+      ],
+      "first_seen": "2025-06-09",
+      "last_seen": "2025-06-13"
+    },
+    {
+      "facility": "Goodfish",
+      "days_active": 6,
+      "total_impact_e3m3d": 96000.0,
+      "zones": [
+        "USJR"
+      ],
+      "activity_types": [
+        "Compressor Station Maintenance"
+      ],
+      "first_seen": "2025-04-06",
+      "last_seen": "2025-04-11"
+    },
+    {
+      "facility": "Red Deer River",
+      "days_active": 10,
+      "total_impact_e3m3d": 94000.0,
+      "zones": [
+        "EGAT"
+      ],
+      "activity_types": [
+        "Compressor Station Maintenance"
+      ],
+      "first_seen": "2026-07-02",
+      "last_seen": "2026-07-11"
+    },
+    {
+      "facility": "Nordegg C6",
+      "days_active": 4,
+      "total_impact_e3m3d": 92000.0,
+      "zones": [
+        "AB/BC",
+        "EGAT",
+        "USJR"
+      ],
+      "activity_types": [
+        "Compressor Station Maintenance"
+      ],
+      "first_seen": "2025-03-24",
+      "last_seen": "2025-03-27"
+    },
+    {
+      "facility": "Schrader Creek",
+      "days_active": 9,
+      "total_impact_e3m3d": 85000.0,
+      "zones": [
+        "EGAT"
+      ],
+      "activity_types": [
+        "Compressor Station Maintenance"
+      ],
+      "first_seen": "2026-07-20",
+      "last_seen": "2026-07-28"
+    },
+    {
+      "facility": "Acme",
+      "days_active": 5,
+      "total_impact_e3m3d": 84000.0,
+      "zones": [
+        "EGAT"
+      ],
+      "activity_types": [
+        "Compressor Station Maintenance"
+      ],
+      "first_seen": "2026-06-15",
+      "last_seen": "2026-06-19"
+    },
+    {
+      "facility": "Winchell Lake A2",
+      "days_active": 6,
+      "total_impact_e3m3d": 78000.0,
+      "zones": [
+        "AB/BC"
+      ],
+      "activity_types": [
+        "Compressor Station Maintenance"
+      ],
+      "first_seen": "2025-11-08",
+      "last_seen": "2025-11-13"
+    },
+    {
+      "facility": "Clearwater A6",
+      "days_active": 10,
+      "total_impact_e3m3d": 70000.0,
+      "zones": [
+        "EGAT"
+      ],
+      "activity_types": [
+        "Compressor Station Maintenance"
+      ],
+      "first_seen": "2025-12-08",
+      "last_seen": "2026-05-15"
+    },
+    {
+      "facility": "NPS 16 Leming Lake Lateral",
+      "days_active": 10,
+      "total_impact_e3m3d": 70000.0,
+      "zones": [
+        "OSDA"
+      ],
+      "activity_types": [
+        "Pipeline Modifications"
+      ],
+      "first_seen": "2025-10-15",
+      "last_seen": "2025-10-24"
+    },
+    {
+      "facility": "NPS 30 Grande Prairie Mainline Loop",
+      "days_active": 3,
+      "total_impact_e3m3d": 45000.0,
+      "zones": [
+        "AB/BC",
+        "EGAT",
+        "USJR"
+      ],
+      "activity_types": [
+        "Pipeline Maintenance"
+      ],
+      "first_seen": "2026-01-28",
+      "last_seen": "2026-01-30"
+    },
+    {
+      "facility": "Burton Creek A3",
+      "days_active": 3,
+      "total_impact_e3m3d": 42000.0,
+      "zones": [
+        "AB/BC"
+      ],
+      "activity_types": [
+        "Compressor Station Maintenance"
+      ],
+      "first_seen": "2025-11-25",
+      "last_seen": "2025-11-27"
+    },
+    {
+      "facility": "Woodenhouse C3",
+      "days_active": 2,
+      "total_impact_e3m3d": 40000.0,
+      "zones": [
+        "AB/BC",
+        "EGAT",
+        "USJR"
+      ],
+      "activity_types": [
+        "Compressor Station Maintenance"
+      ],
+      "first_seen": "2026-03-09",
+      "last_seen": "2026-03-10"
+    },
+    {
+      "facility": "Crowsnest B",
+      "days_active": 4,
+      "total_impact_e3m3d": 40000.0,
+      "zones": [
+        "AB/BC"
+      ],
+      "activity_types": [
+        "Compressor Station Maintenance"
+      ],
+      "first_seen": "2026-05-19",
+      "last_seen": "2026-05-22"
+    },
+    {
+      "facility": "Emerson Creek",
+      "days_active": 2,
+      "total_impact_e3m3d": 38000.0,
+      "zones": [
+        "AB/BC",
+        "EGAT",
+        "USJR"
+      ],
+      "activity_types": [
+        "Compressor Station Maintenance"
+      ],
+      "first_seen": "2026-07-08",
+      "last_seen": "2026-07-09"
+    },
+    {
+      "facility": "Winchell Lake",
+      "days_active": 6,
+      "total_impact_e3m3d": 36000.0,
+      "zones": [
+        "AB/BC"
+      ],
+      "activity_types": [
+        "Compressor Station Maintenance"
+      ],
+      "first_seen": "2025-09-15",
+      "last_seen": "2025-09-20"
+    },
+    {
+      "facility": "Wolf Lake A3",
+      "days_active": 6,
+      "total_impact_e3m3d": 36000.0,
+      "zones": [
+        "USJR"
+      ],
+      "activity_types": [
+        "Compressor Station Maintenance"
+      ],
+      "first_seen": "2026-01-01",
+      "last_seen": "2026-01-06"
+    },
+    {
+      "facility": "Red Deer River A2",
+      "days_active": 15,
+      "total_impact_e3m3d": 33000.0,
+      "zones": [
+        "EGAT"
+      ],
+      "activity_types": [
+        "Compressor Station Maintenance"
+      ],
+      "first_seen": "2026-03-16",
+      "last_seen": "2026-03-30"
+    },
+    {
+      "facility": "NPS 36 Foothills Zone 8 Segment 3",
+      "days_active": 4,
+      "total_impact_e3m3d": 24000.0,
+      "zones": [
+        "AB/BC"
+      ],
+      "activity_types": [
+        "Pipeline Maintenance"
+      ],
+      "first_seen": "2026-07-13",
+      "last_seen": "2026-07-16"
+    },
+    {
+      "facility": "Meikle River C3",
+      "days_active": 5,
+      "total_impact_e3m3d": 20000.0,
+      "zones": [
+        "OSDA"
+      ],
+      "activity_types": [
+        "Compressor Station Maintenance"
+      ],
+      "first_seen": "2026-03-09",
+      "last_seen": "2026-03-13"
+    },
+    {
+      "facility": "Paul Lake",
+      "days_active": 2,
+      "total_impact_e3m3d": 16000.0,
+      "zones": [
+        "OSDA"
+      ],
+      "activity_types": [
+        "Compressor Station Maintenance"
+      ],
+      "first_seen": "2025-02-05",
+      "last_seen": "2025-02-06"
+    },
+    {
+      "facility": "Crowsnest K",
+      "days_active": 1,
+      "total_impact_e3m3d": 9000.0,
+      "zones": [
+        "AB/BC"
+      ],
+      "activity_types": [
+        "Compressor Station Maintenance"
+      ],
+      "first_seen": "2025-03-05",
+      "last_seen": "2025-03-05"
+    }
+  ]
+}
