@@ -1,0 +1,44 @@
+name: Daily NGTL pipeline
+
+on:
+  schedule:
+    # 12:00 UTC — after NGTL's overnight publication of the prior gas day.
+    - cron: "0 12 * * *"
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+jobs:
+  run-pipeline:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: "pip"
+
+      - run: pip install -r requirements.txt
+
+      - name: Run test suite
+        run: python -m pytest tests/ -q
+
+      - name: Run pipeline (fetch + append)
+        run: python -m pipeline.run
+
+      - name: Export site JSON snapshots
+        run: python -m analysis.export_snapshot
+
+      - name: Commit and push new data, if any
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/ngtl.db site/data/
+          if git diff --cached --quiet; then
+            echo "No new rows today; nothing to commit."
+          else
+            git commit -m "Daily data update: $(date -u +'%Y-%m-%d')"
+            git push
+          fi
