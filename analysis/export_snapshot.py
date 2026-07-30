@@ -25,6 +25,7 @@ from analysis.monthly_rollup import compute_monthly_rollup
 from analysis.seasonal import attach_seasonal_deviation, compute_seasonal_normals
 from analysis.utilization import compute_utilization
 from pipeline import db
+from pipeline.parse import split_outage_description
 
 
 def _write_json(path: Path, payload) -> None:
@@ -51,10 +52,14 @@ def main(db_path: str, out_dir: str) -> None:
     # --- heatmap.json: one cell per (zone, gas_day) ---
     heatmap_cells = utilization_with_deviation[[
         "zone", "gas_day", "utilization_pct", "outage_adjusted",
-        "deviation_from_seasonal_normal_pct", "n_prior_years",
+        "deviation_from_seasonal_normal_pct", "n_prior_years", "outage_description",
     ]].copy()
     heatmap_cells["utilization_pct"] = heatmap_cells["utilization_pct"].round(1)
     heatmap_cells["deviation_from_seasonal_normal_pct"] = heatmap_cells["deviation_from_seasonal_normal_pct"].round(1)
+    heatmap_cells["facilities"] = heatmap_cells["outage_description"].apply(
+        lambda text: [m["facility"] for m in split_outage_description(text)]
+    )
+    heatmap_cells = heatmap_cells.drop(columns=["outage_description"])
     zones = sorted(daily_flow["zone"].unique().tolist())
     _write_json(out / "heatmap.json", {
         "generated_at": generated_at,

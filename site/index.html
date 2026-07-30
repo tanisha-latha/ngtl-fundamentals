@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>NGTL Fundamentals — Pipeline Capacity &amp; Constraint Log</title>
+<meta name="description" content="Daily NGTL pipeline capacity, flow, and outage tracking correlated against the Alberta natural gas reference price.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;600;700&family=Source+Sans+3:ital,wght@0,400;0,600;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="titleplate">
+  <div class="titleplate-main">
+    <h1>NGTL Fundamentals</h1>
+    <p class="subtitle">Pipeline capacity, flow &amp; constraint log — TC Energy NGTL / Foothills system, Alberta &amp; BC</p>
+  </div>
+  <div class="titleplate-meta">
+    <div class="meta-block">
+      <span class="meta-label">Data through</span>
+      <span class="meta-value" id="meta-latest-day">—</span>
+    </div>
+    <div class="meta-block">
+      <span class="meta-label">Snapshot generated</span>
+      <span class="meta-value" id="meta-generated-at">—</span>
+    </div>
+  </div>
+</header>
+
+<main>
+
+  <section id="heatmap-section" aria-labelledby="heatmap-heading">
+    <h2 id="heatmap-heading">Zone utilization</h2>
+    <p class="section-note">
+      One row per zone, one cell per gas day. Color is flow as a percentage of that day's
+      outage-adjusted capability (or nameplate base capability, when no outage is active).
+      Cells running past dark rust into navy mean flow exceeded the zone's stated capability
+      that day. Hover a cell for detail.
+    </p>
+    <div class="heatmap-scroll" id="heatmap-scroll">
+      <div id="heatmap-grid"></div>
+    </div>
+    <div class="heatmap-legend" id="heatmap-legend"></div>
+  </section>
+
+  <section id="facilities-section" aria-labelledby="facilities-heading">
+    <h2 id="facilities-heading">Facility constraint log</h2>
+    <p class="section-note">
+      Every facility named in a daily outage description, extracted from the free text and
+      ranked by total impact volume. When more than one facility is named on the same
+      zone-day, each is credited with that day's full zone impact — see
+      <a href="https://github.com/tanisha-latha/ngtl-fundamentals/blob/main/docs/schema.md">docs/schema.md</a>
+      for the exact rule.
+    </p>
+    <div class="table-scroll">
+      <table id="facilities-table">
+        <thead>
+          <tr>
+            <th>Facility</th>
+            <th class="num">Days active</th>
+            <th class="num">Total impact (10&#179;m&#179;/d)</th>
+            <th>Zones</th>
+            <th>Activity</th>
+            <th>First / last seen</th>
+          </tr>
+        </thead>
+        <tbody id="facilities-tbody"></tbody>
+      </table>
+    </div>
+  </section>
+
+  <section id="correlation-section" aria-labelledby="correlation-heading">
+    <h2 id="correlation-heading">Monthly utilization vs. AER reference price</h2>
+    <p class="section-note">
+      System-wide monthly average utilization against the Alberta natural gas reference
+      price for the same month (the only price series in this project — see the README for
+      why no daily AECO price is included).
+    </p>
+    <div class="correlation-stat" id="correlation-stat"></div>
+    <div class="chart-scroll">
+      <svg id="correlation-chart" role="img" aria-label="Monthly utilization bars and AER reference price line, by month"></svg>
+    </div>
+    <p class="margin-note" id="correlation-caveat"></p>
+  </section>
+
+  <section id="events-section" aria-labelledby="events-heading">
+    <h2 id="events-heading">Notable constraint events</h2>
+    <p class="section-note">
+      Named-facility outages paired with what happened to utilization on their zone while
+      active. Deviation from seasonal normal only appears once at least one prior year of
+      same-month history exists — this list gets more useful as the pipeline runs longer.
+    </p>
+    <div id="events-list"></div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="footer-sources">
+    <h3>Data sources</h3>
+    <ul>
+      <li>NGTL/Foothills base capabilities, daily flow &amp; outage history, plant turnaround activity, and raw outage register — TC Energy public CSV endpoints</li>
+      <li>Alberta natural gas reference price (monthly, $/GJ, 1994–present) — <a href="https://www.alberta.ca/alberta-natural-gas-reference-price">alberta.ca</a>, the official input to Crown royalty valuation</li>
+    </ul>
+    <p class="disclaimer">
+      No Bloomberg, Refinitiv, ICE, NGI, Nasdaq Data Link, or any other paid terminal or
+      proprietary feed was used anywhere in this project — every number above comes from a
+      free, public source. Daily AECO spot prices are not freely available and are not
+      estimated or fabricated here; the AER monthly reference price is the only price series
+      shown.
+    </p>
+  </div>
+</footer>
+
+<div class="tooltip" id="tooltip" hidden></div>
+
+<script src="app.js"></script>
+</body>
+</html>
