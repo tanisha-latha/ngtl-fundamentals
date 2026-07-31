@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-30T13:28:46+00:00",
+  "generated_at": "2026-07-31T13:42:45+00:00",
   "facilities": [
     {
       "facility": "Wolf Lake A2",
@@ -780,8 +780,8 @@
     },
     {
       "facility": "Schrader Creek",
-      "days_active": 9,
-      "total_impact_e3m3d": 85000.0,
+      "days_active": 10,
+      "total_impact_e3m3d": 90000.0,
       "zones": [
         "EGAT"
       ],
@@ -789,7 +789,7 @@
         "Compressor Station Maintenance"
       ],
       "first_seen": "2026-07-20",
-      "last_seen": "2026-07-28"
+      "last_seen": "2026-07-29"
     },
     {
       "facility": "Acme",

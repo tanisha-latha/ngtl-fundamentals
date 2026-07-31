@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-30T13:28:46+00:00",
+  "generated_at": "2026-07-31T13:42:45+00:00",
   "events": [
     {
       "facility": "Schrader Creek",
@@ -7,9 +7,9 @@
       "zone": "EGAT",
       "start_date": "2026-07-20",
       "end_date": "2026-07-29",
-      "avg_utilization_pct_during": 104.8,
-      "avg_capability_reduction_pct": 6.0,
-      "avg_deviation_from_seasonal_normal_pct": 2.1,
+      "avg_utilization_pct_during": 104.1,
+      "avg_capability_reduction_pct": 5.7,
+      "avg_deviation_from_seasonal_normal_pct": 1.5,
       "n_prior_years_for_seasonal_normal": 1
     }
   ]
