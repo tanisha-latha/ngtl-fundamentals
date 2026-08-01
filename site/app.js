@@ -57,32 +57,6 @@
       <div class="stat"><span class="value">${daysTracked.toLocaleString()}</span><span class="label">Gas-days tracked</span></div>
       <div class="stat"><span class="value">${facilities.facilities.length}</span><span class="label">Facilities logged</span></div>
     `;
-
-    document.getElementById("hero-mini-legend").innerHTML = [
-      ["low", "var(--ramp-0)"], ["mid", "var(--ramp-2)"], ["high", "var(--ramp-4)"],
-    ].map(([label, color]) => `<span><span class="swatch" style="background:${color}"></span>${label}</span>`).join("");
-
-    const grid = document.getElementById("hero-heatmap-grid");
-    const dateAxis = Array.from(new Set(heatmap.cells.map((c) => c.gas_day))).sort().slice(-60);
-    const cellIndex = {};
-    for (const c of heatmap.cells) {
-      if (!cellIndex[c.zone]) cellIndex[c.zone] = {};
-      cellIndex[c.zone][c.gas_day] = c;
-    }
-    const zonesPresent = ZONE_ORDER.filter((z) => cellIndex[z]);
-    grid.innerHTML = zonesPresent
-      .map((zone) => {
-        const cells = dateAxis
-          .map((day) => {
-            const c = cellIndex[zone][day];
-            const bg = c ? utilizationColor(c.utilization_pct) : "var(--cell-empty)";
-            const title = c ? `${zone} ${day}: ${c.utilization_pct.toFixed(1)}%` : "";
-            return `<div class="hero-hm-cell" style="background:${bg}" title="${title}"></div>`;
-          })
-          .join("");
-        return `<div class="hero-hm-row"><span class="hero-hm-label">${zone}</span>${cells}</div>`;
-      })
-      .join("");
   }
 
   // ---- Schematic system map ----
