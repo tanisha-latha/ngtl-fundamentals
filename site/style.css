@@ -55,11 +55,28 @@ h1, h2, h3 {
   margin: 0;
 }
 
+/* Auto-numbered section kickers ("01", "02", ...) so a new top-level
+   section is unmistakable at a glance, not just another paragraph. */
+main { counter-reset: section-num; }
+main > section { counter-increment: section-num; }
+
 h2 {
-  font-size: 14px;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  margin-bottom: 12px;
+  font-size: 19px;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  margin-bottom: 16px;
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+}
+
+main > section > h2::before {
+  content: counter(section-num, decimal-leading-zero);
+  font-family: var(--font-mono);
+  font-size: 13px;
+  font-weight: 400;
+  color: var(--rust);
+  letter-spacing: 0;
 }
 
 .lede {
@@ -70,10 +87,10 @@ h2 {
 }
 
 section {
-  padding: 28px 0;
-  border-top: 1px solid var(--paper-line-faint);
+  padding: 44px 0 28px;
+  border-top: 2px solid var(--paper-line);
 }
-section:first-of-type { border-top: none; }
+section:first-of-type { border-top: none; padding-top: 28px; }
 
 /* ---- Masthead ---- */
 
@@ -161,14 +178,15 @@ section:first-of-type { border-top: none; }
 /* ---- Trend chart ---- */
 
 .subsection-heading {
-  font-family: var(--font-head);
-  font-size: 12px;
+  font-family: var(--font-mono);
+  font-size: 11px;
   letter-spacing: 0.06em;
   text-transform: uppercase;
   color: var(--charcoal-muted);
-  margin: 22px 0 4px;
+  margin: 28px 0 6px;
 }
-.subsection-heading:first-of-type { margin-top: 4px; }
+.subsection-heading:first-of-type { margin-top: 8px; }
+.subsection-heading::before { content: "— "; color: var(--paper-line); }
 
 .trend-legend {
   display: flex;
