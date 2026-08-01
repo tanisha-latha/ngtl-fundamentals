@@ -307,24 +307,43 @@
 
   // ---- Facility constraint log ----
 
+  const FACILITY_ROWS_COLLAPSED = 12;
+
   function renderFacilities(facilitiesData) {
     const tbody = document.getElementById("facilities-tbody");
-    if (!facilitiesData.facilities.length) {
+    const toggle = document.getElementById("facilities-toggle");
+    const facilities = facilitiesData.facilities;
+
+    if (!facilities.length) {
       tbody.innerHTML = `<tr><td colspan="5" class="empty-note">No facilities recorded yet.</td></tr>`;
+      toggle.hidden = true;
       return;
     }
-    tbody.innerHTML = facilitiesData.facilities
-      .map(
-        (f) => `
+
+    const rowHTML = (f) => `
       <tr>
         <td>${f.firm_risk_events > 0 ? '<span class="firm-dot" title="' + f.firm_risk_events + ' firm-risk event(s)"></span>' : ""}${f.facility}</td>
         <td class="num mono">${fmtInt(f.days_active)}</td>
         <td class="num impact-figure">${fmtInt(f.total_impact_e3m3d)}</td>
         <td>${f.zones.join(", ")}</td>
         <td class="mono">${f.first_seen} → ${f.last_seen}</td>
-      </tr>`
-      )
-      .join("");
+      </tr>`;
+
+    let expanded = false;
+    function draw() {
+      const rows = expanded ? facilities : facilities.slice(0, FACILITY_ROWS_COLLAPSED);
+      tbody.innerHTML = rows.map(rowHTML).join("");
+      if (facilities.length > FACILITY_ROWS_COLLAPSED) {
+        toggle.hidden = false;
+        toggle.textContent = expanded
+          ? "Show fewer ↑"
+          : `Show all ${facilities.length} facilities ↓ (ranked by impact, top ${FACILITY_ROWS_COLLAPSED} shown)`;
+      } else {
+        toggle.hidden = true;
+      }
+    }
+    toggle.onclick = () => { expanded = !expanded; draw(); };
+    draw();
   }
 
   // ---- Firm vs. interruptible service impact ----

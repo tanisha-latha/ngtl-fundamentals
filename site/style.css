@@ -409,6 +409,19 @@ tbody tr:hover { background: rgba(169,73,31,0.06); }
 .event-figures .figure-value { color: var(--rust); }
 .event-figures .figure-label { color: var(--charcoal-muted); display: block; font-size: 10px; }
 
+.table-toggle {
+  display: block;
+  margin: 10px 0 0;
+  padding: 0;
+  border: none;
+  background: none;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--flame-blue);
+  cursor: pointer;
+}
+.table-toggle:hover { color: var(--rust); }
+
 .empty-note {
   font-size: 13px;
   color: var(--charcoal-muted);
