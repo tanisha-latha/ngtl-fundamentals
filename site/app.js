@@ -767,6 +767,12 @@
 
   // ---- Facility impact concentration (Pareto) ----
 
+  // Combined Pareto chart: each shown facility's own impact volume as a
+  // bar (left axis) plus the running cumulative share as an overlaid line
+  // (right axis, 0-100%) -- one figure instead of a bar list and a
+  // separate curve saying the same thing twice.
+  const PARETO_BAR_COUNT = 15;
+
   function renderConcentrationChart(facilitiesData) {
     const facilities = facilitiesData.facilities;
     const svg = document.getElementById("concentration-chart");
@@ -778,37 +784,66 @@
     let running = 0;
     const points = facilities.map((f, i) => {
       running += f.total_impact_e3m3d;
-      return { rank: i + 1, cumPct: (running / total) * 100 };
+      return { rank: i + 1, facility: f.facility, impact: f.total_impact_e3m3d, cumPct: (running / total) * 100 };
     });
 
     const n80 = points.findIndex((p) => p.cumPct >= 80) + 1;
     document.getElementById("concentration-summary").textContent =
-      `The top ${n80} of ${facilities.length} facilities (${((n80 / facilities.length) * 100).toFixed(0)}% of names on the log) account for 80% of total logged impact volume.`;
+      `The top ${n80} of ${facilities.length} facilities (${((n80 / facilities.length) * 100).toFixed(0)}% of names on the log) account for 80% of total logged impact volume. ` +
+      (facilities.length > PARETO_BAR_COUNT ? `Chart below shows the top ${PARETO_BAR_COUNT} by impact; full ranked list is in the table.` : "");
 
-    const width = 620, chartHeight = 180;
-    const marginLeft = 36, marginRight = 12, marginTop = 12, marginBottom = 22;
+    const shown = points.slice(0, PARETO_BAR_COUNT);
+
+    const width = 640, chartHeight = 210;
+    const marginLeft = 44, marginRight = 40, marginTop = 12, marginBottom = 56;
     const innerWidth = width - marginLeft - marginRight;
+    const slot = innerWidth / shown.length;
     const totalHeight = chartHeight + marginTop + marginBottom;
     svg.setAttribute("viewBox", `0 0 ${width} ${totalHeight}`);
     svg.setAttribute("width", "100%");
     svg.setAttribute("height", totalHeight);
     svg.setAttribute("preserveAspectRatio", "none");
 
-    const xAt = (rank) => marginLeft + ((rank - 1) / (points.length - 1 || 1)) * innerWidth;
-    const yAt = (pct) => marginTop + chartHeight - (pct / 100) * chartHeight;
+    const maxImpact = Math.max(...shown.map((p) => p.impact)) * 1.1;
+    const yBar = (v) => marginTop + chartHeight - (v / maxImpact) * chartHeight;
+    const yPct = (v) => marginTop + chartHeight - (v / 100) * chartHeight;
+    const xCenter = (i) => marginLeft + i * slot + slot / 2;
 
     const parts = [];
-    [50, 80].forEach((mark) => {
-      parts.push(`<line x1="${marginLeft}" y1="${yAt(mark).toFixed(1)}" x2="${width - marginRight}" y2="${yAt(mark).toFixed(1)}" stroke="#9DACB1" stroke-width="1" stroke-dasharray="2,3"/>`);
-      parts.push(`<text x="${marginLeft - 4}" y="${(yAt(mark) + 3).toFixed(1)}" font-size="9" font-family="IBM Plex Mono, monospace" fill="#57676E" text-anchor="end">${mark}%</text>`);
+    [50, 80, 100].forEach((mark) => {
+      parts.push(`<line x1="${marginLeft}" y1="${yPct(mark).toFixed(1)}" x2="${width - marginRight}" y2="${yPct(mark).toFixed(1)}" stroke="#C7D2D4" stroke-width="1" ${mark === 80 ? 'stroke-dasharray="2,3"' : ""}/>`);
+      parts.push(`<text x="${width - marginRight + 4}" y="${(yPct(mark) + 3).toFixed(1)}" font-size="9" font-family="IBM Plex Mono, monospace" fill="#57676E">${mark}%</text>`);
+    });
+    parts.push(`<text x="${width - marginRight}" y="${marginTop - 2}" font-size="8.5" font-family="IBM Plex Mono, monospace" fill="#57676E" text-anchor="end">cumulative %</text>`);
+    parts.push(`<text x="${marginLeft}" y="${marginTop - 2}" font-size="8.5" font-family="IBM Plex Mono, monospace" fill="#1D6F91" text-anchor="start">impact volume</text>`);
+
+    shown.forEach((p, i) => {
+      const barTop = yBar(p.impact);
+      const barH = marginTop + chartHeight - barTop;
+      const x = marginLeft + i * slot;
+      parts.push(`<rect class="pareto-bar" data-idx="${i}" x="${(x + slot * 0.15).toFixed(1)}" y="${barTop.toFixed(1)}" width="${(slot * 0.7).toFixed(1)}" height="${barH.toFixed(1)}" fill="#1D6F91"/>`);
+      parts.push(`<text x="${xCenter(i).toFixed(1)}" y="${marginTop + chartHeight + 12}" font-size="8" font-family="IBM Plex Mono, monospace" fill="#57676E" text-anchor="end" transform="rotate(-55 ${xCenter(i).toFixed(1)} ${marginTop + chartHeight + 12})">${p.facility.length > 16 ? p.facility.slice(0, 15) + "…" : p.facility}</text>`);
     });
 
-    const areaPoints = points.map((p) => `${xAt(p.rank).toFixed(1)},${yAt(p.cumPct).toFixed(1)}`).join(" ");
-    const areaPath = `M ${marginLeft},${marginTop + chartHeight} L ${areaPoints} L ${xAt(points[points.length - 1].rank).toFixed(1)},${marginTop + chartHeight} Z`;
-    parts.push(`<path d="${areaPath}" fill="#D9541E" fill-opacity="0.12"/>`);
-    parts.push(`<polyline points="${areaPoints}" fill="none" stroke="#D9541E" stroke-width="1.75"/>`);
+    const linePoints = shown.map((p, i) => `${xCenter(i).toFixed(1)},${yPct(p.cumPct).toFixed(1)}`).join(" ");
+    parts.push(`<polyline points="${linePoints}" fill="none" stroke="#D9541E" stroke-width="2"/>`);
+    shown.forEach((p, i) => {
+      parts.push(`<circle class="pareto-point" data-idx="${i}" cx="${xCenter(i).toFixed(1)}" cy="${yPct(p.cumPct).toFixed(1)}" r="3" fill="#D9541E"/>`);
+    });
 
     svg.innerHTML = parts.join("");
+
+    const tooltip = document.getElementById("tooltip");
+    svg.querySelectorAll(".pareto-bar, .pareto-point").forEach((el) => {
+      const p = shown[Number(el.dataset.idx)];
+      el.addEventListener("mousemove", (e) => {
+        tooltip.innerHTML = `<b>#${p.rank} ${p.facility}</b><br>${fmtInt(p.impact)} 10³m³/d impact<br>cumulative: ${p.cumPct.toFixed(1)}%`;
+        tooltip.style.left = e.clientX + 14 + "px";
+        tooltip.style.top = e.clientY + 14 + "px";
+        tooltip.hidden = false;
+      });
+      el.addEventListener("mouseleave", () => { tooltip.hidden = true; });
+    });
   }
 
   // ---- Boot ----

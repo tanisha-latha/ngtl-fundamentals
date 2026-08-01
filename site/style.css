@@ -539,6 +539,8 @@ tbody tr:hover { background: rgba(217,84,30,0.08); }
 /* (summary stats use the shared .stat-row rule above) */
 
 .chart-scroll { overflow-x: auto; }
+.pareto-bar, .pareto-point { cursor: default; }
+.pareto-bar:hover { opacity: 0.8; }
 
 #correlation-chart { display: block; }
 
