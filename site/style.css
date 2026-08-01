@@ -57,67 +57,103 @@ h2 {
   margin-bottom: 4px;
 }
 
-.section-note {
+.lede {
   font-size: 13px;
   color: var(--charcoal-muted);
-  max-width: 72ch;
-  margin: 8px 0 18px;
+  max-width: 68ch;
+  margin: 6px 0 16px;
 }
 
 section {
-  padding: 32px 0;
-  border-bottom: 1px solid var(--paper-line-faint);
+  padding: 28px 0;
+  border-top: 1px solid var(--paper-line-faint);
 }
-section:last-of-type { border-bottom: none; }
 
-/* ---- Title plate ---- */
+/* ---- Masthead ---- */
 
-.titleplate {
+.masthead {
   max-width: 1100px;
-  margin: 24px auto 8px;
-  padding: 18px 24px;
-  border: 1px solid var(--paper-line);
+  margin: 32px auto 0;
+  padding: 0 24px 18px;
+  border-bottom: 1px solid var(--paper-line);
   display: flex;
   justify-content: space-between;
-  align-items: baseline;
+  align-items: flex-end;
   flex-wrap: wrap;
-  gap: 12px 32px;
+  gap: 8px 32px;
 }
 
-.titleplate h1 {
-  font-size: 24px;
+.masthead h1 {
+  font-size: 22px;
   font-weight: 700;
   letter-spacing: 0.01em;
 }
 
 .subtitle {
-  margin: 4px 0 0;
+  margin: 6px 0 0;
   font-size: 13px;
   color: var(--charcoal-muted);
+  max-width: 60ch;
 }
 
-.titleplate-meta {
-  display: flex;
-  gap: 24px;
-}
-
-.meta-block {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
+.masthead-meta {
   font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--charcoal-muted);
+  white-space: nowrap;
 }
 
-.meta-label {
-  font-size: 10px;
+.masthead-meta .meta-sep { margin: 0 6px; opacity: 0.6; }
+#meta-latest-day, #meta-generated-at { color: var(--ink-navy); }
+
+/* ---- Intro ---- */
+
+.intro {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 20px 24px 4px;
+}
+
+.intro p {
+  max-width: 74ch;
+  font-size: 14px;
+  color: var(--charcoal);
+  margin: 0 0 12px;
+}
+
+.intro em {
+  font-style: normal;
+  color: var(--rust);
+}
+
+/* ---- Trend chart ---- */
+
+.subsection-heading {
+  font-family: var(--font-head);
+  font-size: 12px;
   letter-spacing: 0.06em;
   text-transform: uppercase;
   color: var(--charcoal-muted);
+  margin: 22px 0 4px;
+}
+.subsection-heading:first-of-type { margin-top: 4px; }
+
+.trend-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin: 8px 0 4px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--charcoal-muted);
 }
 
-.meta-value {
-  font-size: 14px;
-  color: var(--ink-navy);
+.trend-legend .swatch {
+  width: 14px;
+  height: 3px;
+  display: inline-block;
+  margin-right: 5px;
+  vertical-align: middle;
 }
 
 /* ---- Heatmap ---- */
@@ -125,8 +161,6 @@ section:last-of-type { border-bottom: none; }
 .heatmap-scroll {
   overflow-x: auto;
   padding-bottom: 8px;
-  border: 1px solid var(--paper-line-faint);
-  background: rgba(255,255,255,0.15);
 }
 
 #heatmap-grid {
@@ -233,6 +267,37 @@ tbody tr:hover { background: rgba(169,73,31,0.06); }
 .mono { font-family: var(--font-mono); }
 .impact-figure { color: var(--rust); font-family: var(--font-mono); }
 
+.firm-dot {
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--rust);
+  margin-right: 6px;
+}
+
+/* ---- Service impact ---- */
+
+#service-impact-summary {
+  display: flex;
+  gap: 28px;
+  align-items: baseline;
+  margin: 4px 0 18px;
+  font-family: var(--font-mono);
+  flex-wrap: wrap;
+}
+
+#service-impact-summary .big { font-size: 28px; color: var(--ink-navy); }
+#service-impact-summary .label {
+  font-size: 10px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--charcoal-muted);
+  display: block;
+}
+
+#service-impact-zone-table, #firm-risk-facilities-table { margin-bottom: 20px; }
+
 /* ---- Correlation ---- */
 
 .correlation-stat {
@@ -278,9 +343,9 @@ tbody tr:hover { background: rgba(169,73,31,0.06); }
 /* ---- Events ---- */
 
 .event-card {
-  border: 1px solid var(--paper-line);
-  padding: 12px 14px;
-  margin-bottom: 10px;
+  border-left: 2px solid var(--rust);
+  padding: 2px 0 12px 14px;
+  margin-bottom: 14px;
 }
 
 .event-card .event-title {
@@ -322,6 +387,7 @@ footer {
   padding: 24px 24px 60px;
   font-size: 12px;
   color: var(--charcoal-muted);
+  border-top: 1px solid var(--paper-line-faint);
 }
 
 footer h3 {
@@ -331,15 +397,13 @@ footer h3 {
   margin-bottom: 8px;
 }
 
-footer ul {
-  padding-left: 18px;
-  margin: 0 0 12px;
+footer p {
+  max-width: 74ch;
+  margin: 0 0 10px;
 }
 
 footer .disclaimer {
-  max-width: 72ch;
-  border-left: 2px solid var(--ink-navy);
-  padding-left: 10px;
+  color: var(--charcoal-muted);
 }
 
 /* ---- Tooltip ---- */
@@ -360,7 +424,7 @@ footer .disclaimer {
 .tooltip b { color: #fff; font-family: var(--font-body); }
 
 @media (max-width: 640px) {
-  main, .titleplate, footer { padding-left: 12px; padding-right: 12px; }
-  .titleplate { flex-direction: column; }
-  .correlation-stat { flex-wrap: wrap; gap: 16px; }
+  main, .masthead, .intro, footer { padding-left: 12px; padding-right: 12px; }
+  .masthead { flex-direction: column; align-items: flex-start; }
+  .correlation-stat, #service-impact-summary { flex-wrap: wrap; gap: 16px; }
 }

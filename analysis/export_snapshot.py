@@ -23,6 +23,7 @@ from analysis.events import compute_annotated_events
 from analysis.facilities import extract_facility_mentions, summarize_constraint_log
 from analysis.monthly_rollup import compute_monthly_rollup
 from analysis.seasonal import attach_seasonal_deviation, compute_seasonal_normals
+from analysis.service_impact import compute_service_impact, facility_firm_risk_lookup
 from analysis.utilization import compute_utilization
 from pipeline import db
 from pipeline.parse import split_outage_description
@@ -71,13 +72,20 @@ def main(db_path: str, out_dir: str) -> None:
         "cells": json.loads(heatmap_cells.to_json(orient="records")),
     })
 
-    # --- facilities.json: constraint log ---
+    # --- facilities.json: constraint log, tagged with firm-risk event counts ---
     mentions = extract_facility_mentions(daily_flow)
     constraint_log = summarize_constraint_log(mentions)
+    firm_risk_counts = facility_firm_risk_lookup(outage_events_raw)
+    constraint_log["firm_risk_events"] = constraint_log["facility"].map(firm_risk_counts).fillna(0).astype(int)
     _write_json(out / "facilities.json", {
         "generated_at": generated_at,
         "facilities": json.loads(constraint_log.to_json(orient="records")),
     })
+
+    # --- service_impact.json: firm (FT-R/FT-D) vs interruptible-only impact ---
+    service_impact = compute_service_impact(outage_events_raw)
+    service_impact["generated_at"] = generated_at
+    _write_json(out / "service_impact.json", service_impact)
 
     # --- monthly_correlation.json: utilization vs AER price ---
     rollup = compute_monthly_rollup(utilization, price)
@@ -91,7 +99,7 @@ def main(db_path: str, out_dir: str) -> None:
         "events": json.loads(annotated.to_json(orient="records")) if not annotated.empty else [],
     })
 
-    print(f"Wrote snapshots to {out}/: heatmap.json, facilities.json, monthly_correlation.json, events.json")
+    print(f"Wrote snapshots to {out}/: heatmap.json, facilities.json, monthly_correlation.json, events.json, service_impact.json")
 
 
 if __name__ == "__main__":

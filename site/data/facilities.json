@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-30T00:40:37+00:00",
+  "generated_at": "2026-08-01T01:47:57+00:00",
   "facilities": [
     {
       "facility": "Wolf Lake A2",
@@ -14,7 +14,8 @@
         "Compressor Station Maintenance"
       ],
       "first_seen": "2025-09-15",
-      "last_seen": "2026-07-03"
+      "last_seen": "2026-07-03",
+      "firm_risk_events": 0
     },
     {
       "facility": "Otter Lake",
@@ -30,7 +31,8 @@
         "Compressor Station Maintenance"
       ],
       "first_seen": "2025-03-31",
-      "last_seen": "2026-05-04"
+      "last_seen": "2026-05-04",
+      "firm_risk_events": 3
     },
     {
       "facility": "Goodfish A1",
@@ -45,7 +47,8 @@
         "Compressor Station Maintenance"
       ],
       "first_seen": "2025-08-18",
-      "last_seen": "2026-04-17"
+      "last_seen": "2026-04-17",
+      "firm_risk_events": 0
     },
     {
       "facility": "Meikle River D5",
@@ -61,7 +64,8 @@
         "Compressor Station Maintenance"
       ],
       "first_seen": "2025-06-23",
-      "last_seen": "2026-06-26"
+      "last_seen": "2026-06-26",
+      "firm_risk_events": 3
     },
     {
       "facility": "Berland River A1",
@@ -76,7 +80,8 @@
         "Compressor Station Maintenance"
       ],
       "first_seen": "2025-02-26",
-      "last_seen": "2025-11-09"
+      "last_seen": "2025-11-09",
+      "firm_risk_events": 0
     },
     {
       "facility": "Latornell A2",
@@ -91,7 +96,8 @@
         "Compressor Station Maintenance"
       ],
       "first_seen": "2025-09-22",
-      "last_seen": "2026-06-19"
+      "last_seen": "2026-06-19",
+      "firm_risk_events": 0
     },
     {
       "facility": "Swartz Creek A1",
@@ -106,7 +112,8 @@
         "Compressor Station Maintenance"
       ],
       "first_seen": "2026-05-06",
-      "last_seen": "2026-06-01"
+      "last_seen": "2026-06-01",
+      "firm_risk_events": 0
     },
     {
       "facility": "Swartz Creek",
@@ -121,7 +128,8 @@
         "Compressor Station Maintenance"
       ],
       "first_seen": "2025-09-02",
-      "last_seen": "2026-05-30"
+      "last_seen": "2026-05-30",
+      "firm_risk_events": 0
     },
     {
       "facility": "NPS 36 Grande Prairie Mainline",
@@ -137,7 +145,8 @@
         "Pipeline Modification"
       ],
       "first_seen": "2025-01-30",
-      "last_seen": "2025-12-07"
+      "last_seen": "2025-12-07",
+      "firm_risk_events": 0
     },
     {
       "facility": "Berland River B2",
@@ -152,7 +161,8 @@
         "Compressor Station Maintenance"
       ],
       "first_seen": "2025-11-10",
-      "last_seen": "2025-11-23"
+      "last_seen": "2025-11-23",
+      "firm_risk_events": 0
     },
     {
       "facility": "Berland River",
@@ -167,7 +177,8 @@
         "Compressor Station Maintenance"
       ],
       "first_seen": "2025-07-23",
-      "last_seen": "2026-06-06"
+      "last_seen": "2026-06-06",
+      "firm_risk_events": 0
     },
     {
       "facility": "NPS 42 WAS Mainline Loop",
@@ -181,7 +192,8 @@
         "Pipeline Modification"
       ],
       "first_seen": "2025-05-07",
-      "last_seen": "2026-04-23"
+      "last_seen": "2026-04-23",
+      "firm_risk_events": 0
     },
     {
       "facility": "NPS 42 Edson Mainline Loop",
@@ -196,7 +208,8 @@
         "Pipeline Maintenance"
       ],
       "first_seen": "2026-03-16",
-      "last_seen": "2026-06-20"
+      "last_seen": "2026-06-20",
+      "firm_risk_events": 0
     },
     {
       "facility": "Nordegg B",
@@ -211,7 +224,8 @@
         "Compressor Station Maintenance"
       ],
       "first_seen": "2025-02-03",
-      "last_seen": "2026-04-02"
+      "last_seen": "2026-04-02",
+      "firm_risk_events": 1
     },
     {
       "facility": "Hidden Lake North",
@@ -227,7 +241,8 @@
         "Compressor Station Maintenance"
       ],
       "first_seen": "2025-02-10",
-      "last_seen": "2026-04-17"
+      "last_seen": "2026-04-17",
+      "firm_risk_events": 0
     },
     {
       "facility": "Leismer East",
@@ -242,7 +257,8 @@
         "Compressor Station Maintenance"
       ],
       "first_seen": "2025-10-01",
-      "last_seen": "2025-10-07"
+      "last_seen": "2025-10-07",
+      "firm_risk_events": 0
     },
     {
       "facility": "NPS 42 Grande Prairie Mainline Loop",
@@ -257,7 +273,8 @@
         "Pipeline Maintenance"
       ],
       "first_seen": "2025-08-08",
-      "last_seen": "2025-08-14"
+      "last_seen": "2025-08-14",
+      "firm_risk_events": 0
     },
     {
       "facility": "Elko",
@@ -270,7 +287,8 @@
         "Compressor Station Maintenance"
       ],
       "first_seen": "2025-08-06",
-      "last_seen": "2025-08-27"
+      "last_seen": "2025-08-27",
+      "firm_risk_events": 1
     },
     {
       "facility": "NPS 30 Western Alberta System Mainline",
@@ -285,7 +303,8 @@
         "Pipeline Modification"
       ],
       "first_seen": "2026-07-18",
-      "last_seen": "2026-07-27"
+      "last_seen": "2026-07-27",
+      "firm_risk_events": 0
     },
     {
       "facility": "Pipestone Creek",
@@ -300,7 +319,8 @@
         "Compressor Station Maintenance"
       ],
       "first_seen": "2025-07-02",
-      "last_seen": "2025-07-17"
+      "last_seen": "2025-07-17",
+      "firm_risk_events": 0
     },
     {
       "facility": "Gold Creek",
@@ -315,7 +335,8 @@
         "Compressor Station Maintenance"
       ],
       "first_seen": "2025-04-28",
-      "last_seen": "2026-07-06"
+      "last_seen": "2026-07-06",
+      "firm_risk_events": 0
     },
     {
       "facility": "Alces River",
@@ -330,7 +351,8 @@
         "Compressor Station Maintenance"
       ],
       "first_seen": "2025-02-08",
-      "last_seen": "2025-08-22"
+      "last_seen": "2025-08-22",
+      "firm_risk_events": 2
     },
     {
       "facility": "Latornell",
@@ -345,7 +367,8 @@
         "Compressor Station Maintenance"
       ],
       "first_seen": "2025-05-11",
-      "last_seen": "2025-05-15"
+      "last_seen": "2025-05-15",
+      "firm_risk_events": 0
     },
     {
       "facility": "Crawling Valley",
@@ -358,7 +381,8 @@
         "Compressor Station Maintenance"
       ],
       "first_seen": "2025-06-02",
-      "last_seen": "2026-07-17"
+      "last_seen": "2026-07-17",
+      "firm_risk_events": 0
     },
     {
       "facility": "Emerson Creek A1",
@@ -373,7 +397,8 @@
         "Compressor Station Maintenance"
       ],
       "first_seen": "2025-12-15",
-      "last_seen": "2026-07-12"
+      "last_seen": "2026-07-12",
+      "firm_risk_events": 0
     },
     {
       "facility": "Knight",
@@ -388,7 +413,8 @@
         "Compressor Station Maintenance"
       ],
       "first_seen": "2025-08-11",
-      "last_seen": "2025-08-15"
+      "last_seen": "2025-08-15",
+      "firm_risk_events": 2
     },
     {
       "facility": "Burton Creek",
@@ -401,7 +427,8 @@
         "Compressor Station Maintenance"
       ],
       "first_seen": "2025-05-27",
-      "last_seen": "2026-07-24"
+      "last_seen": "2026-07-24",
+      "firm_risk_events": 0
     },
     {
       "facility": "Didsbury",
@@ -414,7 +441,8 @@
         "Compressor Station Maintenance"
       ],
       "first_seen": "2025-06-16",
-      "last_seen": "2026-05-21"
+      "last_seen": "2026-05-21",
+      "firm_risk_events": 0
     },
     {
       "facility": "Moyie",
@@ -427,7 +455,8 @@
         "Compressor Station Maintenance"
       ],
       "first_seen": "2025-06-23",
-      "last_seen": "2026-04-24"
+      "last_seen": "2026-04-24",
+      "firm_risk_events": 0
     },
     {
       "facility": "NPS 42 Foothills Pipeline Zone 6",
@@ -440,7 +469,8 @@
         "Pipeline Maintenance"
       ],
       "first_seen": "2025-06-02",
-      "last_seen": "2025-11-14"
+      "last_seen": "2025-11-14",
+      "firm_risk_events": 2
     },
     {
       "facility": "NPS 36 BC Mainline",
@@ -453,7 +483,8 @@
         "Pipeline Modification"
       ],
       "first_seen": "2025-09-30",
-      "last_seen": "2025-10-09"
+      "last_seen": "2025-10-09",
+      "firm_risk_events": 0
     },
     {
       "facility": "Emerson Creek B2",
@@ -468,7 +499,8 @@
         "Compressor Station Maintenance"
       ],
       "first_seen": "2026-04-08",
-      "last_seen": "2026-04-12"
+      "last_seen": "2026-04-12",
+      "firm_risk_events": 0
     },
     {
       "facility": "Meikle River C",
@@ -483,7 +515,8 @@
         "Compressor Station Maintenance"
       ],
       "first_seen": "2025-09-08",
-      "last_seen": "2025-09-12"
+      "last_seen": "2025-09-12",
+      "firm_risk_events": 8
     },
     {
       "facility": "NPS 48 Grande Prairie Mainline Loop 2",
@@ -498,7 +531,8 @@
         "Pipeline Maintenance"
       ],
       "first_seen": "2025-07-24",
-      "last_seen": "2025-07-27"
+      "last_seen": "2025-07-27",
+      "firm_risk_events": 0
     },
     {
       "facility": "Beiseker B3",
@@ -511,7 +545,8 @@
         "Compressor Station Maintenance"
       ],
       "first_seen": "2025-10-06",
-      "last_seen": "2026-05-08"
+      "last_seen": "2026-05-08",
+      "firm_risk_events": 0
     },
     {
       "facility": "Elko C",
@@ -524,7 +559,8 @@
         "Compressor Station Maintenance"
       ],
       "first_seen": "2025-10-14",
-      "last_seen": "2025-11-03"
+      "last_seen": "2025-11-03",
+      "firm_risk_events": 0
     },
     {
       "facility": "NPS 48 Grande Prairie Mainline Loop 4",
@@ -539,7 +575,8 @@
         "Pipeline Maintenance"
       ],
       "first_seen": "2026-05-20",
-      "last_seen": "2026-05-23"
+      "last_seen": "2026-05-23",
+      "firm_risk_events": 0
     },
     {
       "facility": "Groundbirch",
@@ -554,7 +591,8 @@
         "Compressor Station Maintenance"
       ],
       "first_seen": "2025-03-31",
-      "last_seen": "2025-04-04"
+      "last_seen": "2025-04-04",
+      "firm_risk_events": 0
     },
     {
       "facility": "NPS 36 Western Alberta Mainline Extension",
@@ -569,7 +607,8 @@
         "Pipeline Maintenance"
       ],
       "first_seen": "2025-06-13",
-      "last_seen": "2025-06-20"
+      "last_seen": "2025-06-20",
+      "firm_risk_events": 0
     },
     {
       "facility": "NPS 24/30 North Lateral Loop 2",
@@ -582,7 +621,8 @@
         "Pipeline Maintenance"
       ],
       "first_seen": "2025-09-22",
-      "last_seen": "2025-09-29"
+      "last_seen": "2025-09-29",
+      "firm_risk_events": 0
     },
     {
       "facility": "Meikle River B2",
@@ -597,7 +637,8 @@
         "Compressor Station Maintenance"
       ],
       "first_seen": "2026-07-11",
-      "last_seen": "2026-07-17"
+      "last_seen": "2026-07-17",
+      "firm_risk_events": 0
     },
     {
       "facility": "Goodfish A2",
@@ -612,7 +653,8 @@
         "Compressor Station Maintenance"
       ],
       "first_seen": "2025-08-26",
-      "last_seen": "2026-04-09"
+      "last_seen": "2026-04-09",
+      "firm_risk_events": 0
     },
     {
       "facility": "Jenner",
@@ -625,7 +667,8 @@
         "Compressor Station Maintenance"
       ],
       "first_seen": "2025-03-17",
-      "last_seen": "2025-03-30"
+      "last_seen": "2025-03-30",
+      "firm_risk_events": 0
     },
     {
       "facility": "Gold Creek B3",
@@ -640,7 +683,8 @@
         "Compressor Station Maintenance"
       ],
       "first_seen": "2025-09-15",
-      "last_seen": "2025-09-19"
+      "last_seen": "2025-09-19",
+      "firm_risk_events": 1
     },
     {
       "facility": "NPS 42 Foothills Pipeline Zone 6 and 9",
@@ -653,7 +697,8 @@
         "Pipeline Maintenance"
       ],
       "first_seen": "2025-07-25",
-      "last_seen": "2025-08-01"
+      "last_seen": "2025-08-01",
+      "firm_risk_events": 0
     },
     {
       "facility": "Alces River B3",
@@ -668,7 +713,8 @@
         "Compressor Station Maintenance"
       ],
       "first_seen": "2025-04-02",
-      "last_seen": "2026-04-09"
+      "last_seen": "2026-04-09",
+      "firm_risk_events": 0
     },
     {
       "facility": "Turner Valley A1 & A2",
@@ -681,7 +727,8 @@
         "Compressor Station Maintenance"
       ],
       "first_seen": "2025-10-14",
-      "last_seen": "2025-10-20"
+      "last_seen": "2025-10-20",
+      "firm_risk_events": 1
     },
     {
       "facility": "Turner Valley A3",
@@ -694,7 +741,8 @@
         "Compressor Station Maintenance"
       ],
       "first_seen": "2025-11-25",
-      "last_seen": "2025-12-05"
+      "last_seen": "2025-12-05",
+      "firm_risk_events": 0
     },
     {
       "facility": "NPS 36 Foothills Zone 8 Segment 4",
@@ -707,7 +755,8 @@
         "Pipeline Maintenance"
       ],
       "first_seen": "2026-07-20",
-      "last_seen": "2026-07-24"
+      "last_seen": "2026-07-24",
+      "firm_risk_events": 0
     },
     {
       "facility": "Hidden Lake North B2",
@@ -722,7 +771,8 @@
         "Compressor Station Maintenance"
       ],
       "first_seen": "2025-10-07",
-      "last_seen": "2025-10-08"
+      "last_seen": "2025-10-08",
+      "firm_risk_events": 0
     },
     {
       "facility": "Crowsnest",
@@ -735,7 +785,8 @@
         "Compressor Station Maintenance"
       ],
       "first_seen": "2025-06-09",
-      "last_seen": "2025-06-13"
+      "last_seen": "2025-06-13",
+      "firm_risk_events": 0
     },
     {
       "facility": "Goodfish",
@@ -748,7 +799,8 @@
         "Compressor Station Maintenance"
       ],
       "first_seen": "2025-04-06",
-      "last_seen": "2025-04-11"
+      "last_seen": "2025-04-11",
+      "firm_risk_events": 3
     },
     {
       "facility": "Red Deer River",
@@ -761,7 +813,8 @@
         "Compressor Station Maintenance"
       ],
       "first_seen": "2026-07-02",
-      "last_seen": "2026-07-11"
+      "last_seen": "2026-07-11",
+      "firm_risk_events": 0
     },
     {
       "facility": "Nordegg C6",
@@ -776,7 +829,8 @@
         "Compressor Station Maintenance"
       ],
       "first_seen": "2025-03-24",
-      "last_seen": "2025-03-27"
+      "last_seen": "2025-03-27",
+      "firm_risk_events": 0
     },
     {
       "facility": "Schrader Creek",
@@ -789,7 +843,8 @@
         "Compressor Station Maintenance"
       ],
       "first_seen": "2026-07-20",
-      "last_seen": "2026-07-28"
+      "last_seen": "2026-07-28",
+      "firm_risk_events": 0
     },
     {
       "facility": "Acme",
@@ -802,7 +857,8 @@
         "Compressor Station Maintenance"
       ],
       "first_seen": "2026-06-15",
-      "last_seen": "2026-06-19"
+      "last_seen": "2026-06-19",
+      "firm_risk_events": 0
     },
     {
       "facility": "Winchell Lake A2",
@@ -815,7 +871,8 @@
         "Compressor Station Maintenance"
       ],
       "first_seen": "2025-11-08",
-      "last_seen": "2025-11-13"
+      "last_seen": "2025-11-13",
+      "firm_risk_events": 0
     },
     {
       "facility": "Clearwater A6",
@@ -828,7 +885,8 @@
         "Compressor Station Maintenance"
       ],
       "first_seen": "2025-12-08",
-      "last_seen": "2026-05-15"
+      "last_seen": "2026-05-15",
+      "firm_risk_events": 0
     },
     {
       "facility": "NPS 16 Leming Lake Lateral",
@@ -841,7 +899,8 @@
         "Pipeline Modifications"
       ],
       "first_seen": "2025-10-15",
-      "last_seen": "2025-10-24"
+      "last_seen": "2025-10-24",
+      "firm_risk_events": 0
     },
     {
       "facility": "NPS 30 Grande Prairie Mainline Loop",
@@ -856,7 +915,8 @@
         "Pipeline Maintenance"
       ],
       "first_seen": "2026-01-28",
-      "last_seen": "2026-01-30"
+      "last_seen": "2026-01-30",
+      "firm_risk_events": 0
     },
     {
       "facility": "Burton Creek A3",
@@ -869,7 +929,8 @@
         "Compressor Station Maintenance"
       ],
       "first_seen": "2025-11-25",
-      "last_seen": "2025-11-27"
+      "last_seen": "2025-11-27",
+      "firm_risk_events": 1
     },
     {
       "facility": "Woodenhouse C3",
@@ -884,7 +945,8 @@
         "Compressor Station Maintenance"
       ],
       "first_seen": "2026-03-09",
-      "last_seen": "2026-03-10"
+      "last_seen": "2026-03-10",
+      "firm_risk_events": 1
     },
     {
       "facility": "Crowsnest B",
@@ -897,7 +959,8 @@
         "Compressor Station Maintenance"
       ],
       "first_seen": "2026-05-19",
-      "last_seen": "2026-05-22"
+      "last_seen": "2026-05-22",
+      "firm_risk_events": 0
     },
     {
       "facility": "Emerson Creek",
@@ -912,7 +975,8 @@
         "Compressor Station Maintenance"
       ],
       "first_seen": "2026-07-08",
-      "last_seen": "2026-07-09"
+      "last_seen": "2026-07-09",
+      "firm_risk_events": 0
     },
     {
       "facility": "Winchell Lake",
@@ -925,7 +989,8 @@
         "Compressor Station Maintenance"
       ],
       "first_seen": "2025-09-15",
-      "last_seen": "2025-09-20"
+      "last_seen": "2025-09-20",
+      "firm_risk_events": 0
     },
     {
       "facility": "Wolf Lake A3",
@@ -938,7 +1003,8 @@
         "Compressor Station Maintenance"
       ],
       "first_seen": "2026-01-01",
-      "last_seen": "2026-01-06"
+      "last_seen": "2026-01-06",
+      "firm_risk_events": 0
     },
     {
       "facility": "Red Deer River A2",
@@ -951,7 +1017,8 @@
         "Compressor Station Maintenance"
       ],
       "first_seen": "2026-03-16",
-      "last_seen": "2026-03-30"
+      "last_seen": "2026-03-30",
+      "firm_risk_events": 0
     },
     {
       "facility": "NPS 36 Foothills Zone 8 Segment 3",
@@ -964,7 +1031,8 @@
         "Pipeline Maintenance"
       ],
       "first_seen": "2026-07-13",
-      "last_seen": "2026-07-16"
+      "last_seen": "2026-07-16",
+      "firm_risk_events": 0
     },
     {
       "facility": "Meikle River C3",
@@ -977,7 +1045,8 @@
         "Compressor Station Maintenance"
       ],
       "first_seen": "2026-03-09",
-      "last_seen": "2026-03-13"
+      "last_seen": "2026-03-13",
+      "firm_risk_events": 0
     },
     {
       "facility": "Paul Lake",
@@ -990,7 +1059,8 @@
         "Compressor Station Maintenance"
       ],
       "first_seen": "2025-02-05",
-      "last_seen": "2025-02-06"
+      "last_seen": "2025-02-06",
+      "firm_risk_events": 0
     },
     {
       "facility": "Crowsnest K",
@@ -1003,7 +1073,8 @@
         "Compressor Station Maintenance"
       ],
       "first_seen": "2025-03-05",
-      "last_seen": "2025-03-05"
+      "last_seen": "2025-03-05",
+      "firm_risk_events": 0
     }
   ]
 }

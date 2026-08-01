@@ -1,0 +1,231 @@
+{
+  "total_events": 89,
+  "firm_risk_events": 37,
+  "firm_risk_share_pct": 41.6,
+  "by_category": [
+    {
+      "service_category": "firm_risk",
+      "events": 37,
+      "total_event_days": 226
+    },
+    {
+      "service_category": "no_firm_impact",
+      "events": 27,
+      "total_event_days": 197
+    },
+    {
+      "service_category": "unclassified",
+      "events": 25,
+      "total_event_days": 188
+    }
+  ],
+  "by_zone": [
+    {
+      "zone_table": "EGAT",
+      "firm_risk": 2,
+      "no_firm_impact": 16,
+      "unclassified": 0
+    },
+    {
+      "zone_table": "FHZ8",
+      "firm_risk": 3,
+      "no_firm_impact": 0,
+      "unclassified": 0
+    },
+    {
+      "zone_table": "LCLD",
+      "firm_risk": 0,
+      "no_firm_impact": 0,
+      "unclassified": 8
+    },
+    {
+      "zone_table": "LCLR",
+      "firm_risk": 4,
+      "no_firm_impact": 0,
+      "unclassified": 17
+    },
+    {
+      "zone_table": "NEDA",
+      "firm_risk": 5,
+      "no_firm_impact": 0,
+      "unclassified": 0
+    },
+    {
+      "zone_table": "OSDA",
+      "firm_risk": 7,
+      "no_firm_impact": 0,
+      "unclassified": 0
+    },
+    {
+      "zone_table": "USJR",
+      "firm_risk": 14,
+      "no_firm_impact": 0,
+      "unclassified": 0
+    },
+    {
+      "zone_table": "WGAT",
+      "firm_risk": 2,
+      "no_firm_impact": 11,
+      "unclassified": 0
+    }
+  ],
+  "facility_firm_risk_counts": [
+    {
+      "facility": "Meikle River C",
+      "firm_risk_events": 8,
+      "zones": [
+        "NEDA",
+        "OSDA",
+        "USJR"
+      ]
+    },
+    {
+      "facility": "Otter Lake",
+      "firm_risk_events": 3,
+      "zones": [
+        "NEDA",
+        "OSDA",
+        "USJR"
+      ]
+    },
+    {
+      "facility": "Meikle River D5",
+      "firm_risk_events": 3,
+      "zones": [
+        "NEDA",
+        "OSDA",
+        "USJR"
+      ]
+    },
+    {
+      "facility": "Goodfish",
+      "firm_risk_events": 3,
+      "zones": [
+        "NEDA",
+        "OSDA",
+        "USJR"
+      ]
+    },
+    {
+      "facility": "Alces River",
+      "firm_risk_events": 2,
+      "zones": [
+        "USJR"
+      ]
+    },
+    {
+      "facility": "NPS 42 Foothills Pipeline Zone 6",
+      "firm_risk_events": 2,
+      "zones": [
+        "EGAT"
+      ]
+    },
+    {
+      "facility": "Knight",
+      "firm_risk_events": 2,
+      "zones": [
+        "USJR"
+      ]
+    },
+    {
+      "facility": "Crowsnest A",
+      "firm_risk_events": 1,
+      "zones": [
+        "FHZ8"
+      ]
+    },
+    {
+      "facility": "Burton Creek A3",
+      "firm_risk_events": 1,
+      "zones": [
+        "WGAT"
+      ]
+    },
+    {
+      "facility": "Gold Creek B3",
+      "firm_risk_events": 1,
+      "zones": [
+        "USJR"
+      ]
+    },
+    {
+      "facility": "Elko",
+      "firm_risk_events": 1,
+      "zones": [
+        "FHZ8"
+      ]
+    },
+    {
+      "facility": "NPS 20 Marten Hills Lateral",
+      "firm_risk_events": 1,
+      "zones": [
+        "LCLR"
+      ]
+    },
+    {
+      "facility": "Latornell A1",
+      "firm_risk_events": 1,
+      "zones": [
+        "USJR"
+      ]
+    },
+    {
+      "facility": "NPS 36 British Columbia Mainline",
+      "firm_risk_events": 1,
+      "zones": [
+        "FHZ8"
+      ]
+    },
+    {
+      "facility": "Nordegg B",
+      "firm_risk_events": 1,
+      "zones": [
+        "USJR"
+      ]
+    },
+    {
+      "facility": "Saddle Hills B3",
+      "firm_risk_events": 1,
+      "zones": [
+        "LCLR"
+      ]
+    },
+    {
+      "facility": "Saddle Hills C4",
+      "firm_risk_events": 1,
+      "zones": [
+        "LCLR"
+      ]
+    },
+    {
+      "facility": "Saturn",
+      "firm_risk_events": 1,
+      "zones": [
+        "LCLR"
+      ]
+    },
+    {
+      "facility": "Swartz Creek A2",
+      "firm_risk_events": 1,
+      "zones": [
+        "USJR"
+      ]
+    },
+    {
+      "facility": "Turner Valley A1 & A2",
+      "firm_risk_events": 1,
+      "zones": [
+        "WGAT"
+      ]
+    },
+    {
+      "facility": "Woodenhouse C3",
+      "firm_risk_events": 1,
+      "zones": [
+        "OSDA"
+      ]
+    }
+  ],
+  "note": "Categorized directly from the source's own 'Type of Restriction' field on each outage record -- not inferred or modeled. 'firm_risk' means the source explicitly flagged potential impact to FT-R or FT-D; 'no_firm_impact' means the source explicitly said none was anticipated; 'unclassified' means the field was blank in the source, which is common for local receipt/delivery laterals rather than mainline segments.",
+  "generated_at": "2026-08-01T01:47:57+00:00"
+}

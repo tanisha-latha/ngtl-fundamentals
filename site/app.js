@@ -6,6 +6,7 @@
   "use strict";
 
   const ZONE_ORDER = ["USJR", "AB/BC", "EGAT", "OSDA"];
+  const ZONE_COLORS = { "USJR": "#B5502D", "AB/BC": "#2F6690", "EGAT": "#1C2B3A", "OSDA": "#5B6B3D" };
   const MONTH_ABBR = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
 
   function utilizationColor(pct) {
@@ -33,9 +34,93 @@
   }
 
   async function loadJSON(path) {
-    const resp = await fetch(path);
+    // no-store: these snapshots update daily, so a returning visitor should
+    // never see a browser-cached, out-of-date one.
+    const resp = await fetch(path, { cache: "no-store" });
     if (!resp.ok) throw new Error(`Failed to load ${path}: ${resp.status}`);
     return resp.json();
+  }
+
+  // ---- Utilization trend (7-day rolling average) ----
+
+  function rollingAverage(sortedCells, windowSize) {
+    const result = [];
+    const window = [];
+    let sum = 0;
+    for (const c of sortedCells) {
+      window.push(c.utilization_pct);
+      sum += c.utilization_pct;
+      if (window.length > windowSize) sum -= window.shift();
+      result.push({ gas_day: c.gas_day, avg: sum / window.length });
+    }
+    return result;
+  }
+
+  function renderTrendChart(heatmap) {
+    const svg = document.getElementById("trend-chart");
+    const zonesPresent = ZONE_ORDER.filter((z) => heatmap.zones.includes(z));
+
+    const byZone = {};
+    for (const z of zonesPresent) byZone[z] = [];
+    for (const c of heatmap.cells) if (byZone[c.zone]) byZone[c.zone].push(c);
+    for (const z of zonesPresent) byZone[z].sort((a, b) => (a.gas_day < b.gas_day ? -1 : 1));
+
+    const rolling = {};
+    for (const z of zonesPresent) rolling[z] = rollingAverage(byZone[z], 7);
+
+    const dateAxis = Array.from(new Set(heatmap.cells.map((c) => c.gas_day))).sort();
+    const dateIndex = {};
+    dateAxis.forEach((d, i) => (dateIndex[d] = i));
+
+    const width = 900, chartHeight = 220;
+    const marginLeft = 42, marginRight = 16, marginTop = 16, marginBottom = 24;
+    const innerWidth = width - marginLeft - marginRight;
+    const totalHeight = chartHeight + marginTop + marginBottom;
+    svg.setAttribute("viewBox", `0 0 ${width} ${totalHeight}`);
+    svg.setAttribute("width", "100%");
+    svg.setAttribute("height", totalHeight);
+    svg.setAttribute("preserveAspectRatio", "none");
+
+    const allValues = zonesPresent.flatMap((z) => rolling[z].map((r) => r.avg));
+    const maxVal = Math.max(105, ...allValues) * 1.02;
+
+    const xAt = (i) => marginLeft + (dateAxis.length > 1 ? (i / (dateAxis.length - 1)) * innerWidth : 0);
+    const yAt = (v) => marginTop + chartHeight - (v / maxVal) * chartHeight;
+
+    const parts = [];
+    parts.push(`<line x1="${marginLeft}" y1="${yAt(100).toFixed(1)}" x2="${width - marginRight}" y2="${yAt(100).toFixed(1)}" stroke="#d8cba8" stroke-width="1" stroke-dasharray="3,3"/>`);
+    parts.push(`<text x="${marginLeft - 6}" y="${(yAt(100) + 3).toFixed(1)}" font-size="9" font-family="IBM Plex Mono, monospace" fill="#6b6350" text-anchor="end">100%</text>`);
+    parts.push(`<line x1="${marginLeft}" y1="${marginTop + chartHeight}" x2="${width - marginRight}" y2="${marginTop + chartHeight}" stroke="#d8cba8" stroke-width="1"/>`);
+
+    const monthTicks = [];
+    let lastMonthKey = null;
+    dateAxis.forEach((day, i) => {
+      const [yr, mo] = day.split("-");
+      const key = `${yr}-${mo}`;
+      if (key !== lastMonthKey) {
+        lastMonthKey = key;
+        monthTicks.push({ i, yr: Number(yr), mo: Number(mo) });
+      }
+    });
+    const skip = monthTicks.length > 14 ? 2 : 1;
+    monthTicks.forEach((t, idx) => {
+      parts.push(`<line x1="${xAt(t.i).toFixed(1)}" y1="${marginTop}" x2="${xAt(t.i).toFixed(1)}" y2="${marginTop + chartHeight}" stroke="#e6dcc0" stroke-width="1"/>`);
+      if (idx % skip === 0) {
+        parts.push(`<text x="${xAt(t.i).toFixed(1)}" y="${marginTop + chartHeight + 15}" font-size="9" font-family="IBM Plex Mono, monospace" fill="#6b6350" text-anchor="middle">${monthLabel(t.yr, t.mo)}</text>`);
+      }
+    });
+
+    for (const z of zonesPresent) {
+      const points = rolling[z].map((r) => `${xAt(dateIndex[r.gas_day]).toFixed(1)},${yAt(r.avg).toFixed(1)}`).join(" ");
+      parts.push(`<polyline points="${points}" fill="none" stroke="${ZONE_COLORS[z]}" stroke-width="1.75" stroke-linejoin="round"/>`);
+    }
+
+    svg.innerHTML = parts.join("");
+
+    const legend = document.getElementById("trend-legend");
+    legend.innerHTML = zonesPresent
+      .map((z) => `<span><span class="swatch" style="background:${ZONE_COLORS[z]}"></span>${z}</span>`)
+      .join("");
   }
 
   // ---- Heatmap ----
@@ -153,22 +238,62 @@
   function renderFacilities(facilitiesData) {
     const tbody = document.getElementById("facilities-tbody");
     if (!facilitiesData.facilities.length) {
-      tbody.innerHTML = `<tr><td colspan="6" class="empty-note">No facilities recorded yet.</td></tr>`;
+      tbody.innerHTML = `<tr><td colspan="5" class="empty-note">No facilities recorded yet.</td></tr>`;
       return;
     }
     tbody.innerHTML = facilitiesData.facilities
       .map(
         (f) => `
       <tr>
-        <td>${f.facility}</td>
+        <td>${f.firm_risk_events > 0 ? '<span class="firm-dot" title="' + f.firm_risk_events + ' firm-risk event(s)"></span>' : ""}${f.facility}</td>
         <td class="num mono">${fmtInt(f.days_active)}</td>
         <td class="num impact-figure">${fmtInt(f.total_impact_e3m3d)}</td>
         <td>${f.zones.join(", ")}</td>
-        <td>${f.activity_types.join(", ")}</td>
         <td class="mono">${f.first_seen} → ${f.last_seen}</td>
       </tr>`
       )
       .join("");
+  }
+
+  // ---- Firm vs. interruptible service impact ----
+
+  function renderServiceImpact(serviceImpact) {
+    const summary = document.getElementById("service-impact-summary");
+    summary.innerHTML = `
+      <div><span class="label">Firm-risk events</span><span class="big">${serviceImpact.firm_risk_events} / ${serviceImpact.total_events}</span></div>
+      <div><span class="label">Share explicitly firm-risk</span><span class="big">${fmtPct(serviceImpact.firm_risk_share_pct)}</span></div>
+    `;
+
+    const zoneRows = serviceImpact.by_zone.filter((z) => z.firm_risk + z.no_firm_impact + z.unclassified > 0);
+    document.getElementById("service-impact-zone-tbody").innerHTML = zoneRows
+      .map(
+        (z) => `
+      <tr>
+        <td class="mono">${z.zone_table}</td>
+        <td class="num impact-figure">${z.firm_risk}</td>
+        <td class="num mono">${z.no_firm_impact}</td>
+        <td class="num mono">${z.unclassified}</td>
+      </tr>`
+      )
+      .join("");
+
+    const facilityRows = serviceImpact.facility_firm_risk_counts;
+    const tbody = document.getElementById("firm-risk-facilities-tbody");
+    if (!facilityRows.length) {
+      tbody.innerHTML = `<tr><td colspan="3" class="empty-note">None yet.</td></tr>`;
+    } else {
+      tbody.innerHTML = facilityRows
+        .slice(0, 10)
+        .map(
+          (f) => `
+        <tr>
+          <td>${f.facility}</td>
+          <td class="num impact-figure">${f.firm_risk_events}</td>
+          <td>${f.zones.join(", ")}</td>
+        </tr>`
+        )
+        .join("");
+    }
   }
 
   // ---- Monthly correlation ----
@@ -266,17 +391,20 @@
   // ---- Boot ----
 
   async function main() {
-    const [heatmap, facilities, correlation, events] = await Promise.all([
+    const [heatmap, facilities, correlation, events, serviceImpact] = await Promise.all([
       loadJSON("data/heatmap.json"),
       loadJSON("data/facilities.json"),
       loadJSON("data/monthly_correlation.json"),
       loadJSON("data/events.json"),
+      loadJSON("data/service_impact.json"),
     ]);
 
     document.getElementById("meta-latest-day").textContent = heatmap.date_range.end;
     document.getElementById("meta-generated-at").textContent = new Date(heatmap.generated_at).toISOString().slice(0, 16).replace("T", " ") + " UTC";
 
+    renderTrendChart(heatmap);
     renderHeatmap(heatmap);
+    renderServiceImpact(serviceImpact);
     renderFacilities(facilities);
     renderCorrelation(correlation);
     renderEvents(events);
