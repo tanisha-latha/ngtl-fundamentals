@@ -54,9 +54,12 @@ def main(db_path: str, out_dir: str) -> None:
     heatmap_cells = utilization_with_deviation[[
         "zone", "gas_day", "utilization_pct", "outage_adjusted",
         "deviation_from_seasonal_normal_pct", "n_prior_years", "outage_description",
+        "actual_flow_e3m3d", "effective_capability_e3m3d",
     ]].copy()
     heatmap_cells["utilization_pct"] = heatmap_cells["utilization_pct"].round(1)
     heatmap_cells["deviation_from_seasonal_normal_pct"] = heatmap_cells["deviation_from_seasonal_normal_pct"].round(1)
+    heatmap_cells["actual_flow_e3m3d"] = heatmap_cells["actual_flow_e3m3d"].round(0)
+    heatmap_cells["effective_capability_e3m3d"] = heatmap_cells["effective_capability_e3m3d"].round(0)
     heatmap_cells["facilities"] = heatmap_cells["outage_description"].apply(
         lambda text: [m["facility"] for m in split_outage_description(text)]
     )

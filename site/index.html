@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;600;700&family=Source+Sans+3:ital,wght@0,400;0,600;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css?v=11">
+<link rel="stylesheet" href="style.css?v=15">
 </head>
 <body>
 
@@ -25,9 +25,19 @@
 </header>
 
 <section class="hero">
-  <div class="hero-stats" id="hero-stats"></div>
+  <div class="hero-status">
+    <span class="badge badge--live">Live</span>
+    Automated pipeline — fetches TC Energy's public data and appends to the database daily via GitHub Actions, no manual step.
+  </div>
+
+  <div class="hero-stats hero-stats--signal" id="hero-stats-signal"></div>
+  <div class="hero-stats hero-stats--credibility" id="hero-stats-credibility"></div>
+
   <div class="hero-heatmap">
-    <div class="hero-heatmap-label">Last 60 gas days, all zones — <a href="#utilization-section">full history below ↓</a></div>
+    <div class="hero-heatmap-label">
+      <span>Last 60 gas days, all zones — <a href="#utilization-section">full history below ↓</a></span>
+      <span class="hero-mini-legend" id="hero-mini-legend"></span>
+    </div>
     <div id="hero-heatmap-grid"></div>
   </div>
 </section>
@@ -96,12 +106,12 @@
     <div class="trend-legend" id="trend-legend"></div>
 
     <h3 class="subsection-heading">Daily detail</h3>
+    <div class="heatmap-legend" id="heatmap-legend"></div>
     <div class="heatmap-scroll" id="heatmap-scroll">
       <div id="heatmap-grid"></div>
     </div>
-    <div class="heatmap-legend" id="heatmap-legend"></div>
 
-    <h3 class="subsection-heading">Seasonality</h3>
+    <h3 class="subsection-heading">Seasonality <span class="grain-tag">aggregated monthly, not daily</span></h3>
     <p class="lede">System-wide average utilization by calendar month, across all years of history collected. Months with only one year behind them (Aug–Dec, so far) are marked — a single year is a data point, not a season.</p>
     <div class="chart-scroll">
       <svg id="seasonality-chart" role="img" aria-label="Average utilization percent by calendar month, across all years of history"></svg>
@@ -119,9 +129,9 @@
       outage as equally significant.
     </p>
     <dl class="service-glossary">
-      <div><dt>FT-R</dt><dd>Firm Transportation – Receipt, at a shipper's specific receipt point(s)</dd></div>
-      <div><dt>FT-D</dt><dd>Firm Transportation – Delivery, at Group 1/2/3 delivery locations</dd></div>
-      <div><dt>IT-R / IT-D</dt><dd>Interruptible Receipt/Delivery — priced off the firm rate, but curtailed first, "subject to available capacity"</dd></div>
+      <div><dt class="tag--firm">FT-R</dt><dd>Firm Transportation – Receipt, at a shipper's specific receipt point(s)</dd></div>
+      <div><dt class="tag--firm">FT-D</dt><dd>Firm Transportation – Delivery, at Group 1/2/3 delivery locations</dd></div>
+      <div><dt class="tag--interruptible">IT-R / IT-D</dt><dd>Interruptible Receipt/Delivery — priced off the firm rate, but curtailed first, "subject to available capacity"</dd></div>
     </dl>
     <p class="source-note">Source: <a href="https://www.tccustomerexpress.com/docs/ab_pricing_tolls/Summary%20of%20NGTL%20System%20Services.pdf">NGTL System Services Summary Matrix</a>, TC Energy Customer Express — publicly posted, not behind the shipper login.</p>
     <p class="lede">
@@ -217,6 +227,6 @@
 
 <div class="tooltip" id="tooltip" hidden></div>
 
-<script src="app.js?v=8"></script>
+<script src="app.js?v=12"></script>
 </body>
 </html>

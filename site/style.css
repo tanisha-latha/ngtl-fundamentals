@@ -1,24 +1,28 @@
 :root {
-  /* Steel-and-safety-signage palette: brushed-steel gray ground, graphite
-     ink, safety-orange and steel-blue accents -- the actual colors on
-     pipeline equipment and hazard markings, not paper and pen ink. Cool
-     (low utilization) to hot (high) mirrors how a physical gauge reads. */
+  /* Steel-and-safety-signage palette. Every hue below has exactly ONE
+     job -- utilization ramp encodes intensity and nothing else; firm/
+     interruptible is its own categorical pair; ui-accent is chrome
+     (links, hover, section numbers) and never touches data. */
   --paper: #E4E9EA;
   --paper-line: #9DACB1;
   --paper-line-faint: #C7D2D4;
   --ink-navy: #17262E;
   --charcoal: #22323B;
   --charcoal-muted: #57676E;
-  --rust: #D9541E;
-  --flame-blue: #1D6F91;
+
+  --rust: #D9541E;        /* utilization-high / alert only */
+  --flame-blue: #1D6F91;  /* UI chrome: links, hover, section-number kickers */
   --gold: #C99A1E;
+
+  --firm: #1D4E68;          /* FT-R / FT-D, wherever this distinction appears */
+  --interruptible: #C99A1E; /* IT-R / IT-D, same distinction, same color everywhere */
 
   --ramp-0: #D3DEE0;
   --ramp-1: #96BFCC;
   --ramp-2: #3E8FA8;
   --ramp-3: #D9541E;
   --ramp-4: #A8380F;
-  --ramp-over: #17262E;
+  --ramp-over: #7A1E0A;
   --cell-empty: #C7D2D4;
 
   --font-head: "Roboto Slab", Georgia, serif;
@@ -52,7 +56,7 @@ html, body {
 main { padding-bottom: 48px; }
 
 a { color: var(--flame-blue); }
-a:hover { color: var(--rust); }
+a:hover { color: var(--ink-navy); }
 
 h1, h2, h3 {
   font-family: var(--font-head);
@@ -80,7 +84,7 @@ main > section > h2::before {
   font-family: var(--font-mono);
   font-size: 13px;
   font-weight: 400;
-  color: var(--rust);
+  color: var(--flame-blue);
   letter-spacing: 0;
 }
 
@@ -140,45 +144,82 @@ main > section:first-of-type { border-top: none; padding-top: 28px; }
 /* ---- Hero (live stats + recent-heatmap preview, above the fold) ---- */
 
 .hero {
-  padding: 28px 0 4px;
+  padding: 24px 0 4px;
 }
 
-.hero-stats {
+.hero-status {
   display: flex;
-  gap: clamp(20px, 4vw, 44px);
-  flex-wrap: wrap;
-  margin-bottom: 24px;
-}
-
-.hero-stats .stat {
-  display: flex;
-  flex-direction: column;
-}
-
-.hero-stats .stat .value {
+  align-items: center;
+  gap: 8px;
   font-family: var(--font-mono);
-  font-size: clamp(24px, 3.2vw, 34px);
+  font-size: 12px;
+  color: var(--charcoal-muted);
+  margin-bottom: 20px;
+}
+
+/* Signal stats: the two numbers a trader actually reads first. Large,
+   hot-colored, first in source order. */
+.hero-stats--signal {
+  display: flex;
+  gap: clamp(24px, 5vw, 56px);
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+.hero-stats--signal .stat .value {
+  font-family: var(--font-mono);
+  font-size: clamp(28px, 3.8vw, 40px);
   font-weight: 500;
-  color: var(--ink-navy);
+  color: var(--rust);
   line-height: 1.1;
 }
-
-.hero-stats .stat.accent .value { color: var(--rust); }
-
-.hero-stats .stat .label {
-  font-size: 10px;
+.hero-stats--signal .stat .label {
+  font-size: 11px;
   letter-spacing: 0.05em;
   text-transform: uppercase;
   color: var(--charcoal-muted);
   margin-top: 3px;
 }
 
+/* Credibility stats: portfolio-proof numbers -- present, but visibly
+   secondary to the signal row above. */
+.hero-stats--credibility {
+  display: flex;
+  gap: clamp(20px, 4vw, 40px);
+  flex-wrap: wrap;
+  margin-bottom: 24px;
+  padding-top: 12px;
+  border-top: 1px solid var(--paper-line-faint);
+}
+.hero-stats--credibility .stat .value {
+  font-family: var(--font-mono);
+  font-size: 18px;
+  font-weight: 500;
+  color: var(--charcoal-muted);
+  line-height: 1.1;
+}
+.hero-stats--credibility .stat .label {
+  font-size: 9px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--charcoal-muted);
+  opacity: 0.8;
+  margin-top: 2px;
+}
+
 .hero-heatmap-label {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 6px 16px;
   font-family: var(--font-mono);
   font-size: 11px;
   color: var(--charcoal-muted);
   margin-bottom: 8px;
 }
+
+.hero-mini-legend { display: flex; gap: 8px; align-items: center; }
+.hero-mini-legend .swatch { width: 8px; height: 8px; border-radius: 2px; display: inline-block; margin-right: 3px; }
 
 #hero-heatmap-grid { display: inline-block; }
 
@@ -217,7 +258,7 @@ main > section:first-of-type { border-top: none; padding-top: 28px; }
 
 .intro em {
   font-style: normal;
-  color: var(--rust);
+  color: var(--flame-blue);
 }
 
 .intro .what-this-is {
@@ -240,7 +281,7 @@ main > section:first-of-type { border-top: none; padding-top: 28px; }
 }
 
 .tech-stack-label {
-  color: var(--rust);
+  color: var(--flame-blue);
   text-transform: uppercase;
   letter-spacing: 0.05em;
   font-size: 10px;
@@ -268,6 +309,16 @@ main > section:first-of-type { border-top: none; padding-top: 28px; }
   font-family: var(--font-mono);
   font-size: 11px;
   color: var(--charcoal-muted);
+}
+
+.trend-legend-item {
+  cursor: default;
+  padding: 2px 4px;
+  border-radius: 2px;
+}
+.trend-legend-item:hover {
+  background: var(--paper-line-faint);
+  color: var(--ink-navy);
 }
 
 .trend-legend .swatch {
@@ -341,11 +392,26 @@ main > section:first-of-type { border-top: none; padding-top: 28px; }
 .heatmap-legend {
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
   gap: 6px;
-  margin-top: 10px;
+  margin-bottom: 10px;
   font-family: var(--font-mono);
   font-size: 10px;
   color: var(--charcoal-muted);
+}
+
+.grain-tag {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  font-weight: 400;
+  letter-spacing: 0.03em;
+  text-transform: none;
+  color: var(--charcoal-muted);
+  background: var(--paper-line-faint);
+  padding: 1px 6px;
+  border-radius: 2px;
+  margin-left: 6px;
+  vertical-align: middle;
 }
 
 .heatmap-legend .swatch {
@@ -395,7 +461,7 @@ tbody tr:hover { background: rgba(217,84,30,0.08); }
   width: 6px;
   height: 6px;
   border-radius: 50%;
-  background: var(--rust);
+  background: var(--firm);
   margin-right: 6px;
 }
 
@@ -436,9 +502,13 @@ tbody tr:hover { background: rgba(217,84,30,0.08); }
   font-family: var(--font-mono);
   font-size: 12px;
   font-weight: 500;
-  color: var(--rust);
   white-space: nowrap;
 }
+
+/* Firm vs. interruptible: one fixed color pair, used everywhere this
+   distinction appears on the page -- glossary, tables, tariff chart. */
+.tag--firm { color: var(--firm); }
+.tag--interruptible { color: var(--interruptible); }
 
 .service-glossary dd {
   margin: 0;
@@ -451,6 +521,19 @@ tbody tr:hover { background: rgba(217,84,30,0.08); }
   color: var(--charcoal-muted);
   margin: 0 0 18px;
 }
+
+.badge {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 9px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  padding: 2px 6px;
+  border-radius: 2px;
+  margin-right: 6px;
+}
+.badge--static { background: var(--paper-line-faint); color: var(--charcoal-muted); }
+.badge--live { background: var(--firm); color: var(--paper); }
 
 /* ---- Correlation ---- */
 /* (summary stats use the shared .stat-row rule above) */
@@ -486,7 +569,7 @@ tbody tr:hover { background: rgba(217,84,30,0.08); }
   color: var(--flame-blue);
   cursor: pointer;
 }
-.table-toggle:hover { color: var(--rust); }
+.table-toggle:hover { color: var(--ink-navy); }
 
 .empty-note {
   font-size: 13px;

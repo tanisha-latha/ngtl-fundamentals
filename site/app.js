@@ -49,12 +49,18 @@
     const ftRRate = tariff.receipt.find((x) => x.service === "FT-R").rate_cents_gj_d;
     const itPremium = (itRRate / ftRRate - 1) * 100;
 
-    document.getElementById("hero-stats").innerHTML = `
+    document.getElementById("hero-stats-signal").innerHTML = `
+      <div class="stat"><span class="value">${fmtPct(serviceImpact.firm_risk_share_pct, 0)}</span><span class="label">Of outages actually firm-risk</span></div>
+      <div class="stat"><span class="value">+${itPremium.toFixed(0)}%</span><span class="label">IT-R premium over FT-R</span></div>
+    `;
+    document.getElementById("hero-stats-credibility").innerHTML = `
       <div class="stat"><span class="value">${daysTracked.toLocaleString()}</span><span class="label">Gas-days tracked</span></div>
       <div class="stat"><span class="value">${facilities.facilities.length}</span><span class="label">Facilities logged</span></div>
-      <div class="stat accent"><span class="value">${fmtPct(serviceImpact.firm_risk_share_pct, 0)}</span><span class="label">Of outages actually firm-risk</span></div>
-      <div class="stat accent"><span class="value">+${itPremium.toFixed(0)}%</span><span class="label">IT-R premium over FT-R</span></div>
     `;
+
+    document.getElementById("hero-mini-legend").innerHTML = [
+      ["low", "var(--ramp-0)"], ["mid", "var(--ramp-2)"], ["high", "var(--ramp-4)"],
+    ].map(([label, color]) => `<span><span class="swatch" style="background:${color}"></span>${label}</span>`).join("");
 
     const grid = document.getElementById("hero-heatmap-grid");
     const dateAxis = Array.from(new Set(heatmap.cells.map((c) => c.gas_day))).sort().slice(-60);
@@ -93,6 +99,18 @@
     const latest = {};
     for (const c of heatmap.cells) if (c.gas_day === latestDay) latest[c.zone] = c.utilization_pct;
 
+    // Full cell detail (not just %) for hover, and a trailing-7-day series
+    // per zone for the hover sparkline.
+    const cellDetail = {};       // zone -> {gas_day: cell}
+    for (const c of heatmap.cells) {
+      if (!cellDetail[c.zone]) cellDetail[c.zone] = {};
+      cellDetail[c.zone][c.gas_day] = c;
+    }
+    const trailing = {};         // zone -> last 7 days' utilization_pct, oldest first
+    for (const zone of Object.keys(cellDetail)) {
+      trailing[zone] = Object.keys(cellDetail[zone]).sort().slice(-7).map((d) => cellDetail[zone][d].utilization_pct);
+    }
+
     const width = 640, height = 220;
     svg.setAttribute("viewBox", `0 0 ${width} ${height}`);
     svg.setAttribute("width", "100%");
@@ -129,12 +147,50 @@
       const utilVal = latest[title];
       const utilText = utilVal !== undefined ? `${utilVal.toFixed(1)}%` : "no data";
       return `
+        <g data-zone="${title}" class="map-node" style="cursor:default">
         <rect x="${box.x}" y="${box.y}" width="${box.w}" height="${box.h}" fill="${color}" rx="2"/>
         <text x="${box.x + 10}" y="${box.y + 20}" font-family="Roboto Slab, Georgia, serif" font-weight="700" font-size="13" fill="${textColor}">${title}</text>
         <text x="${box.x + 10}" y="${box.y + 34}" font-family="IBM Plex Mono, monospace" font-size="10" fill="${textColor}">${utilText}</text>
         <text x="${box.x + 10}" y="${box.y + box.h - 8}" font-family="Source Sans 3, sans-serif" font-size="10" fill="${textColor}">${subtitle}</text>
+        </g>
       `;
     }
+
+    // Hover: real flow/capability numbers + a trailing-7-day sparkline,
+    // not just the percentage already printed on the node.
+    const tooltip = document.getElementById("tooltip");
+    svg.querySelectorAll(".map-node").forEach((node) => {
+      const zone = node.dataset.zone;
+      const cell = cellDetail[zone] ? cellDetail[zone][latestDay] : null;
+      node.addEventListener("mousemove", (e) => {
+        if (!cell) {
+          tooltip.innerHTML = `<b>${zone}</b><br>no data for ${latestDay}`;
+        } else {
+          const series = trailing[zone] || [];
+          const sparkline = renderInlineSparkline(series);
+          tooltip.innerHTML = `
+            <b>${zone}</b> — ${latestDay}<br>
+            ${fmtInt(cell.actual_flow_e3m3d)} / ${fmtInt(cell.effective_capability_e3m3d)} 10³m³/d
+            (${fmtPct(cell.utilization_pct)})<br>
+            7-day trend ${sparkline}`;
+        }
+        tooltip.style.left = e.clientX + 14 + "px";
+        tooltip.style.top = e.clientY + 14 + "px";
+        tooltip.hidden = false;
+      });
+      node.addEventListener("mouseleave", () => { tooltip.hidden = true; });
+    });
+  }
+
+  function renderInlineSparkline(series) {
+    if (!series.length) return "";
+    const w = 64, h = 16, pad = 2;
+    const max = Math.max(105, ...series);
+    const min = Math.min(0, ...series);
+    const x = (i) => pad + (series.length > 1 ? (i / (series.length - 1)) * (w - pad * 2) : 0);
+    const y = (v) => h - pad - ((v - min) / (max - min || 1)) * (h - pad * 2);
+    const points = series.map((v, i) => `${x(i).toFixed(1)},${y(v).toFixed(1)}`).join(" ");
+    return `<svg width="${w}" height="${h}" viewBox="0 0 ${w} ${h}" style="vertical-align:middle"><polyline points="${points}" fill="none" stroke="#E4E9EA" stroke-width="1.5"/></svg>`;
   }
 
   function isDarkFill(hex) {
@@ -227,7 +283,7 @@
         rollingByDate[z][r.gas_day] = r.avg;
         return `${xAt(dateIndex[r.gas_day]).toFixed(1)},${yAt(r.avg).toFixed(1)}`;
       }).join(" ");
-      parts.push(`<polyline points="${points}" fill="none" stroke="${ZONE_COLORS[z]}" stroke-width="2" stroke-linejoin="round"/>`);
+      parts.push(`<polyline data-zone="${z}" class="trend-line" points="${points}" fill="none" stroke="${ZONE_COLORS[z]}" stroke-width="2" stroke-linejoin="round" style="transition:opacity .1s ease"/>`);
     }
 
     parts.push(`<g id="trend-cursor" visibility="hidden"></g>`);
@@ -237,8 +293,23 @@
 
     const legend = document.getElementById("trend-legend");
     legend.innerHTML = zonesPresent
-      .map((z) => `<span><span class="swatch" style="background:${ZONE_COLORS[z]}"></span>${z}</span>`)
+      .map((z) => `<span class="trend-legend-item" data-zone="${z}"><span class="swatch" style="background:${ZONE_COLORS[z]}"></span>${z}</span>`)
       .join("");
+
+    // Hover a legend entry to isolate that zone's line -- dim the rest
+    // rather than requiring a click/toggle, since this is a scan-and-move
+    // interaction, not a filter you'd want to stick.
+    const lines = svg.querySelectorAll(".trend-line");
+    legend.querySelectorAll(".trend-legend-item").forEach((item) => {
+      item.addEventListener("mouseenter", () => {
+        lines.forEach((line) => {
+          line.style.opacity = line.dataset.zone === item.dataset.zone ? "1" : "0.15";
+        });
+      });
+      item.addEventListener("mouseleave", () => {
+        lines.forEach((line) => { line.style.opacity = "1"; });
+      });
+    });
 
     // Hover: crosshair + per-zone values at the nearest gas day
     const hoverRect = svg.querySelector("#trend-hover-rect");
@@ -470,7 +541,7 @@
         (z) => `
       <tr>
         <td class="mono">${z.zone_table}</td>
-        <td class="num impact-figure">${z.firm_risk}</td>
+        <td class="num mono tag--firm">${z.firm_risk}</td>
         <td class="num mono">${z.no_firm_impact}</td>
         <td class="num mono">${z.unclassified}</td>
       </tr>`
@@ -488,7 +559,7 @@
           (f) => `
         <tr>
           <td>${f.facility}</td>
-          <td class="num impact-figure">${f.firm_risk_events}</td>
+          <td class="num mono tag--firm">${f.firm_risk_events}</td>
           <td>${f.zones.join(", ")}</td>
         </tr>`
         )
@@ -669,7 +740,7 @@
       const barTop = yAt(b.rate);
       const barH = marginTop + chartHeight - barTop;
       const isIT = b.label.startsWith("IT");
-      const color = isIT ? "#D9541E" : "#1D6F91";
+      const color = isIT ? "#C99A1E" : "#1D4E68"; /* --interruptible / --firm */
       parts.push(`<rect x="${(x + slot * 0.12).toFixed(1)}" y="${barTop.toFixed(1)}" width="${(slot * 0.76).toFixed(1)}" height="${barH.toFixed(1)}" fill="${color}"/>`);
       parts.push(`<text x="${(x + slot / 2).toFixed(1)}" y="${(barTop - 4).toFixed(1)}" font-size="9" font-family="IBM Plex Mono, monospace" fill="${color}" text-anchor="middle">${b.rate}¢</text>`);
       parts.push(`<text x="${(x + slot / 2).toFixed(1)}" y="${marginTop + chartHeight + 13}" font-size="8.5" font-family="IBM Plex Mono, monospace" fill="#57676E" text-anchor="middle">${b.label}</text>`);
@@ -690,8 +761,8 @@
     `;
 
     document.getElementById("tariff-source").innerHTML =
-      `Rates effective ${tariff._meta.effective_date}, in ${tariff._meta.units}. ` +
-      `Source: <a href="${tariff._meta.source}">${tariff._meta.source_title}</a>, TC Energy Customer Express. Static reference, not pipeline-updated.`;
+      `<span class="badge badge--static">Static reference</span> effective ${tariff._meta.effective_date}, in ${tariff._meta.units}. ` +
+      `Source: <a href="${tariff._meta.source}">${tariff._meta.source_title}</a>, TC Energy Customer Express — not pipeline-updated, unlike everything else on this page.`;
   }
 
   // ---- Facility impact concentration (Pareto) ----
