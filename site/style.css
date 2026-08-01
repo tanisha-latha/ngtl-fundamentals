@@ -45,7 +45,7 @@ html, body {
 /* Single shared horizontal container -- every top-level block (masthead,
    intro, main, footer) uses the same three rules instead of repeating
    max-width/margin/padding independently, so they can't drift apart. */
-.masthead, .intro, main, footer {
+.masthead, .hero, .intro, main, footer {
   max-width: 1100px;
   margin-left: auto;
   margin-right: auto;
@@ -144,7 +144,8 @@ main > section:first-of-type { border-top: none; padding-top: 28px; }
 /* ---- Hero (live stats + recent-heatmap preview, above the fold) ---- */
 
 .hero {
-  padding: 24px 0 4px;
+  padding-top: 24px;
+  padding-bottom: 4px;
 }
 
 .hero-status {
@@ -623,7 +624,7 @@ footer .disclaimer {
 .tooltip b { color: #fff; font-family: var(--font-body); }
 
 @media (max-width: 640px) {
-  .masthead, .intro, main, footer { padding-left: 12px; padding-right: 12px; }
+  .masthead, .hero, .intro, main, footer { padding-left: 12px; padding-right: 12px; }
   .masthead { flex-direction: column; align-items: flex-start; }
   .correlation-stat, #service-impact-summary { flex-wrap: wrap; gap: 16px; }
   .service-glossary { grid-template-columns: 1fr; }
