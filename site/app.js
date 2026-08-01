@@ -6,7 +6,7 @@
   "use strict";
 
   const ZONE_ORDER = ["USJR", "AB/BC", "EGAT", "OSDA"];
-  const ZONE_COLORS = { "USJR": "#B5502D", "AB/BC": "#2F6690", "EGAT": "#1C2B3A", "OSDA": "#5B6B3D" };
+  const ZONE_COLORS = { "USJR": "#C1481F", "AB/BC": "#1E6F93", "EGAT": "#16222E", "OSDA": "#D89B3C" };
   const MONTH_ABBR = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
 
   function utilizationColor(pct) {
@@ -115,17 +115,17 @@
       const midY = box.y + box.h / 2;
       const startX = sourceBox.x + sourceBox.w;
       const startY = sourceBox.y + sourceBox.h / 2;
-      parts.push(`<path d="M ${startX} ${startY} C ${startX + 100} ${startY}, ${box.x - 80} ${midY}, ${box.x} ${midY}" fill="none" stroke="#b8a878" stroke-width="1.5" marker-end="url(#arrow)"/>`);
+      parts.push(`<path d="M ${startX} ${startY} C ${startX + 100} ${startY}, ${box.x - 80} ${midY}, ${box.x} ${midY}" fill="none" stroke="#B08A4A" stroke-width="1.5" marker-end="url(#arrow)"/>`);
       const color = utilizationColorHex(latest[box.zone]);
       parts.push(rectWithLabel(box, box.zone, MAP_ZONE_LABELS[box.zone], color));
     }
 
-    const defs = `<defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 z" fill="#b8a878"/></marker></defs>`;
+    const defs = `<defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 z" fill="#B08A4A"/></marker></defs>`;
 
     svg.innerHTML = defs + parts.join("");
 
     function rectWithLabel(box, title, subtitle, color) {
-      const textColor = isDarkFill(color) ? "#F1E9D8" : "#1C2B3A";
+      const textColor = isDarkFill(color) ? "#F5EAD3" : "#16222E";
       const utilVal = latest[title];
       const utilText = utilVal !== undefined ? `${utilVal.toFixed(1)}%` : "no data";
       return `
@@ -138,17 +138,17 @@
   }
 
   function isDarkFill(hex) {
-    return hex === "#1C2B3A" || hex === "#7a3319" || hex === "#A9491F";
+    return hex === "#16222E" || hex === "#8A2A1C" || hex === "#C1481F";
   }
 
   function utilizationColorHex(pct) {
-    if (pct === null || pct === undefined || Number.isNaN(pct)) return "#e6dcc0";
-    if (pct > 100) return "#1C2B3A";
-    if (pct >= 90) return "#7a3319";
-    if (pct >= 70) return "#A9491F";
-    if (pct >= 50) return "#C98A3E";
-    if (pct >= 25) return "#DEC98A";
-    return "#EDE3CC";
+    if (pct === null || pct === undefined || Number.isNaN(pct)) return "#E3D2A8";
+    if (pct > 100) return "#16222E";
+    if (pct >= 90) return "#8A2A1C";
+    if (pct >= 70) return "#C1481F";
+    if (pct >= 50) return "#D8842B";
+    if (pct >= 25) return "#E3B44C";
+    return "#F0E1B8";
   }
 
   // ---- Utilization trend (7-day rolling average) ----
@@ -198,9 +198,9 @@
     const yAt = (v) => marginTop + chartHeight - (v / maxVal) * chartHeight;
 
     const parts = [];
-    parts.push(`<line x1="${marginLeft}" y1="${yAt(100).toFixed(1)}" x2="${width - marginRight}" y2="${yAt(100).toFixed(1)}" stroke="#d8cba8" stroke-width="1" stroke-dasharray="3,3"/>`);
-    parts.push(`<text x="${marginLeft - 6}" y="${(yAt(100) + 3).toFixed(1)}" font-size="9" font-family="IBM Plex Mono, monospace" fill="#6b6350" text-anchor="end">100%</text>`);
-    parts.push(`<line x1="${marginLeft}" y1="${marginTop + chartHeight}" x2="${width - marginRight}" y2="${marginTop + chartHeight}" stroke="#d8cba8" stroke-width="1"/>`);
+    parts.push(`<line x1="${marginLeft}" y1="${yAt(100).toFixed(1)}" x2="${width - marginRight}" y2="${yAt(100).toFixed(1)}" stroke="#C9A96E" stroke-width="1" stroke-dasharray="3,3"/>`);
+    parts.push(`<text x="${marginLeft - 6}" y="${(yAt(100) + 3).toFixed(1)}" font-size="9" font-family="IBM Plex Mono, monospace" fill="#7A6A4E" text-anchor="end">100%</text>`);
+    parts.push(`<line x1="${marginLeft}" y1="${marginTop + chartHeight}" x2="${width - marginRight}" y2="${marginTop + chartHeight}" stroke="#C9A96E" stroke-width="1"/>`);
 
     const monthTicks = [];
     let lastMonthKey = null;
@@ -214,16 +214,24 @@
     });
     const skip = monthTicks.length > 14 ? 2 : 1;
     monthTicks.forEach((t, idx) => {
-      parts.push(`<line x1="${xAt(t.i).toFixed(1)}" y1="${marginTop}" x2="${xAt(t.i).toFixed(1)}" y2="${marginTop + chartHeight}" stroke="#e6dcc0" stroke-width="1"/>`);
+      parts.push(`<line x1="${xAt(t.i).toFixed(1)}" y1="${marginTop}" x2="${xAt(t.i).toFixed(1)}" y2="${marginTop + chartHeight}" stroke="#E3D2A8" stroke-width="1"/>`);
       if (idx % skip === 0) {
-        parts.push(`<text x="${xAt(t.i).toFixed(1)}" y="${marginTop + chartHeight + 15}" font-size="9" font-family="IBM Plex Mono, monospace" fill="#6b6350" text-anchor="middle">${monthLabel(t.yr, t.mo)}</text>`);
+        parts.push(`<text x="${xAt(t.i).toFixed(1)}" y="${marginTop + chartHeight + 15}" font-size="9" font-family="IBM Plex Mono, monospace" fill="#7A6A4E" text-anchor="middle">${monthLabel(t.yr, t.mo)}</text>`);
       }
     });
 
+    const rollingByDate = {};
     for (const z of zonesPresent) {
-      const points = rolling[z].map((r) => `${xAt(dateIndex[r.gas_day]).toFixed(1)},${yAt(r.avg).toFixed(1)}`).join(" ");
-      parts.push(`<polyline points="${points}" fill="none" stroke="${ZONE_COLORS[z]}" stroke-width="1.75" stroke-linejoin="round"/>`);
+      rollingByDate[z] = {};
+      const points = rolling[z].map((r) => {
+        rollingByDate[z][r.gas_day] = r.avg;
+        return `${xAt(dateIndex[r.gas_day]).toFixed(1)},${yAt(r.avg).toFixed(1)}`;
+      }).join(" ");
+      parts.push(`<polyline points="${points}" fill="none" stroke="${ZONE_COLORS[z]}" stroke-width="2" stroke-linejoin="round"/>`);
     }
+
+    parts.push(`<g id="trend-cursor" visibility="hidden"></g>`);
+    parts.push(`<rect id="trend-hover-rect" x="${marginLeft}" y="${marginTop}" width="${innerWidth}" height="${chartHeight}" fill="transparent"/>`);
 
     svg.innerHTML = parts.join("");
 
@@ -231,60 +239,123 @@
     legend.innerHTML = zonesPresent
       .map((z) => `<span><span class="swatch" style="background:${ZONE_COLORS[z]}"></span>${z}</span>`)
       .join("");
+
+    // Hover: crosshair + per-zone values at the nearest gas day
+    const hoverRect = svg.querySelector("#trend-hover-rect");
+    const cursorGroup = svg.querySelector("#trend-cursor");
+    const tooltip = document.getElementById("tooltip");
+
+    hoverRect.addEventListener("mousemove", (e) => {
+      const svgRect = svg.getBoundingClientRect();
+      const scaleX = width / svgRect.width;
+      const localX = (e.clientX - svgRect.left) * scaleX;
+      let i = Math.round(((localX - marginLeft) / innerWidth) * (dateAxis.length - 1));
+      i = Math.max(0, Math.min(dateAxis.length - 1, i));
+      const day = dateAxis[i];
+      const x = xAt(i);
+
+      const cursorParts = [`<line x1="${x.toFixed(1)}" y1="${marginTop}" x2="${x.toFixed(1)}" y2="${marginTop + chartHeight}" stroke="#16222E" stroke-width="1" stroke-dasharray="2,2"/>`];
+      const tooltipLines = [`<b>${day}</b> (7-day avg)`];
+      for (const z of zonesPresent) {
+        const v = rollingByDate[z][day];
+        if (v === undefined) continue;
+        cursorParts.push(`<circle cx="${x.toFixed(1)}" cy="${yAt(v).toFixed(1)}" r="3.5" fill="${ZONE_COLORS[z]}" stroke="#F5EAD3" stroke-width="1"/>`);
+        tooltipLines.push(`${z}: ${v.toFixed(1)}%`);
+      }
+      cursorGroup.innerHTML = cursorParts.join("");
+      cursorGroup.setAttribute("visibility", "visible");
+
+      tooltip.innerHTML = tooltipLines.join("<br>");
+      tooltip.style.left = e.clientX + 14 + "px";
+      tooltip.style.top = e.clientY + 14 + "px";
+      tooltip.hidden = false;
+    });
+    hoverRect.addEventListener("mouseleave", () => {
+      cursorGroup.setAttribute("visibility", "hidden");
+      tooltip.hidden = true;
+    });
   }
 
-  // ---- Heatmap ----
+  // ---- Heatmap: one GitHub-style calendar grid per zone (weeks as
+  // columns, day-of-week as rows) -- fits the full history without a
+  // horizontal scrollbar, unlike a single continuous day-strip. All four
+  // zones share the same week/column mapping so they stay visually
+  // aligned when stacked. ----
+
+  const CELL = 10, CELL_GAP = 2, DOW_LABEL_W = 20;
 
   function renderHeatmap(heatmap) {
-    const grid = document.getElementById("heatmap-grid");
+    const container = document.getElementById("heatmap-grid");
+    container.innerHTML = "";
 
-    const dateSet = new Set(heatmap.cells.map((c) => c.gas_day));
-    const dateAxis = Array.from(dateSet).sort();
+    const dateAxis = Array.from(new Set(heatmap.cells.map((c) => c.gas_day))).sort();
+    const firstDate = new Date(dateAxis[0] + "T00:00:00");
+    const firstSunday = new Date(firstDate);
+    firstSunday.setDate(firstDate.getDate() - firstDate.getDay());
+
+    function weekCol(dateStr) {
+      const d = new Date(dateStr + "T00:00:00");
+      return Math.floor((d - firstSunday) / 86400000 / 7);
+    }
+    function dow(dateStr) {
+      return new Date(dateStr + "T00:00:00").getDay();
+    }
+
+    const nWeeks = weekCol(dateAxis[dateAxis.length - 1]) + 1;
+    const gridWidth = DOW_LABEL_W + nWeeks * (CELL + CELL_GAP);
+
+    // Month labels: one per week-column where a new month begins.
+    const monthMarks = [];
+    let lastMonthKey = null;
+    for (const day of dateAxis) {
+      const key = day.slice(0, 7);
+      if (key !== lastMonthKey) {
+        lastMonthKey = key;
+        const [y, m] = day.split("-");
+        monthMarks.push({ col: weekCol(day), label: monthLabel(Number(y), Number(m)) });
+      }
+    }
 
     const cellIndex = {};
-    for (const zone of ZONE_ORDER) cellIndex[zone] = {};
     for (const c of heatmap.cells) {
       if (!cellIndex[c.zone]) cellIndex[c.zone] = {};
       cellIndex[c.zone][c.gas_day] = c;
     }
-
-    // Month label row
-    const monthRow = document.createElement("div");
-    monthRow.className = "heatmap-month-row";
-    let lastMonthKey = null;
-    for (const day of dateAxis) {
-      const [y, m] = day.split("-");
-      const key = `${y}-${m}`;
-      const slot = document.createElement("div");
-      slot.style.width = "10px";
-      slot.style.flex = "0 0 10px";
-      if (key !== lastMonthKey) {
-        slot.className = "month-label";
-        slot.textContent = monthLabel(Number(y), Number(m));
-        lastMonthKey = key;
-      }
-      monthRow.appendChild(slot);
-    }
-    grid.appendChild(monthRow);
-
-    // Zone rows
     const zonesPresent = ZONE_ORDER.filter((z) => cellIndex[z] && Object.keys(cellIndex[z]).length);
+
     for (const zone of zonesPresent) {
-      const row = document.createElement("div");
-      row.className = "heatmap-row";
+      const wrap = document.createElement("div");
+      wrap.className = "zone-calendar";
 
       const label = document.createElement("div");
-      label.className = "zone-row-label";
+      label.className = "zone-calendar-label";
       label.textContent = zone;
-      row.appendChild(label);
+      wrap.appendChild(label);
 
-      const track = document.createElement("div");
-      track.className = "cell-track";
+      const monthRow = document.createElement("div");
+      monthRow.className = "calendar-months";
+      monthRow.style.width = gridWidth + "px";
+      monthRow.style.paddingLeft = DOW_LABEL_W + "px";
+      for (const m of monthMarks) {
+        const el = document.createElement("span");
+        el.className = "calendar-month-mark";
+        el.style.left = DOW_LABEL_W + m.col * (CELL + CELL_GAP) + "px";
+        el.textContent = m.label;
+        monthRow.appendChild(el);
+      }
+      wrap.appendChild(monthRow);
+
+      const grid = document.createElement("div");
+      grid.className = "calendar-grid";
+      grid.style.width = gridWidth + "px";
+      grid.style.height = 7 * (CELL + CELL_GAP) + "px";
 
       for (const day of dateAxis) {
         const cellData = cellIndex[zone][day];
         const cell = document.createElement("div");
         cell.className = "hm-cell";
+        cell.style.left = DOW_LABEL_W + weekCol(day) * (CELL + CELL_GAP) + "px";
+        cell.style.top = dow(day) * (CELL + CELL_GAP) + "px";
         if (cellData) {
           cell.style.background = utilizationColor(cellData.utilization_pct);
           if (cellData.outage_adjusted) cell.classList.add("has-outage");
@@ -297,10 +368,10 @@
         } else {
           cell.style.background = "var(--cell-empty)";
         }
-        track.appendChild(cell);
+        grid.appendChild(cell);
       }
-      row.appendChild(track);
-      grid.appendChild(row);
+      wrap.appendChild(grid);
+      container.appendChild(wrap);
     }
 
     // Legend
@@ -319,7 +390,7 @@
 
     // Tooltip via delegation
     const tooltip = document.getElementById("tooltip");
-    grid.addEventListener("mousemove", (e) => {
+    container.addEventListener("mousemove", (e) => {
       const cell = e.target.closest(".hm-cell");
       if (!cell || !cell.dataset.day) {
         tooltip.hidden = true;
@@ -340,7 +411,7 @@
       tooltip.style.top = e.clientY + 14 + "px";
       tooltip.hidden = false;
     });
-    grid.addEventListener("mouseleave", () => { tooltip.hidden = true; });
+    container.addEventListener("mouseleave", () => { tooltip.hidden = true; });
   }
 
   // ---- Facility constraint log ----
@@ -461,30 +532,30 @@
     const yPrice = (v) => marginTop + chartHeight - (v / maxPrice) * chartHeight;
 
     const parts = [];
-    parts.push(`<line x1="${marginLeft}" y1="${marginTop + chartHeight}" x2="${width - marginRight}" y2="${marginTop + chartHeight}" stroke="#d8cba8" stroke-width="1"/>`);
-    parts.push(`<line x1="${marginLeft}" y1="${yUtil(100)}" x2="${width - marginRight}" y2="${yUtil(100)}" stroke="#d8cba8" stroke-width="1" stroke-dasharray="2,3"/>`);
-    parts.push(`<text x="${marginLeft - 6}" y="${yUtil(100) + 3}" font-size="9" font-family="IBM Plex Mono, monospace" fill="#6b6350" text-anchor="end">100%</text>`);
+    parts.push(`<line x1="${marginLeft}" y1="${marginTop + chartHeight}" x2="${width - marginRight}" y2="${marginTop + chartHeight}" stroke="#C9A96E" stroke-width="1"/>`);
+    parts.push(`<line x1="${marginLeft}" y1="${yUtil(100)}" x2="${width - marginRight}" y2="${yUtil(100)}" stroke="#C9A96E" stroke-width="1" stroke-dasharray="2,3"/>`);
+    parts.push(`<text x="${marginLeft - 6}" y="${yUtil(100) + 3}" font-size="9" font-family="IBM Plex Mono, monospace" fill="#7A6A4E" text-anchor="end">100%</text>`);
 
     data.forEach((d, i) => {
       const x = marginLeft + i * monthWidth;
       const barTop = yUtil(d.avg_utilization_pct);
       const barH = marginTop + chartHeight - barTop;
-      parts.push(`<rect x="${x + 5}" y="${barTop}" width="${monthWidth - 10}" height="${barH}" fill="#A9491F" fill-opacity="0.55"/>`);
+      parts.push(`<rect x="${x + 5}" y="${barTop}" width="${monthWidth - 10}" height="${barH}" fill="#C1481F" fill-opacity="0.55"/>`);
       if (data.length <= 14 || i % 2 === 0) {
-        parts.push(`<text x="${x + monthWidth / 2}" y="${marginTop + chartHeight + 15}" font-size="9" font-family="IBM Plex Mono, monospace" fill="#6b6350" text-anchor="middle">${monthLabel(d.year, d.month)}</text>`);
+        parts.push(`<text x="${x + monthWidth / 2}" y="${marginTop + chartHeight + 15}" font-size="9" font-family="IBM Plex Mono, monospace" fill="#7A6A4E" text-anchor="middle">${monthLabel(d.year, d.month)}</text>`);
       }
     });
 
     const linePoints = data.map((d, i) => `${marginLeft + i * monthWidth + monthWidth / 2},${yPrice(d.price_gj).toFixed(1)}`).join(" ");
-    parts.push(`<polyline points="${linePoints}" fill="none" stroke="#2F6690" stroke-width="2"/>`);
+    parts.push(`<polyline points="${linePoints}" fill="none" stroke="#1E6F93" stroke-width="2"/>`);
     data.forEach((d, i) => {
       const cx = marginLeft + i * monthWidth + monthWidth / 2;
-      parts.push(`<circle cx="${cx}" cy="${yPrice(d.price_gj).toFixed(1)}" r="2.5" fill="#2F6690"/>`);
+      parts.push(`<circle cx="${cx}" cy="${yPrice(d.price_gj).toFixed(1)}" r="2.5" fill="#1E6F93"/>`);
       parts.push(`<title>${monthLabel(d.year, d.month)}: ${d.avg_utilization_pct.toFixed(1)}% util, $${d.price_gj.toFixed(2)}/GJ</title>`);
     });
 
-    parts.push(`<text x="6" y="${marginTop - 2}" font-size="9" font-family="IBM Plex Mono, monospace" fill="#A9491F">■ avg utilization %</text>`);
-    parts.push(`<text x="${width - 6}" y="${marginTop - 2}" font-size="9" font-family="IBM Plex Mono, monospace" fill="#2F6690" text-anchor="end">— AER price $/GJ</text>`);
+    parts.push(`<text x="6" y="${marginTop - 2}" font-size="9" font-family="IBM Plex Mono, monospace" fill="#C1481F">■ avg utilization %</text>`);
+    parts.push(`<text x="${width - 6}" y="${marginTop - 2}" font-size="9" font-family="IBM Plex Mono, monospace" fill="#1E6F93" text-anchor="end">— AER price $/GJ</text>`);
 
     svg.innerHTML = parts.join("");
   }
@@ -507,8 +578,8 @@
       nYears: b.years.size,
     }));
 
-    const width = 620, chartHeight = 200;
-    const marginLeft = 40, marginRight = 16, marginTop = 16, marginBottom = 26;
+    const width = 620, chartHeight = 210;
+    const marginLeft = 40, marginRight = 16, marginTop = 24, marginBottom = 26;
     const barSlot = (width - marginLeft - marginRight) / 12;
     const totalHeight = chartHeight + marginTop + marginBottom;
     svg.setAttribute("viewBox", `0 0 ${width} ${totalHeight}`);
@@ -516,28 +587,49 @@
     svg.setAttribute("height", totalHeight);
     svg.setAttribute("preserveAspectRatio", "none");
 
-    const maxVal = Math.max(105, ...stats.filter((s) => s.avg !== null).map((s) => s.avg)) * 1.02;
+    const maxVal = Math.max(105, ...stats.filter((s) => s.avg !== null).map((s) => s.avg)) * 1.08;
     const yAt = (v) => marginTop + chartHeight - (v / maxVal) * chartHeight;
 
     const parts = [];
-    parts.push(`<line x1="${marginLeft}" y1="${yAt(100).toFixed(1)}" x2="${width - marginRight}" y2="${yAt(100).toFixed(1)}" stroke="#d8cba8" stroke-width="1" stroke-dasharray="3,3"/>`);
-    parts.push(`<text x="${marginLeft - 6}" y="${(yAt(100) + 3).toFixed(1)}" font-size="9" font-family="IBM Plex Mono, monospace" fill="#6b6350" text-anchor="end">100%</text>`);
-    parts.push(`<line x1="${marginLeft}" y1="${marginTop + chartHeight}" x2="${width - marginRight}" y2="${marginTop + chartHeight}" stroke="#d8cba8" stroke-width="1"/>`);
+    [25, 50, 75, 100].forEach((mark) => {
+      parts.push(`<line x1="${marginLeft}" y1="${yAt(mark).toFixed(1)}" x2="${width - marginRight}" y2="${yAt(mark).toFixed(1)}" stroke="#E3D2A8" stroke-width="1" ${mark === 100 ? 'stroke-dasharray="3,3"' : ""}/>`);
+      parts.push(`<text x="${marginLeft - 6}" y="${(yAt(mark) + 3).toFixed(1)}" font-size="9" font-family="IBM Plex Mono, monospace" fill="#7A6A4E" text-anchor="end">${mark}${mark === 100 ? "%" : ""}</text>`);
+    });
+    parts.push(`<line x1="${marginLeft}" y1="${marginTop + chartHeight}" x2="${width - marginRight}" y2="${marginTop + chartHeight}" stroke="#C9A96E" stroke-width="1"/>`);
 
+    const barMeta = [];
     stats.forEach((s, i) => {
       const x = marginLeft + i * barSlot;
-      if (s.avg === null) return;
+      const barX = x + barSlot * 0.14, barW = barSlot * 0.72;
+      if (s.avg === null) {
+        parts.push(`<text x="${(x + barSlot / 2).toFixed(1)}" y="${marginTop + chartHeight + 15}" font-size="9" font-family="IBM Plex Mono, monospace" fill="#7A6A4E" text-anchor="middle">${MONTH_ABBR[i]}</text>`);
+        return;
+      }
       const barTop = yAt(s.avg);
       const barH = marginTop + chartHeight - barTop;
-      const color = s.nYears < 2 ? "#DEC98A" : "#A9491F";
-      parts.push(`<rect x="${(x + barSlot * 0.15).toFixed(1)}" y="${barTop.toFixed(1)}" width="${(barSlot * 0.7).toFixed(1)}" height="${barH.toFixed(1)}" fill="${color}" fill-opacity="0.75"/>`);
-      parts.push(`<title>${MONTH_ABBR[i]}: ${s.avg.toFixed(1)}% avg, n=${s.nYears} year${s.nYears === 1 ? "" : "s"}</title>`);
-      parts.push(`<text x="${(x + barSlot / 2).toFixed(1)}" y="${marginTop + chartHeight + 15}" font-size="9" font-family="IBM Plex Mono, monospace" fill="#6b6350" text-anchor="middle">${MONTH_ABBR[i]}${s.nYears < 2 ? "*" : ""}</text>`);
+      const color = utilizationColorHex(s.avg);
+      const dashed = s.nYears < 2;
+      parts.push(`<rect class="season-bar" data-idx="${i}" x="${barX.toFixed(1)}" y="${barTop.toFixed(1)}" width="${barW.toFixed(1)}" height="${barH.toFixed(1)}" rx="2" fill="${color}" ${dashed ? 'stroke="#7A6A4E" stroke-width="1" stroke-dasharray="2,2"' : ""}/>`);
+      parts.push(`<text x="${(x + barSlot / 2).toFixed(1)}" y="${(barTop - 5).toFixed(1)}" font-size="9" font-family="IBM Plex Mono, monospace" fill="#2E2A22" text-anchor="middle">${s.avg.toFixed(0)}%</text>`);
+      parts.push(`<text x="${(x + barSlot / 2).toFixed(1)}" y="${marginTop + chartHeight + 15}" font-size="9" font-family="IBM Plex Mono, monospace" fill="#7A6A4E" text-anchor="middle">${MONTH_ABBR[i]}${dashed ? "*" : ""}</text>`);
+      barMeta.push({ idx: i, x: x + barSlot / 2, top: barTop, avg: s.avg, nYears: s.nYears });
     });
 
-    parts.push(`<text x="${width - marginRight}" y="${marginTop - 3}" font-size="9" font-family="IBM Plex Mono, monospace" fill="#6b6350" text-anchor="end">* n=1 year</text>`);
+    parts.push(`<text x="${width - marginRight}" y="${marginTop - 8}" font-size="9" font-family="IBM Plex Mono, monospace" fill="#7A6A4E" text-anchor="end">* dashed = only 1 year of history behind it</text>`);
 
     svg.innerHTML = parts.join("");
+
+    const tooltip = document.getElementById("tooltip");
+    svg.querySelectorAll(".season-bar").forEach((rect) => {
+      const meta = barMeta.find((m) => m.idx === Number(rect.dataset.idx));
+      rect.addEventListener("mousemove", (e) => {
+        tooltip.innerHTML = `<b>${MONTH_ABBR[meta.idx]}</b> — system-wide avg<br>${meta.avg.toFixed(1)}% utilization<br>built on n=${meta.nYears} year${meta.nYears === 1 ? "" : "s"} of history`;
+        tooltip.style.left = e.clientX + 14 + "px";
+        tooltip.style.top = e.clientY + 14 + "px";
+        tooltip.hidden = false;
+      });
+      rect.addEventListener("mouseleave", () => { tooltip.hidden = true; });
+    });
   }
 
   // ---- Firm/interruptible tariff rate comparison (static reference data) ----
@@ -570,17 +662,17 @@
     const yAt = (v) => marginTop + chartHeight - (v / maxVal) * chartHeight;
 
     const parts = [];
-    parts.push(`<line x1="${marginLeft}" y1="${marginTop + chartHeight}" x2="${width - marginRight}" y2="${marginTop + chartHeight}" stroke="#d8cba8" stroke-width="1"/>`);
+    parts.push(`<line x1="${marginLeft}" y1="${marginTop + chartHeight}" x2="${width - marginRight}" y2="${marginTop + chartHeight}" stroke="#C9A96E" stroke-width="1"/>`);
 
     bars.forEach((b, i) => {
       const x = marginLeft + i * slot;
       const barTop = yAt(b.rate);
       const barH = marginTop + chartHeight - barTop;
       const isIT = b.label.startsWith("IT");
-      const color = isIT ? "#B5502D" : "#2F6690";
+      const color = isIT ? "#C1481F" : "#1E6F93";
       parts.push(`<rect x="${(x + slot * 0.12).toFixed(1)}" y="${barTop.toFixed(1)}" width="${(slot * 0.76).toFixed(1)}" height="${barH.toFixed(1)}" fill="${color}"/>`);
       parts.push(`<text x="${(x + slot / 2).toFixed(1)}" y="${(barTop - 4).toFixed(1)}" font-size="9" font-family="IBM Plex Mono, monospace" fill="${color}" text-anchor="middle">${b.rate}¢</text>`);
-      parts.push(`<text x="${(x + slot / 2).toFixed(1)}" y="${marginTop + chartHeight + 13}" font-size="8.5" font-family="IBM Plex Mono, monospace" fill="#6b6350" text-anchor="middle">${b.label}</text>`);
+      parts.push(`<text x="${(x + slot / 2).toFixed(1)}" y="${marginTop + chartHeight + 13}" font-size="8.5" font-family="IBM Plex Mono, monospace" fill="#7A6A4E" text-anchor="middle">${b.label}</text>`);
     });
 
     svg.innerHTML = parts.join("");
@@ -636,14 +728,14 @@
 
     const parts = [];
     [50, 80].forEach((mark) => {
-      parts.push(`<line x1="${marginLeft}" y1="${yAt(mark).toFixed(1)}" x2="${width - marginRight}" y2="${yAt(mark).toFixed(1)}" stroke="#d8cba8" stroke-width="1" stroke-dasharray="2,3"/>`);
-      parts.push(`<text x="${marginLeft - 4}" y="${(yAt(mark) + 3).toFixed(1)}" font-size="9" font-family="IBM Plex Mono, monospace" fill="#6b6350" text-anchor="end">${mark}%</text>`);
+      parts.push(`<line x1="${marginLeft}" y1="${yAt(mark).toFixed(1)}" x2="${width - marginRight}" y2="${yAt(mark).toFixed(1)}" stroke="#C9A96E" stroke-width="1" stroke-dasharray="2,3"/>`);
+      parts.push(`<text x="${marginLeft - 4}" y="${(yAt(mark) + 3).toFixed(1)}" font-size="9" font-family="IBM Plex Mono, monospace" fill="#7A6A4E" text-anchor="end">${mark}%</text>`);
     });
 
     const areaPoints = points.map((p) => `${xAt(p.rank).toFixed(1)},${yAt(p.cumPct).toFixed(1)}`).join(" ");
     const areaPath = `M ${marginLeft},${marginTop + chartHeight} L ${areaPoints} L ${xAt(points[points.length - 1].rank).toFixed(1)},${marginTop + chartHeight} Z`;
-    parts.push(`<path d="${areaPath}" fill="#A9491F" fill-opacity="0.12"/>`);
-    parts.push(`<polyline points="${areaPoints}" fill="none" stroke="#A9491F" stroke-width="1.75"/>`);
+    parts.push(`<path d="${areaPath}" fill="#C1481F" fill-opacity="0.12"/>`);
+    parts.push(`<polyline points="${areaPoints}" fill="none" stroke="#C1481F" stroke-width="1.75"/>`);
 
     svg.innerHTML = parts.join("");
   }

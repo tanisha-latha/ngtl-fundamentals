@@ -1,20 +1,24 @@
 :root {
-  --paper: #F1E9D8;
-  --paper-line: #d8cba8;
-  --paper-line-faint: #e6dcc0;
-  --ink-navy: #1C2B3A;
-  --charcoal: #3A342A;
-  --charcoal-muted: #6b6350;
-  --rust: #B5502D;
-  --flame-blue: #2F6690;
+  /* Richer, more saturated take on the same paper-and-ink concept --
+     gauge-brass gold through rust to oxblood, instead of the flatter
+     original earth tones. */
+  --paper: #F5EAD3;
+  --paper-line: #C9A96E;
+  --paper-line-faint: #E3D2A8;
+  --ink-navy: #16222E;
+  --charcoal: #2E2A22;
+  --charcoal-muted: #7A6A4E;
+  --rust: #C1481F;
+  --flame-blue: #1E6F93;
+  --gold: #D89B3C;
 
-  --ramp-0: #EDE3CC;
-  --ramp-1: #DEC98A;
-  --ramp-2: #C98A3E;
-  --ramp-3: #A9491F;
-  --ramp-4: #7a3319;
-  --ramp-over: #1C2B3A;
-  --cell-empty: #e6dcc0;
+  --ramp-0: #F0E1B8;
+  --ramp-1: #E3B44C;
+  --ramp-2: #D8842B;
+  --ramp-3: #C1481F;
+  --ramp-4: #8A2A1C;
+  --ramp-over: #16222E;
+  --cell-empty: #E3D2A8;
 
   --font-head: "Roboto Slab", Georgia, serif;
   --font-body: "Source Sans 3", -apple-system, BlinkMacSystemFont, sans-serif;
@@ -216,7 +220,7 @@ section:first-of-type { border-top: none; padding-top: 28px; }
 .intro .what-this-is {
   padding: 12px 16px;
   border-left: 2px solid var(--ink-navy);
-  background: rgba(28, 43, 58, 0.04);
+  background: rgba(22, 34, 46, 0.05);
   max-width: 78ch;
 }
 
@@ -271,63 +275,64 @@ section:first-of-type { border-top: none; padding-top: 28px; }
   vertical-align: middle;
 }
 
-/* ---- Heatmap ---- */
+/* ---- Heatmap: one calendar grid per zone, weeks as columns ---- */
 
 .heatmap-scroll {
   overflow-x: auto;
   padding-bottom: 8px;
 }
 
-#heatmap-grid {
-  display: inline-block;
-  padding: 10px 12px;
-}
+#heatmap-grid { padding: 4px 0; }
 
-.heatmap-month-row, .heatmap-row {
-  display: flex;
-  align-items: center;
-}
+.zone-calendar { margin-bottom: 20px; }
+.zone-calendar:last-child { margin-bottom: 0; }
 
-.heatmap-month-row {
-  margin-left: 74px;
-  height: 16px;
-  margin-bottom: 3px;
-}
-
-.month-label {
+.zone-calendar-label {
   font-family: var(--font-mono);
-  font-size: 10px;
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--ink-navy);
+  margin-bottom: 4px;
+}
+
+.calendar-months {
+  position: relative;
+  height: 14px;
+}
+
+.calendar-month-mark {
+  position: absolute;
+  top: 0;
+  font-family: var(--font-mono);
+  font-size: 9px;
   color: var(--charcoal-muted);
   white-space: nowrap;
 }
 
-.zone-row-label {
-  width: 70px;
-  flex: 0 0 70px;
-  font-family: var(--font-mono);
-  font-size: 11px;
-  color: var(--ink-navy);
-  padding-right: 6px;
-  text-align: right;
-  position: sticky;
-  left: 0;
-  background: var(--paper);
-}
-
-.cell-track {
-  display: flex;
+.calendar-grid {
+  position: relative;
 }
 
 .hm-cell {
-  width: 8px;
-  height: 8px;
-  margin: 1px;
-  border-radius: 1px;
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  border-radius: 2px;
   cursor: default;
+  transition: transform 0.06s ease;
+}
+
+.hm-cell:hover {
+  transform: scale(1.35);
+  z-index: 2;
+  box-shadow: 0 0 0 1px var(--ink-navy);
 }
 
 .hm-cell.has-outage {
-  box-shadow: inset 0 0 0 1px rgba(28,43,58,0.35);
+  box-shadow: inset 0 0 0 1px rgba(22,34,46,0.4);
+}
+.hm-cell.has-outage:hover {
+  box-shadow: 0 0 0 1px var(--ink-navy);
 }
 
 .heatmap-legend {
@@ -377,7 +382,7 @@ tbody td {
   vertical-align: top;
 }
 
-tbody tr:hover { background: rgba(169,73,31,0.06); }
+tbody tr:hover { background: rgba(193,72,31,0.08); }
 
 .mono { font-family: var(--font-mono); }
 .impact-figure { color: var(--rust); font-family: var(--font-mono); }
