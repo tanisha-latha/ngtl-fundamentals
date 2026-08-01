@@ -248,6 +248,50 @@ main > section:first-of-type { border-top: none; padding-top: 28px; }
 .intro {
   padding-top: 24px;
   padding-bottom: 4px;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 240px;
+  gap: 32px;
+  align-items: start;
+}
+
+.intro-charts {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  position: sticky;
+  top: 16px;
+}
+
+.intro-chart-card {
+  border: 1px solid var(--paper-line);
+  padding: 10px 12px;
+}
+
+.intro-chart-card .intro-chart-label {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  font-family: var(--font-mono);
+  font-size: 9px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--charcoal-muted);
+  margin-bottom: 6px;
+}
+
+.intro-chart-card .intro-chart-value {
+  color: var(--ink-navy);
+  font-size: 12px;
+  font-weight: 500;
+  text-transform: none;
+}
+
+.intro-chart-card svg { display: block; width: 100%; }
+
+@media (max-width: 900px) {
+  .intro { grid-template-columns: 1fr; }
+  .intro-charts { flex-direction: row; flex-wrap: wrap; position: static; }
+  .intro-chart-card { flex: 1 1 200px; }
 }
 
 .intro p {

@@ -846,6 +846,70 @@
     });
   }
 
+  // ---- Intro mini-charts: small previews of the sections below, filling
+  // what would otherwise be dead space next to the explanatory text. Each
+  // one reuses data already fetched for the full-size charts. ----
+
+  function miniSparklinePath(series, w, h, pad) {
+    const max = Math.max(105, ...series);
+    const min = Math.min(0, ...series);
+    const x = (i) => pad + (series.length > 1 ? (i / (series.length - 1)) * (w - pad * 2) : 0);
+    const y = (v) => h - pad - ((v - min) / (max - min || 1)) * (h - pad * 2);
+    return series.map((v, i) => `${x(i).toFixed(1)},${y(v).toFixed(1)}`).join(" ");
+  }
+
+  function renderIntroCharts(heatmap, facilities, serviceImpact) {
+    const container = document.getElementById("intro-charts");
+    const w = 216, h = 46, pad = 3;
+
+    // 1. System-wide utilization, last 90 days
+    const byDate = {};
+    for (const c of heatmap.cells) {
+      if (!byDate[c.gas_day]) byDate[c.gas_day] = [];
+      byDate[c.gas_day].push(c.utilization_pct);
+    }
+    const days = Object.keys(byDate).sort().slice(-90);
+    const systemAvg = days.map((d) => byDate[d].reduce((s, v) => s + v, 0) / byDate[d].length);
+    const latestAvg = systemAvg[systemAvg.length - 1];
+
+    // 2. Seasonality, 12 calendar months, system-wide
+    const byMonth = Array.from({ length: 12 }, () => ({ sum: 0, n: 0 }));
+    for (const c of heatmap.cells) {
+      const m = Number(c.gas_day.slice(5, 7)) - 1;
+      byMonth[m].sum += c.utilization_pct;
+      byMonth[m].n += 1;
+    }
+    const monthAvgs = byMonth.map((b) => (b.n ? b.sum / b.n : null));
+
+    // 3. Facility impact concentration curve
+    const total = facilities.facilities.reduce((s, f) => s + f.total_impact_e3m3d, 0);
+    let running = 0;
+    const cumPcts = facilities.facilities.slice(0, 20).map((f) => {
+      running += f.total_impact_e3m3d;
+      return (running / total) * 100;
+    });
+
+    container.innerHTML = `
+      <div class="intro-chart-card">
+        <div class="intro-chart-label"><span>System utilization, 90d</span><span class="intro-chart-value">${latestAvg.toFixed(0)}%</span></div>
+        <svg viewBox="0 0 ${w} ${h}"><polyline points="${miniSparklinePath(systemAvg, w, h, pad)}" fill="none" stroke="#D9541E" stroke-width="1.5"/></svg>
+      </div>
+      <div class="intro-chart-card">
+        <div class="intro-chart-label"><span>Seasonality by month</span><span class="intro-chart-value">Jan–Dec</span></div>
+        <svg viewBox="0 0 ${w} ${h}">${monthAvgs.map((v, i) => {
+          if (v === null) return "";
+          const bw = (w - pad * 2) / 12;
+          const bh = ((v / 110) * (h - pad * 2));
+          return `<rect x="${(pad + i * bw + 1).toFixed(1)}" y="${(h - pad - bh).toFixed(1)}" width="${(bw - 2).toFixed(1)}" height="${bh.toFixed(1)}" fill="${utilizationColorHex(v)}"/>`;
+        }).join("")}</svg>
+      </div>
+      <div class="intro-chart-card">
+        <div class="intro-chart-label"><span>Facility impact concentration</span><span class="intro-chart-value">${fmtPct(serviceImpact.firm_risk_share_pct, 0)} firm-risk</span></div>
+        <svg viewBox="0 0 ${w} ${h}"><polyline points="${miniSparklinePath(cumPcts, w, h, pad)}" fill="none" stroke="#1D6F91" stroke-width="1.5"/></svg>
+      </div>
+    `;
+  }
+
   // ---- Boot ----
 
   async function main() {
@@ -861,6 +925,7 @@
     document.getElementById("meta-generated-at").textContent = new Date(heatmap.generated_at).toISOString().slice(0, 16).replace("T", " ") + " UTC";
 
     renderHero(heatmap, facilities, serviceImpact, tariff);
+    renderIntroCharts(heatmap, facilities, serviceImpact);
     renderSystemMap(heatmap);
     renderTrendChart(heatmap);
     renderHeatmap(heatmap);

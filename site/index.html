@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;600;700&family=Source+Sans+3:ital,wght@0,400;0,600;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css?v=17">
+<link rel="stylesheet" href="style.css?v=18">
 </head>
 <body>
 
@@ -43,42 +43,46 @@
 </section>
 
 <section class="intro">
-  <p class="what-this-is">
-    <strong>What this is:</strong> a working data engineering and analysis project, not a
-    mockup. A Python pipeline pulls TC Energy's public NGTL data daily into an
-    append-only SQLite database; an analysis layer computes utilization, firm/interruptible
-    constraint impact, and price correlation, always reporting sample size alongside any
-    statistic; a framework-free static front end (vanilla JS, hand-drawn SVG charts, no
-    chart library) renders the results. A GitHub Actions workflow runs the whole thing on a
-    schedule and commits new data automatically — the commit history is the build log.
-  </p>
-  <p class="tech-stack">
-    <span class="tech-stack-label">Built with</span>
-    Python (pandas, SQLite) · GitHub Actions (daily automated ETL) · vanilla JS + SVG (no
-    chart library, no CSS framework) · sourced domain research beyond the raw feeds (NGTL
-    tariff structure, service types, transportation economics)
-  </p>
-  <p class="tech-stack">
-    <span class="tech-stack-label">Source</span>
-    <a href="https://github.com/tanisha-latha/ngtl-fundamentals">github.com/tanisha-latha/ngtl-fundamentals</a>
-    — full pipeline, analysis, and site code, MIT licensed
-  </p>
-  <p>
-    NGTL is the gathering and transmission system that collects gas from wells across
-    Alberta and northeast BC and moves it toward the AECO/NIT trading hub and export
-    points at the Alberta/BC and Empress/McNeill borders. How much of that system is
-    actually being used on a given day — and specifically whether a constraint is eating
-    into <em>firm</em> capacity or just trimming interruptible flow — is a real input
-    into how a fundamentals desk reads Alberta basis. This page tracks that directly
-    from TC Energy's own published capability, flow, and outage data, updated daily.
-  </p>
-  <p>
-    One thing this deliberately does <em>not</em> do: show a daily AECO spot price.
-    Daily AECO data sits behind NGI, ICE, and Nasdaq Data Link paywalls, so the only
-    price series here is the AER's official monthly reference price — and every
-    correlation below is shown with its sample size, because eighteen months of history
-    isn't enough to claim one.
-  </p>
+  <div class="intro-text">
+    <p class="what-this-is">
+      <strong>What this is:</strong> a working data engineering and analysis project, not a
+      mockup. A Python pipeline pulls TC Energy's public NGTL data daily into an
+      append-only SQLite database; an analysis layer computes utilization, firm/interruptible
+      constraint impact, and price correlation, always reporting sample size alongside any
+      statistic; a framework-free static front end (vanilla JS, hand-drawn SVG charts, no
+      chart library) renders the results. A GitHub Actions workflow runs the whole thing on a
+      schedule and commits new data automatically — the commit history is the build log.
+    </p>
+    <p class="tech-stack">
+      <span class="tech-stack-label">Built with</span>
+      Python (pandas, SQLite) · GitHub Actions (daily automated ETL) · vanilla JS + SVG (no
+      chart library, no CSS framework) · sourced domain research beyond the raw feeds (NGTL
+      tariff structure, service types, transportation economics)
+    </p>
+    <p class="tech-stack">
+      <span class="tech-stack-label">Source</span>
+      <a href="https://github.com/tanisha-latha/ngtl-fundamentals">github.com/tanisha-latha/ngtl-fundamentals</a>
+      — full pipeline, analysis, and site code, MIT licensed
+    </p>
+    <p>
+      NGTL is the gathering and transmission system that collects gas from wells across
+      Alberta and northeast BC and moves it toward the AECO/NIT trading hub and export
+      points at the Alberta/BC and Empress/McNeill borders. How much of that system is
+      actually being used on a given day — and specifically whether a constraint is eating
+      into <em>firm</em> capacity or just trimming interruptible flow — is a real input
+      into how a fundamentals desk reads Alberta basis. This page tracks that directly
+      from TC Energy's own published capability, flow, and outage data, updated daily.
+    </p>
+    <p>
+      One thing this deliberately does <em>not</em> do: show a daily AECO spot price.
+      Daily AECO data sits behind NGI, ICE, and Nasdaq Data Link paywalls, so the only
+      price series here is the AER's official monthly reference price — and every
+      correlation below is shown with its sample size, because eighteen months of history
+      isn't enough to claim one.
+    </p>
+  </div>
+
+  <aside class="intro-charts" id="intro-charts" aria-label="Preview of charts covered further down the page"></aside>
 </section>
 
 <main>
@@ -227,6 +231,6 @@
 
 <div class="tooltip" id="tooltip" hidden></div>
 
-<script src="app.js?v=14"></script>
+<script src="app.js?v=15"></script>
 </body>
 </html>
