@@ -679,14 +679,14 @@
       const barTop = yAt(s.avg);
       const barH = marginTop + chartHeight - barTop;
       const color = utilizationColorHex(s.avg);
-      const dashed = s.nYears < 2;
-      parts.push(`<rect class="season-bar" data-idx="${i}" x="${barX.toFixed(1)}" y="${barTop.toFixed(1)}" width="${barW.toFixed(1)}" height="${barH.toFixed(1)}" rx="2" fill="${color}" ${dashed ? 'stroke="#57676E" stroke-width="1" stroke-dasharray="2,2"' : ""}/>`);
+      const lowConfidence = s.nYears < 2;
+      parts.push(`<rect class="season-bar" data-idx="${i}" x="${barX.toFixed(1)}" y="${barTop.toFixed(1)}" width="${barW.toFixed(1)}" height="${barH.toFixed(1)}" rx="2" fill="${color}" fill-opacity="${lowConfidence ? "0.5" : "1"}"/>`);
       parts.push(`<text x="${(x + barSlot / 2).toFixed(1)}" y="${(barTop - 5).toFixed(1)}" font-size="9" font-family="IBM Plex Mono, monospace" fill="#22323B" text-anchor="middle">${s.avg.toFixed(0)}%</text>`);
-      parts.push(`<text x="${(x + barSlot / 2).toFixed(1)}" y="${marginTop + chartHeight + 15}" font-size="9" font-family="IBM Plex Mono, monospace" fill="#57676E" text-anchor="middle">${MONTH_ABBR[i]}${dashed ? "*" : ""}</text>`);
+      parts.push(`<text x="${(x + barSlot / 2).toFixed(1)}" y="${marginTop + chartHeight + 15}" font-size="9" font-family="IBM Plex Mono, monospace" fill="#57676E" text-anchor="middle">${MONTH_ABBR[i]}${lowConfidence ? "*" : ""}</text>`);
       barMeta.push({ idx: i, x: x + barSlot / 2, top: barTop, avg: s.avg, nYears: s.nYears });
     });
 
-    parts.push(`<text x="${width - marginRight}" y="${marginTop - 8}" font-size="9" font-family="IBM Plex Mono, monospace" fill="#57676E" text-anchor="end">* dashed = only 1 year of history behind it</text>`);
+    parts.push(`<text x="${width - marginRight}" y="${marginTop - 8}" font-size="9" font-family="IBM Plex Mono, monospace" fill="#57676E" text-anchor="end">* faded = only 1 year of history behind it</text>`);
 
     svg.innerHTML = parts.join("");
 
