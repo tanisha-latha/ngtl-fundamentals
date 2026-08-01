@@ -281,9 +281,9 @@ tbody tr:hover { background: rgba(169,73,31,0.06); }
   margin-right: 6px;
 }
 
-/* ---- Service impact ---- */
+/* ---- Shared stat row (used by service impact, tariff, and correlation summaries) ---- */
 
-#service-impact-summary {
+.stat-row {
   display: flex;
   gap: 28px;
   align-items: baseline;
@@ -292,8 +292,8 @@ tbody tr:hover { background: rgba(169,73,31,0.06); }
   flex-wrap: wrap;
 }
 
-#service-impact-summary .big { font-size: 28px; color: var(--ink-navy); }
-#service-impact-summary .label {
+.stat-row .big { font-size: 28px; color: var(--ink-navy); }
+.stat-row .label {
   font-size: 10px;
   letter-spacing: 0.05em;
   text-transform: uppercase;
@@ -335,27 +335,7 @@ tbody tr:hover { background: rgba(169,73,31,0.06); }
 }
 
 /* ---- Correlation ---- */
-
-.correlation-stat {
-  display: flex;
-  gap: 28px;
-  align-items: baseline;
-  margin-bottom: 14px;
-  font-family: var(--font-mono);
-}
-
-.correlation-stat .big {
-  font-size: 28px;
-  color: var(--ink-navy);
-}
-
-.correlation-stat .label {
-  font-size: 10px;
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
-  color: var(--charcoal-muted);
-  display: block;
-}
+/* (summary stats use the shared .stat-row rule above) */
 
 .chart-scroll { overflow-x: auto; }
 

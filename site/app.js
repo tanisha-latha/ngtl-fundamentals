@@ -451,6 +451,165 @@
     svg.innerHTML = parts.join("");
   }
 
+  // ---- Seasonality (client-side aggregation from heatmap.cells) ----
+
+  function renderSeasonalityChart(heatmap) {
+    const svg = document.getElementById("seasonality-chart");
+    const byMonth = Array.from({ length: 12 }, () => ({ sum: 0, n: 0, years: new Set() }));
+    for (const c of heatmap.cells) {
+      const [yr, mo] = c.gas_day.split("-");
+      const m = Number(mo) - 1;
+      byMonth[m].sum += c.utilization_pct;
+      byMonth[m].n += 1;
+      byMonth[m].years.add(yr);
+    }
+    const stats = byMonth.map((b, i) => ({
+      month: i + 1,
+      avg: b.n ? b.sum / b.n : null,
+      nYears: b.years.size,
+    }));
+
+    const width = 620, chartHeight = 200;
+    const marginLeft = 40, marginRight = 16, marginTop = 16, marginBottom = 26;
+    const barSlot = (width - marginLeft - marginRight) / 12;
+    const totalHeight = chartHeight + marginTop + marginBottom;
+    svg.setAttribute("viewBox", `0 0 ${width} ${totalHeight}`);
+    svg.setAttribute("width", "100%");
+    svg.setAttribute("height", totalHeight);
+    svg.setAttribute("preserveAspectRatio", "none");
+
+    const maxVal = Math.max(105, ...stats.filter((s) => s.avg !== null).map((s) => s.avg)) * 1.02;
+    const yAt = (v) => marginTop + chartHeight - (v / maxVal) * chartHeight;
+
+    const parts = [];
+    parts.push(`<line x1="${marginLeft}" y1="${yAt(100).toFixed(1)}" x2="${width - marginRight}" y2="${yAt(100).toFixed(1)}" stroke="#d8cba8" stroke-width="1" stroke-dasharray="3,3"/>`);
+    parts.push(`<text x="${marginLeft - 6}" y="${(yAt(100) + 3).toFixed(1)}" font-size="9" font-family="IBM Plex Mono, monospace" fill="#6b6350" text-anchor="end">100%</text>`);
+    parts.push(`<line x1="${marginLeft}" y1="${marginTop + chartHeight}" x2="${width - marginRight}" y2="${marginTop + chartHeight}" stroke="#d8cba8" stroke-width="1"/>`);
+
+    stats.forEach((s, i) => {
+      const x = marginLeft + i * barSlot;
+      if (s.avg === null) return;
+      const barTop = yAt(s.avg);
+      const barH = marginTop + chartHeight - barTop;
+      const color = s.nYears < 2 ? "#DEC98A" : "#A9491F";
+      parts.push(`<rect x="${(x + barSlot * 0.15).toFixed(1)}" y="${barTop.toFixed(1)}" width="${(barSlot * 0.7).toFixed(1)}" height="${barH.toFixed(1)}" fill="${color}" fill-opacity="0.75"/>`);
+      parts.push(`<title>${MONTH_ABBR[i]}: ${s.avg.toFixed(1)}% avg, n=${s.nYears} year${s.nYears === 1 ? "" : "s"}</title>`);
+      parts.push(`<text x="${(x + barSlot / 2).toFixed(1)}" y="${marginTop + chartHeight + 15}" font-size="9" font-family="IBM Plex Mono, monospace" fill="#6b6350" text-anchor="middle">${MONTH_ABBR[i]}${s.nYears < 2 ? "*" : ""}</text>`);
+    });
+
+    parts.push(`<text x="${width - marginRight}" y="${marginTop - 3}" font-size="9" font-family="IBM Plex Mono, monospace" fill="#6b6350" text-anchor="end">* n=1 year</text>`);
+
+    svg.innerHTML = parts.join("");
+  }
+
+  // ---- Firm/interruptible tariff rate comparison (static reference data) ----
+
+  function renderTariffComparison(tariff) {
+    const svg = document.getElementById("tariff-chart");
+    const bars = [];
+    const r = tariff.receipt;
+    bars.push({ label: "FT-R", rate: r.find((x) => x.service === "FT-R").rate_cents_gj_d, pairIdx: 0 });
+    bars.push({ label: "IT-R", rate: r.find((x) => x.service === "IT-R").rate_cents_gj_d, pairIdx: 0 });
+    for (const g of ["Group 1", "Group 2"]) {
+      const ft = tariff.delivery.find((x) => x.service === "FT-D" && x.group === g);
+      const it = tariff.delivery.find((x) => x.service === "IT-D" && x.group === g);
+      bars.push({ label: `FT-D ${g}`, rate: ft.rate_cents_gj_d, pairIdx: bars.length / 2 });
+      bars.push({ label: `IT-D ${g}`, rate: it.rate_cents_gj_d, pairIdx: (bars.length - 1) / 2 });
+    }
+    const g3 = tariff.delivery.find((x) => x.group === "Group 3");
+    bars.push({ label: "FT-D Group 3", rate: g3.rate_cents_gj_d, pairIdx: null });
+
+    const width = 560, chartHeight = 190;
+    const marginLeft = 34, marginRight = 12, marginTop = 14, marginBottom = 34;
+    const slot = (width - marginLeft - marginRight) / bars.length;
+    const totalHeight = chartHeight + marginTop + marginBottom;
+    svg.setAttribute("viewBox", `0 0 ${width} ${totalHeight}`);
+    svg.setAttribute("width", "100%");
+    svg.setAttribute("height", totalHeight);
+    svg.setAttribute("preserveAspectRatio", "none");
+
+    const maxVal = Math.max(...bars.map((b) => b.rate)) * 1.15;
+    const yAt = (v) => marginTop + chartHeight - (v / maxVal) * chartHeight;
+
+    const parts = [];
+    parts.push(`<line x1="${marginLeft}" y1="${marginTop + chartHeight}" x2="${width - marginRight}" y2="${marginTop + chartHeight}" stroke="#d8cba8" stroke-width="1"/>`);
+
+    bars.forEach((b, i) => {
+      const x = marginLeft + i * slot;
+      const barTop = yAt(b.rate);
+      const barH = marginTop + chartHeight - barTop;
+      const isIT = b.label.startsWith("IT");
+      const color = isIT ? "#B5502D" : "#2F6690";
+      parts.push(`<rect x="${(x + slot * 0.12).toFixed(1)}" y="${barTop.toFixed(1)}" width="${(slot * 0.76).toFixed(1)}" height="${barH.toFixed(1)}" fill="${color}"/>`);
+      parts.push(`<text x="${(x + slot / 2).toFixed(1)}" y="${(barTop - 4).toFixed(1)}" font-size="9" font-family="IBM Plex Mono, monospace" fill="${color}" text-anchor="middle">${b.rate}¢</text>`);
+      parts.push(`<text x="${(x + slot / 2).toFixed(1)}" y="${marginTop + chartHeight + 13}" font-size="8.5" font-family="IBM Plex Mono, monospace" fill="#6b6350" text-anchor="middle">${b.label}</text>`);
+    });
+
+    svg.innerHTML = parts.join("");
+
+    // Headline premium stats, computed from the data (not hardcoded)
+    const receiptPremium = (bars[1].rate / bars[0].rate - 1) * 100;
+    const g1Premium = (bars[3].rate / bars[2].rate - 1) * 100;
+    const g2Premium = (bars[5].rate / bars[4].rate - 1) * 100;
+    const tariffSummaryEl = document.getElementById("tariff-summary");
+    tariffSummaryEl.className = "stat-row";
+    tariffSummaryEl.innerHTML = `
+      <div><span class="label">IT-R premium over FT-R</span><span class="big">+${receiptPremium.toFixed(0)}%</span></div>
+      <div><span class="label">IT-D premium, Group 1</span><span class="big">+${g1Premium.toFixed(0)}%</span></div>
+      <div><span class="label">IT-D premium, Group 2</span><span class="big">+${g2Premium.toFixed(0)}%</span></div>
+    `;
+
+    document.getElementById("tariff-source").innerHTML =
+      `Rates effective ${tariff._meta.effective_date}, in ${tariff._meta.units}. ` +
+      `Source: <a href="${tariff._meta.source}">${tariff._meta.source_title}</a>, TC Energy Customer Express. Static reference, not pipeline-updated.`;
+  }
+
+  // ---- Facility impact concentration (Pareto) ----
+
+  function renderConcentrationChart(facilitiesData) {
+    const facilities = facilitiesData.facilities;
+    const svg = document.getElementById("concentration-chart");
+    if (!facilities.length) {
+      svg.outerHTML = '<p class="empty-note">Not enough data yet.</p>';
+      return;
+    }
+    const total = facilities.reduce((s, f) => s + f.total_impact_e3m3d, 0);
+    let running = 0;
+    const points = facilities.map((f, i) => {
+      running += f.total_impact_e3m3d;
+      return { rank: i + 1, cumPct: (running / total) * 100 };
+    });
+
+    const n80 = points.findIndex((p) => p.cumPct >= 80) + 1;
+    document.getElementById("concentration-summary").textContent =
+      `The top ${n80} of ${facilities.length} facilities (${((n80 / facilities.length) * 100).toFixed(0)}% of names on the log) account for 80% of total logged impact volume.`;
+
+    const width = 620, chartHeight = 180;
+    const marginLeft = 36, marginRight = 12, marginTop = 12, marginBottom = 22;
+    const innerWidth = width - marginLeft - marginRight;
+    const totalHeight = chartHeight + marginTop + marginBottom;
+    svg.setAttribute("viewBox", `0 0 ${width} ${totalHeight}`);
+    svg.setAttribute("width", "100%");
+    svg.setAttribute("height", totalHeight);
+    svg.setAttribute("preserveAspectRatio", "none");
+
+    const xAt = (rank) => marginLeft + ((rank - 1) / (points.length - 1 || 1)) * innerWidth;
+    const yAt = (pct) => marginTop + chartHeight - (pct / 100) * chartHeight;
+
+    const parts = [];
+    [50, 80].forEach((mark) => {
+      parts.push(`<line x1="${marginLeft}" y1="${yAt(mark).toFixed(1)}" x2="${width - marginRight}" y2="${yAt(mark).toFixed(1)}" stroke="#d8cba8" stroke-width="1" stroke-dasharray="2,3"/>`);
+      parts.push(`<text x="${marginLeft - 4}" y="${(yAt(mark) + 3).toFixed(1)}" font-size="9" font-family="IBM Plex Mono, monospace" fill="#6b6350" text-anchor="end">${mark}%</text>`);
+    });
+
+    const areaPoints = points.map((p) => `${xAt(p.rank).toFixed(1)},${yAt(p.cumPct).toFixed(1)}`).join(" ");
+    const areaPath = `M ${marginLeft},${marginTop + chartHeight} L ${areaPoints} L ${xAt(points[points.length - 1].rank).toFixed(1)},${marginTop + chartHeight} Z`;
+    parts.push(`<path d="${areaPath}" fill="#A9491F" fill-opacity="0.12"/>`);
+    parts.push(`<polyline points="${areaPoints}" fill="none" stroke="#A9491F" stroke-width="1.75"/>`);
+
+    svg.innerHTML = parts.join("");
+  }
+
   // ---- Events ----
 
   function renderEvents(eventsData) {
@@ -482,12 +641,13 @@
   // ---- Boot ----
 
   async function main() {
-    const [heatmap, facilities, correlation, events, serviceImpact] = await Promise.all([
+    const [heatmap, facilities, correlation, events, serviceImpact, tariff] = await Promise.all([
       loadJSON("data/heatmap.json"),
       loadJSON("data/facilities.json"),
       loadJSON("data/monthly_correlation.json"),
       loadJSON("data/events.json"),
       loadJSON("data/service_impact.json"),
+      loadJSON("data/tariff_rates.json"),
     ]);
 
     document.getElementById("meta-latest-day").textContent = heatmap.date_range.end;
@@ -496,8 +656,11 @@
     renderSystemMap(heatmap);
     renderTrendChart(heatmap);
     renderHeatmap(heatmap);
+    renderSeasonalityChart(heatmap);
     renderServiceImpact(serviceImpact);
+    renderTariffComparison(tariff);
     renderFacilities(facilities);
+    renderConcentrationChart(facilities);
     renderCorrelation(correlation);
     renderEvents(events);
   }

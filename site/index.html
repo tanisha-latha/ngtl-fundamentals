@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;600;700&family=Source+Sans+3:ital,wght@0,400;0,600;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css?v=3">
+<link rel="stylesheet" href="style.css?v=5">
 </head>
 <body>
 
@@ -72,6 +72,12 @@
       <div id="heatmap-grid"></div>
     </div>
     <div class="heatmap-legend" id="heatmap-legend"></div>
+
+    <h3 class="subsection-heading">Seasonality</h3>
+    <p class="lede">System-wide average utilization by calendar month, across all years of history collected. Months with only one year behind them (Aug–Dec, so far) are marked — a single year is a data point, not a season.</p>
+    <div class="chart-scroll">
+      <svg id="seasonality-chart" role="img" aria-label="Average utilization percent by calendar month, across all years of history"></svg>
+    </div>
   </section>
 
   <section id="service-impact-section" aria-labelledby="service-impact-heading">
@@ -97,7 +103,7 @@
       portal rather than the public site above, so this project claims the general
       framework, not NGTL's exact clock times.
     </p>
-    <div id="service-impact-summary"></div>
+    <div class="stat-row" id="service-impact-summary"></div>
     <div class="table-scroll">
       <table id="service-impact-zone-table">
         <thead>
@@ -113,11 +119,30 @@
         <tbody id="firm-risk-facilities-tbody"></tbody>
       </table>
     </div>
+
+    <h3 class="subsection-heading">Why IT gets curtailed first: it costs more, not less</h3>
+    <p class="lede">
+      Interruptible service isn't a discount option — NGTL's own posted tariff prices IT
+      <em>above</em> the equivalent firm rate at every point compared below. A shipper on
+      IT is paying a premium for flexibility and accepting curtailment risk in exchange;
+      it's not that IT is cheap capacity nobody wanted.
+    </p>
+    <div id="tariff-summary"></div>
+    <div class="chart-scroll">
+      <svg id="tariff-chart" role="img" aria-label="Bar chart comparing firm and interruptible transportation rates in cents per gigajoule per day"></svg>
+    </div>
+    <p class="source-note" id="tariff-source"></p>
   </section>
 
   <section id="facilities-section" aria-labelledby="facilities-heading">
     <h2 id="facilities-heading">Facility constraint log</h2>
     <p class="lede">Every facility named in a daily outage description, ranked by total impact volume. <span class="firm-dot" aria-hidden="true"></span> marks facilities with at least one firm-risk event.</p>
+
+    <p class="lede" id="concentration-summary"></p>
+    <div class="chart-scroll">
+      <svg id="concentration-chart" role="img" aria-label="Cumulative share of total impact volume as more facilities are included, ranked by impact"></svg>
+    </div>
+
     <div class="table-scroll">
       <table id="facilities-table">
         <thead>
@@ -137,7 +162,7 @@
 
   <section id="correlation-section" aria-labelledby="correlation-heading">
     <h2 id="correlation-heading">Utilization vs. AER reference price</h2>
-    <div class="correlation-stat" id="correlation-stat"></div>
+    <div class="stat-row" id="correlation-stat"></div>
     <div class="chart-scroll">
       <svg id="correlation-chart" role="img" aria-label="Monthly utilization bars and AER reference price line, by month"></svg>
     </div>
@@ -170,6 +195,6 @@
 
 <div class="tooltip" id="tooltip" hidden></div>
 
-<script src="app.js?v=3"></script>
+<script src="app.js?v=5"></script>
 </body>
 </html>
