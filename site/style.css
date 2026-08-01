@@ -33,11 +33,18 @@ html, body {
   line-height: 1.5;
 }
 
-main {
+/* Single shared horizontal container -- every top-level block (masthead,
+   intro, main, footer) uses the same three rules instead of repeating
+   max-width/margin/padding independently, so they can't drift apart. */
+.masthead, .intro, main, footer {
   max-width: 1100px;
-  margin: 0 auto;
-  padding: 0 24px 48px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 24px;
+  padding-right: 24px;
 }
+
+main { padding-bottom: 48px; }
 
 a { color: var(--flame-blue); }
 a:hover { color: var(--rust); }
@@ -52,29 +59,28 @@ h2 {
   font-size: 14px;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  border-bottom: 1px solid var(--paper-line);
-  padding-bottom: 8px;
-  margin-bottom: 4px;
+  margin-bottom: 12px;
 }
 
 .lede {
   font-size: 13px;
   color: var(--charcoal-muted);
   max-width: 68ch;
-  margin: 6px 0 16px;
+  margin: 0 0 16px;
 }
 
 section {
   padding: 28px 0;
   border-top: 1px solid var(--paper-line-faint);
 }
+section:first-of-type { border-top: none; }
 
 /* ---- Masthead ---- */
 
 .masthead {
-  max-width: 1100px;
-  margin: 32px auto 0;
-  padding: 0 24px 18px;
+  margin-top: 32px;
+  padding-top: 0;
+  padding-bottom: 18px;
   border-bottom: 1px solid var(--paper-line);
   display: flex;
   justify-content: space-between;
@@ -109,9 +115,8 @@ section {
 /* ---- Intro ---- */
 
 .intro {
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 20px 24px 4px;
+  padding-top: 20px;
+  padding-bottom: 4px;
 }
 
 .intro p {
@@ -298,6 +303,37 @@ tbody tr:hover { background: rgba(169,73,31,0.06); }
 
 #service-impact-zone-table, #firm-risk-facilities-table { margin-bottom: 20px; }
 
+.service-glossary {
+  margin: 0 0 8px;
+  padding: 0;
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  gap: 4px 16px;
+  max-width: 74ch;
+}
+
+.service-glossary > div { display: contents; }
+
+.service-glossary dt {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--rust);
+  white-space: nowrap;
+}
+
+.service-glossary dd {
+  margin: 0;
+  font-size: 13px;
+  color: var(--charcoal);
+}
+
+.source-note {
+  font-size: 11px;
+  color: var(--charcoal-muted);
+  margin: 0 0 18px;
+}
+
 /* ---- Correlation ---- */
 
 .correlation-stat {
@@ -382,9 +418,8 @@ tbody tr:hover { background: rgba(169,73,31,0.06); }
 /* ---- Footer ---- */
 
 footer {
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 24px 24px 60px;
+  padding-top: 24px;
+  padding-bottom: 60px;
   font-size: 12px;
   color: var(--charcoal-muted);
   border-top: 1px solid var(--paper-line-faint);
@@ -424,7 +459,9 @@ footer .disclaimer {
 .tooltip b { color: #fff; font-family: var(--font-body); }
 
 @media (max-width: 640px) {
-  main, .masthead, .intro, footer { padding-left: 12px; padding-right: 12px; }
+  .masthead, .intro, main, footer { padding-left: 12px; padding-right: 12px; }
   .masthead { flex-direction: column; align-items: flex-start; }
   .correlation-stat, #service-impact-summary { flex-wrap: wrap; gap: 16px; }
+  .service-glossary { grid-template-columns: 1fr; }
+  .service-glossary dd { margin-bottom: 6px; }
 }

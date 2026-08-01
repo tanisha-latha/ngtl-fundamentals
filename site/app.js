@@ -41,6 +41,78 @@
     return resp.json();
   }
 
+  // ---- Schematic system map ----
+
+  const MAP_ZONE_LABELS = {
+    "AB/BC": "Alberta/BC & Alberta/Montana borders",
+    "EGAT": "Empress/McNeill borders",
+    "OSDA": "Other Alberta sales deliveries",
+  };
+
+  function renderSystemMap(heatmap) {
+    const svg = document.getElementById("system-map");
+    const latestDay = heatmap.date_range.end;
+    const latest = {};
+    for (const c of heatmap.cells) if (c.gas_day === latestDay) latest[c.zone] = c.utilization_pct;
+
+    const width = 640, height = 220;
+    svg.setAttribute("viewBox", `0 0 ${width} ${height}`);
+    svg.setAttribute("width", "100%");
+    svg.setAttribute("height", height);
+    svg.setAttribute("preserveAspectRatio", "xMinYMid meet");
+
+    const sourceBox = { x: 20, y: 80, w: 150, h: 60 };
+    const destZones = ["AB/BC", "EGAT", "OSDA"];
+    const destBoxes = destZones.map((z, i) => ({
+      zone: z,
+      x: 420, y: 20 + i * 70, w: 200, h: 52,
+    }));
+
+    const parts = [];
+    // source box (USJR)
+    const usjrColor = utilizationColorHex(latest["USJR"]);
+    parts.push(rectWithLabel(sourceBox, "USJR", "System receipts", usjrColor));
+
+    for (const box of destBoxes) {
+      const midY = box.y + box.h / 2;
+      const startX = sourceBox.x + sourceBox.w;
+      const startY = sourceBox.y + sourceBox.h / 2;
+      parts.push(`<path d="M ${startX} ${startY} C ${startX + 100} ${startY}, ${box.x - 80} ${midY}, ${box.x} ${midY}" fill="none" stroke="#b8a878" stroke-width="1.5" marker-end="url(#arrow)"/>`);
+      const color = utilizationColorHex(latest[box.zone]);
+      parts.push(rectWithLabel(box, box.zone, MAP_ZONE_LABELS[box.zone], color));
+    }
+
+    const defs = `<defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 z" fill="#b8a878"/></marker></defs>`;
+
+    svg.innerHTML = defs + parts.join("");
+
+    function rectWithLabel(box, title, subtitle, color) {
+      const textColor = isDarkFill(color) ? "#F1E9D8" : "#1C2B3A";
+      const utilVal = latest[title];
+      const utilText = utilVal !== undefined ? `${utilVal.toFixed(1)}%` : "no data";
+      return `
+        <rect x="${box.x}" y="${box.y}" width="${box.w}" height="${box.h}" fill="${color}" rx="2"/>
+        <text x="${box.x + 10}" y="${box.y + 20}" font-family="Roboto Slab, Georgia, serif" font-weight="700" font-size="13" fill="${textColor}">${title}</text>
+        <text x="${box.x + 10}" y="${box.y + 34}" font-family="IBM Plex Mono, monospace" font-size="10" fill="${textColor}">${utilText}</text>
+        <text x="${box.x + 10}" y="${box.y + box.h - 8}" font-family="Source Sans 3, sans-serif" font-size="10" fill="${textColor}">${subtitle}</text>
+      `;
+    }
+  }
+
+  function isDarkFill(hex) {
+    return hex === "#1C2B3A" || hex === "#7a3319" || hex === "#A9491F";
+  }
+
+  function utilizationColorHex(pct) {
+    if (pct === null || pct === undefined || Number.isNaN(pct)) return "#e6dcc0";
+    if (pct > 100) return "#1C2B3A";
+    if (pct >= 90) return "#7a3319";
+    if (pct >= 70) return "#A9491F";
+    if (pct >= 50) return "#C98A3E";
+    if (pct >= 25) return "#DEC98A";
+    return "#EDE3CC";
+  }
+
   // ---- Utilization trend (7-day rolling average) ----
 
   function rollingAverage(sortedCells, windowSize) {
@@ -402,6 +474,7 @@
     document.getElementById("meta-latest-day").textContent = heatmap.date_range.end;
     document.getElementById("meta-generated-at").textContent = new Date(heatmap.generated_at).toISOString().slice(0, 16).replace("T", " ") + " UTC";
 
+    renderSystemMap(heatmap);
     renderTrendChart(heatmap);
     renderHeatmap(heatmap);
     renderServiceImpact(serviceImpact);

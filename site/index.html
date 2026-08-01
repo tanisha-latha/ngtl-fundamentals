@@ -45,6 +45,18 @@
 
 <main>
 
+  <section id="map-section" aria-labelledby="map-heading">
+    <h2 id="map-heading">System map</h2>
+    <p class="lede">
+      Schematic — relative flow topology as NGTL itself groups these zones, not a
+      geographic or to-scale map. Color is each zone's utilization on the most recent
+      gas day.
+    </p>
+    <div class="chart-scroll">
+      <svg id="system-map" role="img" aria-label="Schematic diagram of gas flowing from NGTL system receipts to the AB/BC, EGAT, and OSDA delivery zones, colored by current utilization"></svg>
+    </div>
+  </section>
+
   <section id="utilization-section" aria-labelledby="utilization-heading">
     <h2 id="utilization-heading">Zone utilization</h2>
     <p class="lede">Flow as a share of that day's outage-adjusted capability, across the four zones NGTL reports: USJR, AB/BC, EGAT (Empress/McNeill), and OSDA.</p>
@@ -65,10 +77,25 @@
   <section id="service-impact-section" aria-labelledby="service-impact-heading">
     <h2 id="service-impact-heading">Firm vs. interruptible impact</h2>
     <p class="lede">
-      NGTL curtails interruptible (IT) flow before it touches firm contracts, so most
-      outages never actually threaten firm transportation — TC Energy says so directly
-      in each outage's own "Type of Restriction" field. This reads that field rather
-      than treating every outage as equally significant.
+      NGTL sells transportation as distinct contract services, and interruptible service
+      is explicitly "subject to available capacity" while firm service isn't — so IT
+      flow absorbs a constraint first, and most outages never actually threaten firm
+      transportation. TC Energy says which case applies directly, in each outage's own
+      "Type of Restriction" field; this reads that field rather than treating every
+      outage as equally significant.
+    </p>
+    <dl class="service-glossary">
+      <div><dt>FT-R</dt><dd>Firm Transportation – Receipt, at a shipper's specific receipt point(s)</dd></div>
+      <div><dt>FT-D</dt><dd>Firm Transportation – Delivery, at Group 1/2/3 delivery locations</dd></div>
+      <div><dt>IT-R / IT-D</dt><dd>Interruptible Receipt/Delivery — priced off the firm rate, but curtailed first, "subject to available capacity"</dd></div>
+    </dl>
+    <p class="source-note">Source: <a href="https://www.tccustomerexpress.com/docs/ab_pricing_tolls/Summary%20of%20NGTL%20System%20Services.pdf">NGTL System Services Summary Matrix</a>, TC Energy Customer Express — publicly posted, not behind the shipper login.</p>
+    <p class="lede">
+      This also lines up with the standard NAESB nomination cycle every North American
+      shipper works within — Timely, Evening, and Intraday 1–3 — where firm nominations
+      get priority in every cycle. NGTL's own cycle deadlines sit behind the shipper
+      portal rather than the public site above, so this project claims the general
+      framework, not NGTL's exact clock times.
     </p>
     <div id="service-impact-summary"></div>
     <div class="table-scroll">
