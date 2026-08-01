@@ -1,24 +1,25 @@
 :root {
-  /* Richer, more saturated take on the same paper-and-ink concept --
-     gauge-brass gold through rust to oxblood, instead of the flatter
-     original earth tones. */
-  --paper: #F5EAD3;
-  --paper-line: #C9A96E;
-  --paper-line-faint: #E3D2A8;
-  --ink-navy: #16222E;
-  --charcoal: #2E2A22;
-  --charcoal-muted: #7A6A4E;
-  --rust: #C1481F;
-  --flame-blue: #1E6F93;
-  --gold: #D89B3C;
+  /* Steel-and-safety-signage palette: brushed-steel gray ground, graphite
+     ink, safety-orange and steel-blue accents -- the actual colors on
+     pipeline equipment and hazard markings, not paper and pen ink. Cool
+     (low utilization) to hot (high) mirrors how a physical gauge reads. */
+  --paper: #E4E9EA;
+  --paper-line: #9DACB1;
+  --paper-line-faint: #C7D2D4;
+  --ink-navy: #17262E;
+  --charcoal: #22323B;
+  --charcoal-muted: #57676E;
+  --rust: #D9541E;
+  --flame-blue: #1D6F91;
+  --gold: #C99A1E;
 
-  --ramp-0: #F0E1B8;
-  --ramp-1: #E3B44C;
-  --ramp-2: #D8842B;
-  --ramp-3: #C1481F;
-  --ramp-4: #8A2A1C;
-  --ramp-over: #16222E;
-  --cell-empty: #E3D2A8;
+  --ramp-0: #D3DEE0;
+  --ramp-1: #96BFCC;
+  --ramp-2: #3E8FA8;
+  --ramp-3: #D9541E;
+  --ramp-4: #A8380F;
+  --ramp-over: #17262E;
+  --cell-empty: #C7D2D4;
 
   --font-head: "Roboto Slab", Georgia, serif;
   --font-body: "Source Sans 3", -apple-system, BlinkMacSystemFont, sans-serif;
@@ -90,11 +91,14 @@ main > section > h2::before {
   margin: 0 0 16px;
 }
 
-section {
+/* Scoped to main > section only -- .hero and .intro are also <section>
+   tags but must not pick up this divider/padding, or they double up
+   against the masthead's own border-bottom right above them. */
+main > section {
   padding: 44px 0 28px;
   border-top: 2px solid var(--paper-line);
 }
-section:first-of-type { border-top: none; padding-top: 28px; }
+main > section:first-of-type { border-top: none; padding-top: 28px; }
 
 /* ---- Masthead ---- */
 
@@ -194,7 +198,7 @@ section:first-of-type { border-top: none; padding-top: 28px; }
   width: 13px;
   height: 13px;
   margin-right: 2px;
-  border-radius: 1px;
+  border-radius: 2px;
 }
 
 /* ---- Intro ---- */
@@ -202,7 +206,6 @@ section:first-of-type { border-top: none; padding-top: 28px; }
 .intro {
   padding-top: 24px;
   padding-bottom: 4px;
-  border-top: 1px solid var(--paper-line-faint);
 }
 
 .intro p {
@@ -220,7 +223,7 @@ section:first-of-type { border-top: none; padding-top: 28px; }
 .intro .what-this-is {
   padding: 12px 16px;
   border-left: 2px solid var(--ink-navy);
-  background: rgba(22, 34, 46, 0.05);
+  background: rgba(23, 38, 46, 0.06);
   max-width: 78ch;
 }
 
@@ -329,7 +332,7 @@ section:first-of-type { border-top: none; padding-top: 28px; }
 }
 
 .hm-cell.has-outage {
-  box-shadow: inset 0 0 0 1px rgba(22,34,46,0.4);
+  box-shadow: inset 0 0 0 1px rgba(23,38,46,0.45);
 }
 .hm-cell.has-outage:hover {
   box-shadow: 0 0 0 1px var(--ink-navy);
@@ -348,7 +351,7 @@ section:first-of-type { border-top: none; padding-top: 28px; }
 .heatmap-legend .swatch {
   width: 10px;
   height: 10px;
-  border-radius: 1px;
+  border-radius: 2px;
   display: inline-block;
 }
 
@@ -382,7 +385,7 @@ tbody td {
   vertical-align: top;
 }
 
-tbody tr:hover { background: rgba(193,72,31,0.08); }
+tbody tr:hover { background: rgba(217,84,30,0.08); }
 
 .mono { font-family: var(--font-mono); }
 .impact-figure { color: var(--rust); font-family: var(--font-mono); }
@@ -471,38 +474,6 @@ tbody tr:hover { background: rgba(193,72,31,0.08); }
   border-left-color: var(--flame-blue);
 }
 
-/* ---- Events ---- */
-
-.event-card {
-  border-left: 2px solid var(--rust);
-  padding: 2px 0 12px 14px;
-  margin-bottom: 14px;
-}
-
-.event-card .event-title {
-  font-family: var(--font-head);
-  font-weight: 600;
-  color: var(--ink-navy);
-  font-size: 14px;
-}
-
-.event-card .event-meta {
-  font-family: var(--font-mono);
-  font-size: 11px;
-  color: var(--charcoal-muted);
-  margin-top: 2px;
-}
-
-.event-card .event-figures {
-  margin-top: 8px;
-  display: flex;
-  gap: 20px;
-  font-family: var(--font-mono);
-  font-size: 12px;
-}
-
-.event-figures .figure-value { color: var(--rust); }
-.event-figures .figure-label { color: var(--charcoal-muted); display: block; font-size: 10px; }
 
 .table-toggle {
   display: block;

@@ -6,7 +6,7 @@
   "use strict";
 
   const ZONE_ORDER = ["USJR", "AB/BC", "EGAT", "OSDA"];
-  const ZONE_COLORS = { "USJR": "#C1481F", "AB/BC": "#1E6F93", "EGAT": "#16222E", "OSDA": "#D89B3C" };
+  const ZONE_COLORS = { "USJR": "#D9541E", "AB/BC": "#1D6F91", "EGAT": "#17262E", "OSDA": "#C99A1E" };
   const MONTH_ABBR = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
 
   function utilizationColor(pct) {
@@ -115,17 +115,17 @@
       const midY = box.y + box.h / 2;
       const startX = sourceBox.x + sourceBox.w;
       const startY = sourceBox.y + sourceBox.h / 2;
-      parts.push(`<path d="M ${startX} ${startY} C ${startX + 100} ${startY}, ${box.x - 80} ${midY}, ${box.x} ${midY}" fill="none" stroke="#B08A4A" stroke-width="1.5" marker-end="url(#arrow)"/>`);
+      parts.push(`<path d="M ${startX} ${startY} C ${startX + 100} ${startY}, ${box.x - 80} ${midY}, ${box.x} ${midY}" fill="none" stroke="#9DACB1" stroke-width="1.5" marker-end="url(#arrow)"/>`);
       const color = utilizationColorHex(latest[box.zone]);
       parts.push(rectWithLabel(box, box.zone, MAP_ZONE_LABELS[box.zone], color));
     }
 
-    const defs = `<defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 z" fill="#B08A4A"/></marker></defs>`;
+    const defs = `<defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 z" fill="#9DACB1"/></marker></defs>`;
 
     svg.innerHTML = defs + parts.join("");
 
     function rectWithLabel(box, title, subtitle, color) {
-      const textColor = isDarkFill(color) ? "#F5EAD3" : "#16222E";
+      const textColor = isDarkFill(color) ? "#E4E9EA" : "#17262E";
       const utilVal = latest[title];
       const utilText = utilVal !== undefined ? `${utilVal.toFixed(1)}%` : "no data";
       return `
@@ -138,17 +138,17 @@
   }
 
   function isDarkFill(hex) {
-    return hex === "#16222E" || hex === "#8A2A1C" || hex === "#C1481F";
+    return hex === "#17262E" || hex === "#A8380F" || hex === "#D9541E";
   }
 
   function utilizationColorHex(pct) {
-    if (pct === null || pct === undefined || Number.isNaN(pct)) return "#E3D2A8";
-    if (pct > 100) return "#16222E";
-    if (pct >= 90) return "#8A2A1C";
-    if (pct >= 70) return "#C1481F";
-    if (pct >= 50) return "#D8842B";
-    if (pct >= 25) return "#E3B44C";
-    return "#F0E1B8";
+    if (pct === null || pct === undefined || Number.isNaN(pct)) return "#C7D2D4";
+    if (pct > 100) return "#17262E";
+    if (pct >= 90) return "#A8380F";
+    if (pct >= 70) return "#D9541E";
+    if (pct >= 50) return "#3E8FA8";
+    if (pct >= 25) return "#96BFCC";
+    return "#D3DEE0";
   }
 
   // ---- Utilization trend (7-day rolling average) ----
@@ -198,9 +198,9 @@
     const yAt = (v) => marginTop + chartHeight - (v / maxVal) * chartHeight;
 
     const parts = [];
-    parts.push(`<line x1="${marginLeft}" y1="${yAt(100).toFixed(1)}" x2="${width - marginRight}" y2="${yAt(100).toFixed(1)}" stroke="#C9A96E" stroke-width="1" stroke-dasharray="3,3"/>`);
-    parts.push(`<text x="${marginLeft - 6}" y="${(yAt(100) + 3).toFixed(1)}" font-size="9" font-family="IBM Plex Mono, monospace" fill="#7A6A4E" text-anchor="end">100%</text>`);
-    parts.push(`<line x1="${marginLeft}" y1="${marginTop + chartHeight}" x2="${width - marginRight}" y2="${marginTop + chartHeight}" stroke="#C9A96E" stroke-width="1"/>`);
+    parts.push(`<line x1="${marginLeft}" y1="${yAt(100).toFixed(1)}" x2="${width - marginRight}" y2="${yAt(100).toFixed(1)}" stroke="#9DACB1" stroke-width="1" stroke-dasharray="3,3"/>`);
+    parts.push(`<text x="${marginLeft - 6}" y="${(yAt(100) + 3).toFixed(1)}" font-size="9" font-family="IBM Plex Mono, monospace" fill="#57676E" text-anchor="end">100%</text>`);
+    parts.push(`<line x1="${marginLeft}" y1="${marginTop + chartHeight}" x2="${width - marginRight}" y2="${marginTop + chartHeight}" stroke="#9DACB1" stroke-width="1"/>`);
 
     const monthTicks = [];
     let lastMonthKey = null;
@@ -214,9 +214,9 @@
     });
     const skip = monthTicks.length > 14 ? 2 : 1;
     monthTicks.forEach((t, idx) => {
-      parts.push(`<line x1="${xAt(t.i).toFixed(1)}" y1="${marginTop}" x2="${xAt(t.i).toFixed(1)}" y2="${marginTop + chartHeight}" stroke="#E3D2A8" stroke-width="1"/>`);
+      parts.push(`<line x1="${xAt(t.i).toFixed(1)}" y1="${marginTop}" x2="${xAt(t.i).toFixed(1)}" y2="${marginTop + chartHeight}" stroke="#C7D2D4" stroke-width="1"/>`);
       if (idx % skip === 0) {
-        parts.push(`<text x="${xAt(t.i).toFixed(1)}" y="${marginTop + chartHeight + 15}" font-size="9" font-family="IBM Plex Mono, monospace" fill="#7A6A4E" text-anchor="middle">${monthLabel(t.yr, t.mo)}</text>`);
+        parts.push(`<text x="${xAt(t.i).toFixed(1)}" y="${marginTop + chartHeight + 15}" font-size="9" font-family="IBM Plex Mono, monospace" fill="#57676E" text-anchor="middle">${monthLabel(t.yr, t.mo)}</text>`);
       }
     });
 
@@ -254,12 +254,12 @@
       const day = dateAxis[i];
       const x = xAt(i);
 
-      const cursorParts = [`<line x1="${x.toFixed(1)}" y1="${marginTop}" x2="${x.toFixed(1)}" y2="${marginTop + chartHeight}" stroke="#16222E" stroke-width="1" stroke-dasharray="2,2"/>`];
+      const cursorParts = [`<line x1="${x.toFixed(1)}" y1="${marginTop}" x2="${x.toFixed(1)}" y2="${marginTop + chartHeight}" stroke="#17262E" stroke-width="1" stroke-dasharray="2,2"/>`];
       const tooltipLines = [`<b>${day}</b> (7-day avg)`];
       for (const z of zonesPresent) {
         const v = rollingByDate[z][day];
         if (v === undefined) continue;
-        cursorParts.push(`<circle cx="${x.toFixed(1)}" cy="${yAt(v).toFixed(1)}" r="3.5" fill="${ZONE_COLORS[z]}" stroke="#F5EAD3" stroke-width="1"/>`);
+        cursorParts.push(`<circle cx="${x.toFixed(1)}" cy="${yAt(v).toFixed(1)}" r="3.5" fill="${ZONE_COLORS[z]}" stroke="#E4E9EA" stroke-width="1"/>`);
         tooltipLines.push(`${z}: ${v.toFixed(1)}%`);
       }
       cursorGroup.innerHTML = cursorParts.join("");
@@ -532,30 +532,30 @@
     const yPrice = (v) => marginTop + chartHeight - (v / maxPrice) * chartHeight;
 
     const parts = [];
-    parts.push(`<line x1="${marginLeft}" y1="${marginTop + chartHeight}" x2="${width - marginRight}" y2="${marginTop + chartHeight}" stroke="#C9A96E" stroke-width="1"/>`);
-    parts.push(`<line x1="${marginLeft}" y1="${yUtil(100)}" x2="${width - marginRight}" y2="${yUtil(100)}" stroke="#C9A96E" stroke-width="1" stroke-dasharray="2,3"/>`);
-    parts.push(`<text x="${marginLeft - 6}" y="${yUtil(100) + 3}" font-size="9" font-family="IBM Plex Mono, monospace" fill="#7A6A4E" text-anchor="end">100%</text>`);
+    parts.push(`<line x1="${marginLeft}" y1="${marginTop + chartHeight}" x2="${width - marginRight}" y2="${marginTop + chartHeight}" stroke="#9DACB1" stroke-width="1"/>`);
+    parts.push(`<line x1="${marginLeft}" y1="${yUtil(100)}" x2="${width - marginRight}" y2="${yUtil(100)}" stroke="#9DACB1" stroke-width="1" stroke-dasharray="2,3"/>`);
+    parts.push(`<text x="${marginLeft - 6}" y="${yUtil(100) + 3}" font-size="9" font-family="IBM Plex Mono, monospace" fill="#57676E" text-anchor="end">100%</text>`);
 
     data.forEach((d, i) => {
       const x = marginLeft + i * monthWidth;
       const barTop = yUtil(d.avg_utilization_pct);
       const barH = marginTop + chartHeight - barTop;
-      parts.push(`<rect x="${x + 5}" y="${barTop}" width="${monthWidth - 10}" height="${barH}" fill="#C1481F" fill-opacity="0.55"/>`);
+      parts.push(`<rect x="${x + 5}" y="${barTop}" width="${monthWidth - 10}" height="${barH}" fill="#D9541E" fill-opacity="0.55"/>`);
       if (data.length <= 14 || i % 2 === 0) {
-        parts.push(`<text x="${x + monthWidth / 2}" y="${marginTop + chartHeight + 15}" font-size="9" font-family="IBM Plex Mono, monospace" fill="#7A6A4E" text-anchor="middle">${monthLabel(d.year, d.month)}</text>`);
+        parts.push(`<text x="${x + monthWidth / 2}" y="${marginTop + chartHeight + 15}" font-size="9" font-family="IBM Plex Mono, monospace" fill="#57676E" text-anchor="middle">${monthLabel(d.year, d.month)}</text>`);
       }
     });
 
     const linePoints = data.map((d, i) => `${marginLeft + i * monthWidth + monthWidth / 2},${yPrice(d.price_gj).toFixed(1)}`).join(" ");
-    parts.push(`<polyline points="${linePoints}" fill="none" stroke="#1E6F93" stroke-width="2"/>`);
+    parts.push(`<polyline points="${linePoints}" fill="none" stroke="#1D6F91" stroke-width="2"/>`);
     data.forEach((d, i) => {
       const cx = marginLeft + i * monthWidth + monthWidth / 2;
-      parts.push(`<circle cx="${cx}" cy="${yPrice(d.price_gj).toFixed(1)}" r="2.5" fill="#1E6F93"/>`);
+      parts.push(`<circle cx="${cx}" cy="${yPrice(d.price_gj).toFixed(1)}" r="2.5" fill="#1D6F91"/>`);
       parts.push(`<title>${monthLabel(d.year, d.month)}: ${d.avg_utilization_pct.toFixed(1)}% util, $${d.price_gj.toFixed(2)}/GJ</title>`);
     });
 
-    parts.push(`<text x="6" y="${marginTop - 2}" font-size="9" font-family="IBM Plex Mono, monospace" fill="#C1481F">■ avg utilization %</text>`);
-    parts.push(`<text x="${width - 6}" y="${marginTop - 2}" font-size="9" font-family="IBM Plex Mono, monospace" fill="#1E6F93" text-anchor="end">— AER price $/GJ</text>`);
+    parts.push(`<text x="6" y="${marginTop - 2}" font-size="9" font-family="IBM Plex Mono, monospace" fill="#D9541E">■ avg utilization %</text>`);
+    parts.push(`<text x="${width - 6}" y="${marginTop - 2}" font-size="9" font-family="IBM Plex Mono, monospace" fill="#1D6F91" text-anchor="end">— AER price $/GJ</text>`);
 
     svg.innerHTML = parts.join("");
   }
@@ -592,30 +592,30 @@
 
     const parts = [];
     [25, 50, 75, 100].forEach((mark) => {
-      parts.push(`<line x1="${marginLeft}" y1="${yAt(mark).toFixed(1)}" x2="${width - marginRight}" y2="${yAt(mark).toFixed(1)}" stroke="#E3D2A8" stroke-width="1" ${mark === 100 ? 'stroke-dasharray="3,3"' : ""}/>`);
-      parts.push(`<text x="${marginLeft - 6}" y="${(yAt(mark) + 3).toFixed(1)}" font-size="9" font-family="IBM Plex Mono, monospace" fill="#7A6A4E" text-anchor="end">${mark}${mark === 100 ? "%" : ""}</text>`);
+      parts.push(`<line x1="${marginLeft}" y1="${yAt(mark).toFixed(1)}" x2="${width - marginRight}" y2="${yAt(mark).toFixed(1)}" stroke="#C7D2D4" stroke-width="1" ${mark === 100 ? 'stroke-dasharray="3,3"' : ""}/>`);
+      parts.push(`<text x="${marginLeft - 6}" y="${(yAt(mark) + 3).toFixed(1)}" font-size="9" font-family="IBM Plex Mono, monospace" fill="#57676E" text-anchor="end">${mark}${mark === 100 ? "%" : ""}</text>`);
     });
-    parts.push(`<line x1="${marginLeft}" y1="${marginTop + chartHeight}" x2="${width - marginRight}" y2="${marginTop + chartHeight}" stroke="#C9A96E" stroke-width="1"/>`);
+    parts.push(`<line x1="${marginLeft}" y1="${marginTop + chartHeight}" x2="${width - marginRight}" y2="${marginTop + chartHeight}" stroke="#9DACB1" stroke-width="1"/>`);
 
     const barMeta = [];
     stats.forEach((s, i) => {
       const x = marginLeft + i * barSlot;
       const barX = x + barSlot * 0.14, barW = barSlot * 0.72;
       if (s.avg === null) {
-        parts.push(`<text x="${(x + barSlot / 2).toFixed(1)}" y="${marginTop + chartHeight + 15}" font-size="9" font-family="IBM Plex Mono, monospace" fill="#7A6A4E" text-anchor="middle">${MONTH_ABBR[i]}</text>`);
+        parts.push(`<text x="${(x + barSlot / 2).toFixed(1)}" y="${marginTop + chartHeight + 15}" font-size="9" font-family="IBM Plex Mono, monospace" fill="#57676E" text-anchor="middle">${MONTH_ABBR[i]}</text>`);
         return;
       }
       const barTop = yAt(s.avg);
       const barH = marginTop + chartHeight - barTop;
       const color = utilizationColorHex(s.avg);
       const dashed = s.nYears < 2;
-      parts.push(`<rect class="season-bar" data-idx="${i}" x="${barX.toFixed(1)}" y="${barTop.toFixed(1)}" width="${barW.toFixed(1)}" height="${barH.toFixed(1)}" rx="2" fill="${color}" ${dashed ? 'stroke="#7A6A4E" stroke-width="1" stroke-dasharray="2,2"' : ""}/>`);
-      parts.push(`<text x="${(x + barSlot / 2).toFixed(1)}" y="${(barTop - 5).toFixed(1)}" font-size="9" font-family="IBM Plex Mono, monospace" fill="#2E2A22" text-anchor="middle">${s.avg.toFixed(0)}%</text>`);
-      parts.push(`<text x="${(x + barSlot / 2).toFixed(1)}" y="${marginTop + chartHeight + 15}" font-size="9" font-family="IBM Plex Mono, monospace" fill="#7A6A4E" text-anchor="middle">${MONTH_ABBR[i]}${dashed ? "*" : ""}</text>`);
+      parts.push(`<rect class="season-bar" data-idx="${i}" x="${barX.toFixed(1)}" y="${barTop.toFixed(1)}" width="${barW.toFixed(1)}" height="${barH.toFixed(1)}" rx="2" fill="${color}" ${dashed ? 'stroke="#57676E" stroke-width="1" stroke-dasharray="2,2"' : ""}/>`);
+      parts.push(`<text x="${(x + barSlot / 2).toFixed(1)}" y="${(barTop - 5).toFixed(1)}" font-size="9" font-family="IBM Plex Mono, monospace" fill="#22323B" text-anchor="middle">${s.avg.toFixed(0)}%</text>`);
+      parts.push(`<text x="${(x + barSlot / 2).toFixed(1)}" y="${marginTop + chartHeight + 15}" font-size="9" font-family="IBM Plex Mono, monospace" fill="#57676E" text-anchor="middle">${MONTH_ABBR[i]}${dashed ? "*" : ""}</text>`);
       barMeta.push({ idx: i, x: x + barSlot / 2, top: barTop, avg: s.avg, nYears: s.nYears });
     });
 
-    parts.push(`<text x="${width - marginRight}" y="${marginTop - 8}" font-size="9" font-family="IBM Plex Mono, monospace" fill="#7A6A4E" text-anchor="end">* dashed = only 1 year of history behind it</text>`);
+    parts.push(`<text x="${width - marginRight}" y="${marginTop - 8}" font-size="9" font-family="IBM Plex Mono, monospace" fill="#57676E" text-anchor="end">* dashed = only 1 year of history behind it</text>`);
 
     svg.innerHTML = parts.join("");
 
@@ -662,17 +662,17 @@
     const yAt = (v) => marginTop + chartHeight - (v / maxVal) * chartHeight;
 
     const parts = [];
-    parts.push(`<line x1="${marginLeft}" y1="${marginTop + chartHeight}" x2="${width - marginRight}" y2="${marginTop + chartHeight}" stroke="#C9A96E" stroke-width="1"/>`);
+    parts.push(`<line x1="${marginLeft}" y1="${marginTop + chartHeight}" x2="${width - marginRight}" y2="${marginTop + chartHeight}" stroke="#9DACB1" stroke-width="1"/>`);
 
     bars.forEach((b, i) => {
       const x = marginLeft + i * slot;
       const barTop = yAt(b.rate);
       const barH = marginTop + chartHeight - barTop;
       const isIT = b.label.startsWith("IT");
-      const color = isIT ? "#C1481F" : "#1E6F93";
+      const color = isIT ? "#D9541E" : "#1D6F91";
       parts.push(`<rect x="${(x + slot * 0.12).toFixed(1)}" y="${barTop.toFixed(1)}" width="${(slot * 0.76).toFixed(1)}" height="${barH.toFixed(1)}" fill="${color}"/>`);
       parts.push(`<text x="${(x + slot / 2).toFixed(1)}" y="${(barTop - 4).toFixed(1)}" font-size="9" font-family="IBM Plex Mono, monospace" fill="${color}" text-anchor="middle">${b.rate}¢</text>`);
-      parts.push(`<text x="${(x + slot / 2).toFixed(1)}" y="${marginTop + chartHeight + 13}" font-size="8.5" font-family="IBM Plex Mono, monospace" fill="#7A6A4E" text-anchor="middle">${b.label}</text>`);
+      parts.push(`<text x="${(x + slot / 2).toFixed(1)}" y="${marginTop + chartHeight + 13}" font-size="8.5" font-family="IBM Plex Mono, monospace" fill="#57676E" text-anchor="middle">${b.label}</text>`);
     });
 
     svg.innerHTML = parts.join("");
@@ -728,54 +728,25 @@
 
     const parts = [];
     [50, 80].forEach((mark) => {
-      parts.push(`<line x1="${marginLeft}" y1="${yAt(mark).toFixed(1)}" x2="${width - marginRight}" y2="${yAt(mark).toFixed(1)}" stroke="#C9A96E" stroke-width="1" stroke-dasharray="2,3"/>`);
-      parts.push(`<text x="${marginLeft - 4}" y="${(yAt(mark) + 3).toFixed(1)}" font-size="9" font-family="IBM Plex Mono, monospace" fill="#7A6A4E" text-anchor="end">${mark}%</text>`);
+      parts.push(`<line x1="${marginLeft}" y1="${yAt(mark).toFixed(1)}" x2="${width - marginRight}" y2="${yAt(mark).toFixed(1)}" stroke="#9DACB1" stroke-width="1" stroke-dasharray="2,3"/>`);
+      parts.push(`<text x="${marginLeft - 4}" y="${(yAt(mark) + 3).toFixed(1)}" font-size="9" font-family="IBM Plex Mono, monospace" fill="#57676E" text-anchor="end">${mark}%</text>`);
     });
 
     const areaPoints = points.map((p) => `${xAt(p.rank).toFixed(1)},${yAt(p.cumPct).toFixed(1)}`).join(" ");
     const areaPath = `M ${marginLeft},${marginTop + chartHeight} L ${areaPoints} L ${xAt(points[points.length - 1].rank).toFixed(1)},${marginTop + chartHeight} Z`;
-    parts.push(`<path d="${areaPath}" fill="#C1481F" fill-opacity="0.12"/>`);
-    parts.push(`<polyline points="${areaPoints}" fill="none" stroke="#C1481F" stroke-width="1.75"/>`);
+    parts.push(`<path d="${areaPath}" fill="#D9541E" fill-opacity="0.12"/>`);
+    parts.push(`<polyline points="${areaPoints}" fill="none" stroke="#D9541E" stroke-width="1.75"/>`);
 
     svg.innerHTML = parts.join("");
-  }
-
-  // ---- Events ----
-
-  function renderEvents(eventsData) {
-    const list = document.getElementById("events-list");
-    if (!eventsData.events.length) {
-      list.innerHTML = `<p class="empty-note">No completed named-facility events fall within the realized flow history yet — most currently scheduled outages are still in the future. This list grows automatically as the daily pipeline runs.</p>`;
-      return;
-    }
-    list.innerHTML = eventsData.events
-      .map((ev) => {
-        const deviation =
-          ev.avg_deviation_from_seasonal_normal_pct === null
-            ? `insufficient history (n=${ev.n_prior_years_for_seasonal_normal} prior yrs)`
-            : `${ev.avg_deviation_from_seasonal_normal_pct >= 0 ? "+" : ""}${ev.avg_deviation_from_seasonal_normal_pct}pp`;
-        return `
-        <div class="event-card">
-          <div class="event-title">${ev.facility} — ${ev.activity_type || "Outage"}</div>
-          <div class="event-meta">${ev.zone} &middot; ${ev.start_date} → ${ev.end_date}</div>
-          <div class="event-figures">
-            <div><span class="figure-value">${fmtPct(ev.avg_utilization_pct_during)}</span><span class="figure-label">avg utilization during</span></div>
-            <div><span class="figure-value">${ev.avg_capability_reduction_pct !== null ? fmtPct(ev.avg_capability_reduction_pct) : "—"}</span><span class="figure-label">capability reduction</span></div>
-            <div><span class="figure-value">${deviation}</span><span class="figure-label">vs. seasonal normal</span></div>
-          </div>
-        </div>`;
-      })
-      .join("");
   }
 
   // ---- Boot ----
 
   async function main() {
-    const [heatmap, facilities, correlation, events, serviceImpact, tariff] = await Promise.all([
+    const [heatmap, facilities, correlation, serviceImpact, tariff] = await Promise.all([
       loadJSON("data/heatmap.json"),
       loadJSON("data/facilities.json"),
       loadJSON("data/monthly_correlation.json"),
-      loadJSON("data/events.json"),
       loadJSON("data/service_impact.json"),
       loadJSON("data/tariff_rates.json"),
     ]);
@@ -793,7 +764,6 @@
     renderFacilities(facilities);
     renderConcentrationChart(facilities);
     renderCorrelation(correlation);
-    renderEvents(events);
   }
 
   main().catch((err) => {
