@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;600;700&family=Source+Sans+3:ital,wght@0,400;0,600;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css?v=7">
+<link rel="stylesheet" href="style.css?v=8">
 </head>
 <body>
 
@@ -23,6 +23,14 @@
     <span>updated <span id="meta-generated-at">—</span></span>
   </div>
 </header>
+
+<section class="hero">
+  <div class="hero-stats" id="hero-stats"></div>
+  <div class="hero-heatmap">
+    <div class="hero-heatmap-label">Last 60 gas days, all zones — <a href="#utilization-section">full history below ↓</a></div>
+    <div id="hero-heatmap-grid"></div>
+  </div>
+</section>
 
 <section class="intro">
   <p class="what-this-is">
@@ -215,6 +223,6 @@
 
 <div class="tooltip" id="tooltip" hidden></div>
 
-<script src="app.js?v=5"></script>
+<script src="app.js?v=6"></script>
 </body>
 </html>

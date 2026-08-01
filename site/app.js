@@ -41,6 +41,44 @@
     return resp.json();
   }
 
+  // ---- Hero: live stats + recent-heatmap preview, above the fold ----
+
+  function renderHero(heatmap, facilities, serviceImpact, tariff) {
+    const daysTracked = new Set(heatmap.cells.map((c) => c.gas_day)).size;
+    const itRRate = tariff.receipt.find((x) => x.service === "IT-R").rate_cents_gj_d;
+    const ftRRate = tariff.receipt.find((x) => x.service === "FT-R").rate_cents_gj_d;
+    const itPremium = (itRRate / ftRRate - 1) * 100;
+
+    document.getElementById("hero-stats").innerHTML = `
+      <div class="stat"><span class="value">${daysTracked.toLocaleString()}</span><span class="label">Gas-days tracked</span></div>
+      <div class="stat"><span class="value">${facilities.facilities.length}</span><span class="label">Facilities logged</span></div>
+      <div class="stat accent"><span class="value">${fmtPct(serviceImpact.firm_risk_share_pct, 0)}</span><span class="label">Of outages actually firm-risk</span></div>
+      <div class="stat accent"><span class="value">+${itPremium.toFixed(0)}%</span><span class="label">IT-R premium over FT-R</span></div>
+    `;
+
+    const grid = document.getElementById("hero-heatmap-grid");
+    const dateAxis = Array.from(new Set(heatmap.cells.map((c) => c.gas_day))).sort().slice(-60);
+    const cellIndex = {};
+    for (const c of heatmap.cells) {
+      if (!cellIndex[c.zone]) cellIndex[c.zone] = {};
+      cellIndex[c.zone][c.gas_day] = c;
+    }
+    const zonesPresent = ZONE_ORDER.filter((z) => cellIndex[z]);
+    grid.innerHTML = zonesPresent
+      .map((zone) => {
+        const cells = dateAxis
+          .map((day) => {
+            const c = cellIndex[zone][day];
+            const bg = c ? utilizationColor(c.utilization_pct) : "var(--cell-empty)";
+            const title = c ? `${zone} ${day}: ${c.utilization_pct.toFixed(1)}%` : "";
+            return `<div class="hero-hm-cell" style="background:${bg}" title="${title}"></div>`;
+          })
+          .join("");
+        return `<div class="hero-hm-row"><span class="hero-hm-label">${zone}</span>${cells}</div>`;
+      })
+      .join("");
+  }
+
   // ---- Schematic system map ----
 
   const MAP_ZONE_LABELS = {
@@ -653,6 +691,7 @@
     document.getElementById("meta-latest-day").textContent = heatmap.date_range.end;
     document.getElementById("meta-generated-at").textContent = new Date(heatmap.generated_at).toISOString().slice(0, 16).replace("T", " ") + " UTC";
 
+    renderHero(heatmap, facilities, serviceImpact, tariff);
     renderSystemMap(heatmap);
     renderTrendChart(heatmap);
     renderHeatmap(heatmap);
