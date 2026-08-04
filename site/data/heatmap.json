@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-03T14:17:21+00:00",
+  "generated_at": "2026-08-04T13:49:22+00:00",
   "zones": [
     "AB/BC",
     "EGAT",
@@ -8,7 +8,7 @@
   ],
   "date_range": {
     "start": "2025-01-30",
-    "end": "2026-08-01"
+    "end": "2026-08-02"
   },
   "cells": [
     {
@@ -27012,6 +27012,50 @@
     {
       "zone": "OSDA",
       "gas_day": "2026-08-01",
+      "utilization_pct": 90.6,
+      "outage_adjusted": false,
+      "deviation_from_seasonal_normal_pct": 0.9,
+      "n_prior_years": 1,
+      "actual_flow_e3m3d": 87000.0,
+      "effective_capability_e3m3d": 96000.0,
+      "facilities": []
+    },
+    {
+      "zone": "USJR",
+      "gas_day": "2026-08-02",
+      "utilization_pct": 94.5,
+      "outage_adjusted": false,
+      "deviation_from_seasonal_normal_pct": 2.7,
+      "n_prior_years": 1,
+      "actual_flow_e3m3d": 359000.0,
+      "effective_capability_e3m3d": 380000.0,
+      "facilities": []
+    },
+    {
+      "zone": "AB/BC",
+      "gas_day": "2026-08-02",
+      "utilization_pct": 68.2,
+      "outage_adjusted": false,
+      "deviation_from_seasonal_normal_pct": -15.4,
+      "n_prior_years": 1,
+      "actual_flow_e3m3d": 60000.0,
+      "effective_capability_e3m3d": 88000.0,
+      "facilities": []
+    },
+    {
+      "zone": "EGAT",
+      "gas_day": "2026-08-02",
+      "utilization_pct": 106.3,
+      "outage_adjusted": false,
+      "deviation_from_seasonal_normal_pct": 6.3,
+      "n_prior_years": 1,
+      "actual_flow_e3m3d": 168000.0,
+      "effective_capability_e3m3d": 158000.0,
+      "facilities": []
+    },
+    {
+      "zone": "OSDA",
+      "gas_day": "2026-08-02",
       "utilization_pct": 90.6,
       "outage_adjusted": false,
       "deviation_from_seasonal_normal_pct": 0.9,
