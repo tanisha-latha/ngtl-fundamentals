@@ -1,7 +1,7 @@
 {
-  "total_events": 90,
+  "total_events": 92,
   "firm_risk_events": 37,
-  "firm_risk_share_pct": 41.1,
+  "firm_risk_share_pct": 40.2,
   "by_category": [
     {
       "service_category": "firm_risk",
@@ -15,8 +15,8 @@
     },
     {
       "service_category": "unclassified",
-      "events": 26,
-      "total_event_days": 189
+      "events": 28,
+      "total_event_days": 221
     }
   ],
   "by_zone": [
@@ -36,13 +36,13 @@
       "zone_table": "LCLD",
       "firm_risk": 0,
       "no_firm_impact": 0,
-      "unclassified": 9
+      "unclassified": 10
     },
     {
       "zone_table": "LCLR",
       "firm_risk": 4,
       "no_firm_impact": 0,
-      "unclassified": 17
+      "unclassified": 18
     },
     {
       "zone_table": "NEDA",
@@ -227,5 +227,5 @@
     }
   ],
   "note": "Categorized directly from the source's own 'Type of Restriction' field on each outage record -- not inferred or modeled. 'firm_risk' means the source explicitly flagged potential impact to FT-R or FT-D; 'no_firm_impact' means the source explicitly said none was anticipated; 'unclassified' means the field was blank in the source, which is common for local receipt/delivery laterals rather than mainline segments.",
-  "generated_at": "2026-08-04T13:49:22+00:00"
+  "generated_at": "2026-08-05T13:44:49+00:00"
 }
