@@ -1,29 +1,29 @@
 {
-  "total_events": 92,
-  "firm_risk_events": 37,
-  "firm_risk_share_pct": 40.2,
+  "total_events": 99,
+  "firm_risk_events": 40,
+  "firm_risk_share_pct": 40.4,
   "by_category": [
     {
       "service_category": "firm_risk",
-      "events": 37,
-      "total_event_days": 226
+      "events": 40,
+      "total_event_days": 250
     },
     {
       "service_category": "no_firm_impact",
-      "events": 27,
-      "total_event_days": 197
+      "events": 29,
+      "total_event_days": 213
     },
     {
       "service_category": "unclassified",
-      "events": 28,
-      "total_event_days": 221
+      "events": 30,
+      "total_event_days": 223
     }
   ],
   "by_zone": [
     {
       "zone_table": "EGAT",
       "firm_risk": 2,
-      "no_firm_impact": 16,
+      "no_firm_impact": 17,
       "unclassified": 0
     },
     {
@@ -42,30 +42,30 @@
       "zone_table": "LCLR",
       "firm_risk": 4,
       "no_firm_impact": 0,
-      "unclassified": 18
+      "unclassified": 20
     },
     {
       "zone_table": "NEDA",
-      "firm_risk": 5,
+      "firm_risk": 6,
       "no_firm_impact": 0,
       "unclassified": 0
     },
     {
       "zone_table": "OSDA",
-      "firm_risk": 7,
+      "firm_risk": 8,
       "no_firm_impact": 0,
       "unclassified": 0
     },
     {
       "zone_table": "USJR",
-      "firm_risk": 14,
+      "firm_risk": 15,
       "no_firm_impact": 0,
       "unclassified": 0
     },
     {
       "zone_table": "WGAT",
       "firm_risk": 2,
-      "no_firm_impact": 11,
+      "no_firm_impact": 12,
       "unclassified": 0
     }
   ],
@@ -81,7 +81,7 @@
     },
     {
       "facility": "Otter Lake",
-      "firm_risk_events": 3,
+      "firm_risk_events": 6,
       "zones": [
         "NEDA",
         "OSDA",
@@ -227,5 +227,5 @@
     }
   ],
   "note": "Categorized directly from the source's own 'Type of Restriction' field on each outage record -- not inferred or modeled. 'firm_risk' means the source explicitly flagged potential impact to FT-R or FT-D; 'no_firm_impact' means the source explicitly said none was anticipated; 'unclassified' means the field was blank in the source, which is common for local receipt/delivery laterals rather than mainline segments.",
-  "generated_at": "2026-08-05T13:44:49+00:00"
+  "generated_at": "2026-08-06T13:43:02+00:00"
 }

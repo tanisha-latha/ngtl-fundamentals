@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-05T13:44:49+00:00",
+  "generated_at": "2026-08-06T13:43:02+00:00",
   "facilities": [
     {
       "facility": "Wolf Lake A2",
@@ -32,7 +32,7 @@
       ],
       "first_seen": "2025-03-31",
       "last_seen": "2026-05-04",
-      "firm_risk_events": 3
+      "firm_risk_events": 6
     },
     {
       "facility": "Goodfish A1",
@@ -445,6 +445,23 @@
       "firm_risk_events": 0
     },
     {
+      "facility": "Meikle River C",
+      "days_active": 6,
+      "total_impact_e3m3d": 221000.0,
+      "zones": [
+        "AB/BC",
+        "EGAT",
+        "OSDA",
+        "USJR"
+      ],
+      "activity_types": [
+        "Compressor Station Maintenance"
+      ],
+      "first_seen": "2025-09-08",
+      "last_seen": "2026-08-04",
+      "firm_risk_events": 8
+    },
+    {
       "facility": "Moyie",
       "days_active": 9,
       "total_impact_e3m3d": 219000.0,
@@ -501,22 +518,6 @@
       "first_seen": "2026-04-08",
       "last_seen": "2026-04-12",
       "firm_risk_events": 0
-    },
-    {
-      "facility": "Meikle River C",
-      "days_active": 5,
-      "total_impact_e3m3d": 185000.0,
-      "zones": [
-        "AB/BC",
-        "EGAT",
-        "USJR"
-      ],
-      "activity_types": [
-        "Compressor Station Maintenance"
-      ],
-      "first_seen": "2025-09-08",
-      "last_seen": "2025-09-12",
-      "firm_risk_events": 8
     },
     {
       "facility": "NPS 48 Grande Prairie Mainline Loop 2",
