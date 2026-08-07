@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-06T13:43:02+00:00",
+  "generated_at": "2026-08-07T12:41:11+00:00",
   "facilities": [
     {
       "facility": "Wolf Lake A2",
@@ -19,8 +19,8 @@
     },
     {
       "facility": "Otter Lake",
-      "days_active": 29,
-      "total_impact_e3m3d": 1146000.0,
+      "days_active": 30,
+      "total_impact_e3m3d": 1204000.0,
       "zones": [
         "AB/BC",
         "EGAT",
@@ -31,7 +31,7 @@
         "Compressor Station Maintenance"
       ],
       "first_seen": "2025-03-31",
-      "last_seen": "2026-05-04",
+      "last_seen": "2026-08-05",
       "firm_risk_events": 6
     },
     {
@@ -339,6 +339,23 @@
       "firm_risk_events": 0
     },
     {
+      "facility": "Meikle River C",
+      "days_active": 7,
+      "total_impact_e3m3d": 279000.0,
+      "zones": [
+        "AB/BC",
+        "EGAT",
+        "OSDA",
+        "USJR"
+      ],
+      "activity_types": [
+        "Compressor Station Maintenance"
+      ],
+      "first_seen": "2025-09-08",
+      "last_seen": "2026-08-05",
+      "firm_risk_events": 8
+    },
+    {
       "facility": "Alces River",
       "days_active": 9,
       "total_impact_e3m3d": 276000.0,
@@ -385,22 +402,6 @@
       "firm_risk_events": 0
     },
     {
-      "facility": "Emerson Creek A1",
-      "days_active": 17,
-      "total_impact_e3m3d": 236000.0,
-      "zones": [
-        "AB/BC",
-        "EGAT",
-        "USJR"
-      ],
-      "activity_types": [
-        "Compressor Station Maintenance"
-      ],
-      "first_seen": "2025-12-15",
-      "last_seen": "2026-07-12",
-      "firm_risk_events": 0
-    },
-    {
       "facility": "Knight",
       "days_active": 5,
       "total_impact_e3m3d": 236000.0,
@@ -415,6 +416,22 @@
       "first_seen": "2025-08-11",
       "last_seen": "2025-08-15",
       "firm_risk_events": 2
+    },
+    {
+      "facility": "Emerson Creek A1",
+      "days_active": 17,
+      "total_impact_e3m3d": 236000.0,
+      "zones": [
+        "AB/BC",
+        "EGAT",
+        "USJR"
+      ],
+      "activity_types": [
+        "Compressor Station Maintenance"
+      ],
+      "first_seen": "2025-12-15",
+      "last_seen": "2026-07-12",
+      "firm_risk_events": 0
     },
     {
       "facility": "Burton Creek",
@@ -443,23 +460,6 @@
       "first_seen": "2025-06-16",
       "last_seen": "2026-05-21",
       "firm_risk_events": 0
-    },
-    {
-      "facility": "Meikle River C",
-      "days_active": 6,
-      "total_impact_e3m3d": 221000.0,
-      "zones": [
-        "AB/BC",
-        "EGAT",
-        "OSDA",
-        "USJR"
-      ],
-      "activity_types": [
-        "Compressor Station Maintenance"
-      ],
-      "first_seen": "2025-09-08",
-      "last_seen": "2026-08-04",
-      "firm_risk_events": 8
     },
     {
       "facility": "Moyie",
@@ -876,20 +876,6 @@
       "firm_risk_events": 0
     },
     {
-      "facility": "Clearwater A6",
-      "days_active": 10,
-      "total_impact_e3m3d": 70000.0,
-      "zones": [
-        "EGAT"
-      ],
-      "activity_types": [
-        "Compressor Station Maintenance"
-      ],
-      "first_seen": "2025-12-08",
-      "last_seen": "2026-05-15",
-      "firm_risk_events": 0
-    },
-    {
       "facility": "NPS 16 Leming Lake Lateral",
       "days_active": 10,
       "total_impact_e3m3d": 70000.0,
@@ -901,6 +887,20 @@
       ],
       "first_seen": "2025-10-15",
       "last_seen": "2025-10-24",
+      "firm_risk_events": 0
+    },
+    {
+      "facility": "Clearwater A6",
+      "days_active": 10,
+      "total_impact_e3m3d": 70000.0,
+      "zones": [
+        "EGAT"
+      ],
+      "activity_types": [
+        "Compressor Station Maintenance"
+      ],
+      "first_seen": "2025-12-08",
+      "last_seen": "2026-05-15",
       "firm_risk_events": 0
     },
     {
@@ -934,6 +934,20 @@
       "firm_risk_events": 1
     },
     {
+      "facility": "Crowsnest B",
+      "days_active": 4,
+      "total_impact_e3m3d": 40000.0,
+      "zones": [
+        "AB/BC"
+      ],
+      "activity_types": [
+        "Compressor Station Maintenance"
+      ],
+      "first_seen": "2026-05-19",
+      "last_seen": "2026-05-22",
+      "firm_risk_events": 0
+    },
+    {
       "facility": "Woodenhouse C3",
       "days_active": 2,
       "total_impact_e3m3d": 40000.0,
@@ -948,20 +962,6 @@
       "first_seen": "2026-03-09",
       "last_seen": "2026-03-10",
       "firm_risk_events": 1
-    },
-    {
-      "facility": "Crowsnest B",
-      "days_active": 4,
-      "total_impact_e3m3d": 40000.0,
-      "zones": [
-        "AB/BC"
-      ],
-      "activity_types": [
-        "Compressor Station Maintenance"
-      ],
-      "first_seen": "2026-05-19",
-      "last_seen": "2026-05-22",
-      "firm_risk_events": 0
     },
     {
       "facility": "Emerson Creek",
@@ -980,20 +980,6 @@
       "firm_risk_events": 0
     },
     {
-      "facility": "Winchell Lake",
-      "days_active": 6,
-      "total_impact_e3m3d": 36000.0,
-      "zones": [
-        "AB/BC"
-      ],
-      "activity_types": [
-        "Compressor Station Maintenance"
-      ],
-      "first_seen": "2025-09-15",
-      "last_seen": "2025-09-20",
-      "firm_risk_events": 0
-    },
-    {
       "facility": "Wolf Lake A3",
       "days_active": 6,
       "total_impact_e3m3d": 36000.0,
@@ -1005,6 +991,20 @@
       ],
       "first_seen": "2026-01-01",
       "last_seen": "2026-01-06",
+      "firm_risk_events": 0
+    },
+    {
+      "facility": "Winchell Lake",
+      "days_active": 6,
+      "total_impact_e3m3d": 36000.0,
+      "zones": [
+        "AB/BC"
+      ],
+      "activity_types": [
+        "Compressor Station Maintenance"
+      ],
+      "first_seen": "2025-09-15",
+      "last_seen": "2025-09-20",
       "firm_risk_events": 0
     },
     {
@@ -1034,6 +1034,20 @@
       "first_seen": "2026-07-13",
       "last_seen": "2026-07-16",
       "firm_risk_events": 0
+    },
+    {
+      "facility": "Crowsnest A",
+      "days_active": 1,
+      "total_impact_e3m3d": 23000.0,
+      "zones": [
+        "AB/BC"
+      ],
+      "activity_types": [
+        "Compressor Station Maintenance"
+      ],
+      "first_seen": "2026-08-05",
+      "last_seen": "2026-08-05",
+      "firm_risk_events": 1
     },
     {
       "facility": "Meikle River C3",

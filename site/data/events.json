@@ -1,15 +1,59 @@
 {
-  "generated_at": "2026-08-06T13:43:02+00:00",
+  "generated_at": "2026-08-07T12:41:11+00:00",
   "events": [
+    {
+      "facility": "Otter Lake",
+      "activity_type": "Compressor Station Maintenance",
+      "zone": "AB/BC",
+      "start_date": "2026-08-05",
+      "end_date": "2026-08-12",
+      "avg_utilization_pct_during": 87.7,
+      "avg_capability_reduction_pct": 26.1,
+      "avg_deviation_from_seasonal_normal_pct": 4.1,
+      "n_prior_years_for_seasonal_normal": 1
+    },
+    {
+      "facility": "Meikle River C",
+      "activity_type": "Compressor Station Maintenance",
+      "zone": "AB/BC",
+      "start_date": "2026-08-04",
+      "end_date": "2026-08-08",
+      "avg_utilization_pct_during": 75.5,
+      "avg_capability_reduction_pct": 13.6,
+      "avg_deviation_from_seasonal_normal_pct": -8.1,
+      "n_prior_years_for_seasonal_normal": 1
+    },
+    {
+      "facility": "Otter Lake",
+      "activity_type": "Compressor Station Maintenance",
+      "zone": "OSDA",
+      "start_date": "2026-08-05",
+      "end_date": "2026-08-12",
+      "avg_utilization_pct_during": 98.9,
+      "avg_capability_reduction_pct": 9.4,
+      "avg_deviation_from_seasonal_normal_pct": 9.2,
+      "n_prior_years_for_seasonal_normal": 1
+    },
     {
       "facility": "Meikle River C",
       "activity_type": "Compressor Station Maintenance",
       "zone": "OSDA",
       "start_date": "2026-08-04",
       "end_date": "2026-08-08",
-      "avg_utilization_pct_during": 100.0,
+      "avg_utilization_pct_during": 99.4,
       "avg_capability_reduction_pct": 9.4,
-      "avg_deviation_from_seasonal_normal_pct": 10.3,
+      "avg_deviation_from_seasonal_normal_pct": 9.7,
+      "n_prior_years_for_seasonal_normal": 1
+    },
+    {
+      "facility": "Otter Lake",
+      "activity_type": "Compressor Station Maintenance",
+      "zone": "EGAT",
+      "start_date": "2026-08-05",
+      "end_date": "2026-08-12",
+      "avg_utilization_pct_during": 105.4,
+      "avg_capability_reduction_pct": 6.3,
+      "avg_deviation_from_seasonal_normal_pct": 5.3,
       "n_prior_years_for_seasonal_normal": 1
     },
     {
@@ -18,9 +62,9 @@
       "zone": "EGAT",
       "start_date": "2026-08-04",
       "end_date": "2026-08-08",
-      "avg_utilization_pct_during": 104.1,
+      "avg_utilization_pct_during": 104.7,
       "avg_capability_reduction_pct": 6.3,
-      "avg_deviation_from_seasonal_normal_pct": 4.0,
+      "avg_deviation_from_seasonal_normal_pct": 4.7,
       "n_prior_years_for_seasonal_normal": 1
     },
     {
@@ -40,20 +84,20 @@
       "zone": "USJR",
       "start_date": "2026-08-04",
       "end_date": "2026-08-08",
-      "avg_utilization_pct_during": 97.5,
+      "avg_utilization_pct_during": 96.8,
       "avg_capability_reduction_pct": 4.2,
-      "avg_deviation_from_seasonal_normal_pct": 5.7,
+      "avg_deviation_from_seasonal_normal_pct": 5.1,
       "n_prior_years_for_seasonal_normal": 1
     },
     {
-      "facility": "Meikle River C",
+      "facility": "Otter Lake",
       "activity_type": "Compressor Station Maintenance",
-      "zone": "AB/BC",
-      "start_date": "2026-08-04",
-      "end_date": "2026-08-08",
-      "avg_utilization_pct_during": 63.2,
-      "avg_capability_reduction_pct": 1.1,
-      "avg_deviation_from_seasonal_normal_pct": -20.4,
+      "zone": "USJR",
+      "start_date": "2026-08-05",
+      "end_date": "2026-08-12",
+      "avg_utilization_pct_during": 96.2,
+      "avg_capability_reduction_pct": 4.2,
+      "avg_deviation_from_seasonal_normal_pct": 4.4,
       "n_prior_years_for_seasonal_normal": 1
     }
   ]
