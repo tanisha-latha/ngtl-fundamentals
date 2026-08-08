@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-07T12:41:11+00:00",
+  "generated_at": "2026-08-08T12:27:58+00:00",
   "events": [
     {
       "facility": "Otter Lake",
@@ -7,9 +7,9 @@
       "zone": "AB/BC",
       "start_date": "2026-08-05",
       "end_date": "2026-08-12",
-      "avg_utilization_pct_during": 87.7,
-      "avg_capability_reduction_pct": 26.1,
-      "avg_deviation_from_seasonal_normal_pct": 4.1,
+      "avg_utilization_pct_during": 89.7,
+      "avg_capability_reduction_pct": 29.0,
+      "avg_deviation_from_seasonal_normal_pct": 6.1,
       "n_prior_years_for_seasonal_normal": 1
     },
     {
@@ -18,31 +18,31 @@
       "zone": "AB/BC",
       "start_date": "2026-08-04",
       "end_date": "2026-08-08",
-      "avg_utilization_pct_during": 75.5,
-      "avg_capability_reduction_pct": 13.6,
-      "avg_deviation_from_seasonal_normal_pct": -8.1,
+      "avg_utilization_pct_during": 80.9,
+      "avg_capability_reduction_pct": 19.7,
+      "avg_deviation_from_seasonal_normal_pct": -2.7,
       "n_prior_years_for_seasonal_normal": 1
     },
     {
-      "facility": "Otter Lake",
+      "facility": "Meikle River C",
       "activity_type": "Compressor Station Maintenance",
       "zone": "OSDA",
-      "start_date": "2026-08-05",
-      "end_date": "2026-08-12",
+      "start_date": "2026-08-04",
+      "end_date": "2026-08-08",
       "avg_utilization_pct_during": 98.9,
-      "avg_capability_reduction_pct": 9.4,
+      "avg_capability_reduction_pct": 8.3,
       "avg_deviation_from_seasonal_normal_pct": 9.2,
       "n_prior_years_for_seasonal_normal": 1
     },
     {
-      "facility": "Meikle River C",
+      "facility": "Otter Lake",
       "activity_type": "Compressor Station Maintenance",
       "zone": "OSDA",
-      "start_date": "2026-08-04",
-      "end_date": "2026-08-08",
-      "avg_utilization_pct_during": 99.4,
-      "avg_capability_reduction_pct": 9.4,
-      "avg_deviation_from_seasonal_normal_pct": 9.7,
+      "start_date": "2026-08-05",
+      "end_date": "2026-08-12",
+      "avg_utilization_pct_during": 98.3,
+      "avg_capability_reduction_pct": 7.8,
+      "avg_deviation_from_seasonal_normal_pct": 8.6,
       "n_prior_years_for_seasonal_normal": 1
     },
     {
@@ -51,9 +51,9 @@
       "zone": "EGAT",
       "start_date": "2026-08-05",
       "end_date": "2026-08-12",
-      "avg_utilization_pct_during": 105.4,
+      "avg_utilization_pct_during": 104.7,
       "avg_capability_reduction_pct": 6.3,
-      "avg_deviation_from_seasonal_normal_pct": 5.3,
+      "avg_deviation_from_seasonal_normal_pct": 4.7,
       "n_prior_years_for_seasonal_normal": 1
     },
     {
@@ -62,9 +62,9 @@
       "zone": "EGAT",
       "start_date": "2026-08-04",
       "end_date": "2026-08-08",
-      "avg_utilization_pct_during": 104.7,
+      "avg_utilization_pct_during": 104.5,
       "avg_capability_reduction_pct": 6.3,
-      "avg_deviation_from_seasonal_normal_pct": 4.7,
+      "avg_deviation_from_seasonal_normal_pct": 4.4,
       "n_prior_years_for_seasonal_normal": 1
     },
     {
@@ -84,9 +84,9 @@
       "zone": "USJR",
       "start_date": "2026-08-04",
       "end_date": "2026-08-08",
-      "avg_utilization_pct_during": 96.8,
-      "avg_capability_reduction_pct": 4.2,
-      "avg_deviation_from_seasonal_normal_pct": 5.1,
+      "avg_utilization_pct_during": 97.1,
+      "avg_capability_reduction_pct": 4.0,
+      "avg_deviation_from_seasonal_normal_pct": 5.3,
       "n_prior_years_for_seasonal_normal": 1
     },
     {
@@ -95,9 +95,9 @@
       "zone": "USJR",
       "start_date": "2026-08-05",
       "end_date": "2026-08-12",
-      "avg_utilization_pct_during": 96.2,
-      "avg_capability_reduction_pct": 4.2,
-      "avg_deviation_from_seasonal_normal_pct": 4.4,
+      "avg_utilization_pct_during": 96.8,
+      "avg_capability_reduction_pct": 3.9,
+      "avg_deviation_from_seasonal_normal_pct": 5.1,
       "n_prior_years_for_seasonal_normal": 1
     }
   ]
