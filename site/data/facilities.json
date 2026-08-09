@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-08T12:27:58+00:00",
+  "generated_at": "2026-08-09T12:30:50+00:00",
   "facilities": [
     {
       "facility": "Wolf Lake A2",
@@ -19,8 +19,8 @@
     },
     {
       "facility": "Otter Lake",
-      "days_active": 31,
-      "total_impact_e3m3d": 1262000.0,
+      "days_active": 32,
+      "total_impact_e3m3d": 1325000.0,
       "zones": [
         "AB/BC",
         "EGAT",
@@ -31,7 +31,7 @@
         "Compressor Station Maintenance"
       ],
       "first_seen": "2025-03-31",
-      "last_seen": "2026-08-06",
+      "last_seen": "2026-08-07",
       "firm_risk_events": 6
     },
     {
@@ -212,6 +212,23 @@
       "firm_risk_events": 0
     },
     {
+      "facility": "Meikle River C",
+      "days_active": 9,
+      "total_impact_e3m3d": 400000.0,
+      "zones": [
+        "AB/BC",
+        "EGAT",
+        "OSDA",
+        "USJR"
+      ],
+      "activity_types": [
+        "Compressor Station Maintenance"
+      ],
+      "first_seen": "2025-09-08",
+      "last_seen": "2026-08-07",
+      "firm_risk_events": 8
+    },
+    {
       "facility": "Nordegg B",
       "days_active": 12,
       "total_impact_e3m3d": 399000.0,
@@ -305,23 +322,6 @@
       "first_seen": "2026-07-18",
       "last_seen": "2026-07-27",
       "firm_risk_events": 0
-    },
-    {
-      "facility": "Meikle River C",
-      "days_active": 8,
-      "total_impact_e3m3d": 337000.0,
-      "zones": [
-        "AB/BC",
-        "EGAT",
-        "OSDA",
-        "USJR"
-      ],
-      "activity_types": [
-        "Compressor Station Maintenance"
-      ],
-      "first_seen": "2025-09-08",
-      "last_seen": "2026-08-06",
-      "firm_risk_events": 8
     },
     {
       "facility": "Pipestone Creek",
@@ -862,6 +862,20 @@
       "firm_risk_events": 0
     },
     {
+      "facility": "Crowsnest A",
+      "days_active": 3,
+      "total_impact_e3m3d": 79000.0,
+      "zones": [
+        "AB/BC"
+      ],
+      "activity_types": [
+        "Compressor Station Maintenance"
+      ],
+      "first_seen": "2026-08-05",
+      "last_seen": "2026-08-07",
+      "firm_risk_events": 1
+    },
+    {
       "facility": "Winchell Lake A2",
       "days_active": 6,
       "total_impact_e3m3d": 78000.0,
@@ -873,20 +887,6 @@
       ],
       "first_seen": "2025-11-08",
       "last_seen": "2025-11-13",
-      "firm_risk_events": 0
-    },
-    {
-      "facility": "NPS 16 Leming Lake Lateral",
-      "days_active": 10,
-      "total_impact_e3m3d": 70000.0,
-      "zones": [
-        "OSDA"
-      ],
-      "activity_types": [
-        "Pipeline Modifications"
-      ],
-      "first_seen": "2025-10-15",
-      "last_seen": "2025-10-24",
       "firm_risk_events": 0
     },
     {
@@ -904,17 +904,31 @@
       "firm_risk_events": 0
     },
     {
-      "facility": "Crowsnest A",
+      "facility": "NPS 16 Leming Lake Lateral",
+      "days_active": 10,
+      "total_impact_e3m3d": 70000.0,
+      "zones": [
+        "OSDA"
+      ],
+      "activity_types": [
+        "Pipeline Modifications"
+      ],
+      "first_seen": "2025-10-15",
+      "last_seen": "2025-10-24",
+      "firm_risk_events": 0
+    },
+    {
+      "facility": "NPS 36 British Columbia Mainline",
       "days_active": 2,
-      "total_impact_e3m3d": 51000.0,
+      "total_impact_e3m3d": 56000.0,
       "zones": [
         "AB/BC"
       ],
       "activity_types": [
-        "Compressor Station Maintenance"
+        "Pipeline Maintenance"
       ],
-      "first_seen": "2026-08-05",
-      "last_seen": "2026-08-06",
+      "first_seen": "2026-08-06",
+      "last_seen": "2026-08-07",
       "firm_risk_events": 1
     },
     {
@@ -1034,20 +1048,6 @@
       "first_seen": "2026-03-16",
       "last_seen": "2026-03-30",
       "firm_risk_events": 0
-    },
-    {
-      "facility": "NPS 36 British Columbia Mainline",
-      "days_active": 1,
-      "total_impact_e3m3d": 28000.0,
-      "zones": [
-        "AB/BC"
-      ],
-      "activity_types": [
-        "Pipeline Maintenance"
-      ],
-      "first_seen": "2026-08-06",
-      "last_seen": "2026-08-06",
-      "firm_risk_events": 1
     },
     {
       "facility": "NPS 36 Foothills Zone 8 Segment 3",
