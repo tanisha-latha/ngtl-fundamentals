@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-09T12:30:50+00:00",
+  "generated_at": "2026-08-10T12:45:24+00:00",
   "facilities": [
     {
       "facility": "Wolf Lake A2",
@@ -19,8 +19,8 @@
     },
     {
       "facility": "Otter Lake",
-      "days_active": 32,
-      "total_impact_e3m3d": 1325000.0,
+      "days_active": 33,
+      "total_impact_e3m3d": 1388000.0,
       "zones": [
         "AB/BC",
         "EGAT",
@@ -31,7 +31,7 @@
         "Compressor Station Maintenance"
       ],
       "first_seen": "2025-03-31",
-      "last_seen": "2026-08-07",
+      "last_seen": "2026-08-08",
       "firm_risk_events": 6
     },
     {
@@ -165,6 +165,23 @@
       "firm_risk_events": 0
     },
     {
+      "facility": "Meikle River C",
+      "days_active": 10,
+      "total_impact_e3m3d": 463000.0,
+      "zones": [
+        "AB/BC",
+        "EGAT",
+        "OSDA",
+        "USJR"
+      ],
+      "activity_types": [
+        "Compressor Station Maintenance"
+      ],
+      "first_seen": "2025-09-08",
+      "last_seen": "2026-08-08",
+      "firm_risk_events": 8
+    },
+    {
       "facility": "Berland River",
       "days_active": 14,
       "total_impact_e3m3d": 456000.0,
@@ -210,23 +227,6 @@
       "first_seen": "2026-03-16",
       "last_seen": "2026-06-20",
       "firm_risk_events": 0
-    },
-    {
-      "facility": "Meikle River C",
-      "days_active": 9,
-      "total_impact_e3m3d": 400000.0,
-      "zones": [
-        "AB/BC",
-        "EGAT",
-        "OSDA",
-        "USJR"
-      ],
-      "activity_types": [
-        "Compressor Station Maintenance"
-      ],
-      "first_seen": "2025-09-08",
-      "last_seen": "2026-08-07",
-      "firm_risk_events": 8
     },
     {
       "facility": "Nordegg B",
@@ -746,6 +746,20 @@
       "firm_risk_events": 0
     },
     {
+      "facility": "Crowsnest A",
+      "days_active": 4,
+      "total_impact_e3m3d": 107000.0,
+      "zones": [
+        "AB/BC"
+      ],
+      "activity_types": [
+        "Compressor Station Maintenance"
+      ],
+      "first_seen": "2026-08-05",
+      "last_seen": "2026-08-08",
+      "firm_risk_events": 1
+    },
+    {
       "facility": "NPS 36 Foothills Zone 8 Segment 4",
       "days_active": 5,
       "total_impact_e3m3d": 105000.0,
@@ -757,6 +771,20 @@
       ],
       "first_seen": "2026-07-20",
       "last_seen": "2026-07-24",
+      "firm_risk_events": 0
+    },
+    {
+      "facility": "Crowsnest",
+      "days_active": 5,
+      "total_impact_e3m3d": 100000.0,
+      "zones": [
+        "AB/BC"
+      ],
+      "activity_types": [
+        "Compressor Station Maintenance"
+      ],
+      "first_seen": "2025-06-09",
+      "last_seen": "2025-06-13",
       "firm_risk_events": 0
     },
     {
@@ -773,20 +801,6 @@
       ],
       "first_seen": "2025-10-07",
       "last_seen": "2025-10-08",
-      "firm_risk_events": 0
-    },
-    {
-      "facility": "Crowsnest",
-      "days_active": 5,
-      "total_impact_e3m3d": 100000.0,
-      "zones": [
-        "AB/BC"
-      ],
-      "activity_types": [
-        "Compressor Station Maintenance"
-      ],
-      "first_seen": "2025-06-09",
-      "last_seen": "2025-06-13",
       "firm_risk_events": 0
     },
     {
@@ -862,17 +876,17 @@
       "firm_risk_events": 0
     },
     {
-      "facility": "Crowsnest A",
+      "facility": "NPS 36 British Columbia Mainline",
       "days_active": 3,
-      "total_impact_e3m3d": 79000.0,
+      "total_impact_e3m3d": 84000.0,
       "zones": [
         "AB/BC"
       ],
       "activity_types": [
-        "Compressor Station Maintenance"
+        "Pipeline Maintenance"
       ],
-      "first_seen": "2026-08-05",
-      "last_seen": "2026-08-07",
+      "first_seen": "2026-08-06",
+      "last_seen": "2026-08-08",
       "firm_risk_events": 1
     },
     {
@@ -916,20 +930,6 @@
       "first_seen": "2025-10-15",
       "last_seen": "2025-10-24",
       "firm_risk_events": 0
-    },
-    {
-      "facility": "NPS 36 British Columbia Mainline",
-      "days_active": 2,
-      "total_impact_e3m3d": 56000.0,
-      "zones": [
-        "AB/BC"
-      ],
-      "activity_types": [
-        "Pipeline Maintenance"
-      ],
-      "first_seen": "2026-08-06",
-      "last_seen": "2026-08-07",
-      "firm_risk_events": 1
     },
     {
       "facility": "NPS 30 Grande Prairie Mainline Loop",
