@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-10T12:45:24+00:00",
+  "generated_at": "2026-08-11T12:42:39+00:00",
   "facilities": [
     {
       "facility": "Wolf Lake A2",
@@ -19,8 +19,8 @@
     },
     {
       "facility": "Otter Lake",
-      "days_active": 33,
-      "total_impact_e3m3d": 1388000.0,
+      "days_active": 34,
+      "total_impact_e3m3d": 1446000.0,
       "zones": [
         "AB/BC",
         "EGAT",
@@ -31,7 +31,7 @@
         "Compressor Station Maintenance"
       ],
       "first_seen": "2025-03-31",
-      "last_seen": "2026-08-08",
+      "last_seen": "2026-08-09",
       "firm_risk_events": 6
     },
     {
@@ -658,6 +658,20 @@
       "firm_risk_events": 0
     },
     {
+      "facility": "Crowsnest A",
+      "days_active": 5,
+      "total_impact_e3m3d": 135000.0,
+      "zones": [
+        "AB/BC"
+      ],
+      "activity_types": [
+        "Compressor Station Maintenance"
+      ],
+      "first_seen": "2026-08-05",
+      "last_seen": "2026-08-09",
+      "firm_risk_events": 1
+    },
+    {
       "facility": "Jenner",
       "days_active": 14,
       "total_impact_e3m3d": 134000.0,
@@ -718,6 +732,20 @@
       "firm_risk_events": 0
     },
     {
+      "facility": "NPS 36 British Columbia Mainline",
+      "days_active": 4,
+      "total_impact_e3m3d": 112000.0,
+      "zones": [
+        "AB/BC"
+      ],
+      "activity_types": [
+        "Pipeline Maintenance"
+      ],
+      "first_seen": "2026-08-06",
+      "last_seen": "2026-08-09",
+      "firm_risk_events": 1
+    },
+    {
       "facility": "Turner Valley A1 & A2",
       "days_active": 7,
       "total_impact_e3m3d": 112000.0,
@@ -744,20 +772,6 @@
       "first_seen": "2025-11-25",
       "last_seen": "2025-12-05",
       "firm_risk_events": 0
-    },
-    {
-      "facility": "Crowsnest A",
-      "days_active": 4,
-      "total_impact_e3m3d": 107000.0,
-      "zones": [
-        "AB/BC"
-      ],
-      "activity_types": [
-        "Compressor Station Maintenance"
-      ],
-      "first_seen": "2026-08-05",
-      "last_seen": "2026-08-08",
-      "firm_risk_events": 1
     },
     {
       "facility": "NPS 36 Foothills Zone 8 Segment 4",
@@ -874,20 +888,6 @@
       "first_seen": "2026-06-15",
       "last_seen": "2026-06-19",
       "firm_risk_events": 0
-    },
-    {
-      "facility": "NPS 36 British Columbia Mainline",
-      "days_active": 3,
-      "total_impact_e3m3d": 84000.0,
-      "zones": [
-        "AB/BC"
-      ],
-      "activity_types": [
-        "Pipeline Maintenance"
-      ],
-      "first_seen": "2026-08-06",
-      "last_seen": "2026-08-08",
-      "firm_risk_events": 1
     },
     {
       "facility": "Winchell Lake A2",
