@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-12T12:45:51+00:00",
+  "generated_at": "2026-08-13T12:47:20+00:00",
   "facilities": [
     {
       "facility": "Wolf Lake A2",
@@ -19,8 +19,8 @@
     },
     {
       "facility": "Otter Lake",
-      "days_active": 35,
-      "total_impact_e3m3d": 1499000.0,
+      "days_active": 36,
+      "total_impact_e3m3d": 1552000.0,
       "zones": [
         "AB/BC",
         "EGAT",
@@ -31,7 +31,7 @@
         "Compressor Station Maintenance"
       ],
       "first_seen": "2025-03-31",
-      "last_seen": "2026-08-10",
+      "last_seen": "2026-08-11",
       "firm_risk_events": 6
     },
     {
@@ -536,6 +536,20 @@
       "firm_risk_events": 0
     },
     {
+      "facility": "Crowsnest A",
+      "days_active": 7,
+      "total_impact_e3m3d": 181000.0,
+      "zones": [
+        "AB/BC"
+      ],
+      "activity_types": [
+        "Compressor Station Maintenance"
+      ],
+      "first_seen": "2026-08-05",
+      "last_seen": "2026-08-11",
+      "firm_risk_events": 1
+    },
+    {
       "facility": "Beiseker B3",
       "days_active": 11,
       "total_impact_e3m3d": 171000.0,
@@ -594,20 +608,6 @@
       "first_seen": "2025-03-31",
       "last_seen": "2025-04-04",
       "firm_risk_events": 0
-    },
-    {
-      "facility": "Crowsnest A",
-      "days_active": 6,
-      "total_impact_e3m3d": 158000.0,
-      "zones": [
-        "AB/BC"
-      ],
-      "activity_types": [
-        "Compressor Station Maintenance"
-      ],
-      "first_seen": "2026-08-05",
-      "last_seen": "2026-08-10",
-      "firm_risk_events": 1
     },
     {
       "facility": "NPS 36 Western Alberta Mainline Extension",

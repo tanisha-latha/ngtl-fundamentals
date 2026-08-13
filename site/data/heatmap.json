@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-12T12:45:51+00:00",
+  "generated_at": "2026-08-13T12:47:20+00:00",
   "zones": [
     "AB/BC",
     "EGAT",
@@ -8,7 +8,7 @@
   ],
   "date_range": {
     "start": "2025-01-30",
-    "end": "2026-08-10"
+    "end": "2026-08-11"
   },
   "cells": [
     {
@@ -27493,6 +27493,59 @@
       "deviation_from_seasonal_normal_pct": 7.0,
       "n_prior_years": 1,
       "actual_flow_e3m3d": 87000.0,
+      "effective_capability_e3m3d": 90000.0,
+      "facilities": [
+        "Otter Lake"
+      ]
+    },
+    {
+      "zone": "USJR",
+      "gas_day": "2026-08-11",
+      "utilization_pct": 98.6,
+      "outage_adjusted": true,
+      "deviation_from_seasonal_normal_pct": 6.9,
+      "n_prior_years": 1,
+      "actual_flow_e3m3d": 361000.0,
+      "effective_capability_e3m3d": 366000.0,
+      "facilities": [
+        "Otter Lake"
+      ]
+    },
+    {
+      "zone": "AB/BC",
+      "gas_day": "2026-08-11",
+      "utilization_pct": 96.9,
+      "outage_adjusted": true,
+      "deviation_from_seasonal_normal_pct": 13.3,
+      "n_prior_years": 1,
+      "actual_flow_e3m3d": 63000.0,
+      "effective_capability_e3m3d": 65000.0,
+      "facilities": [
+        "Crowsnest A",
+        "Otter Lake"
+      ]
+    },
+    {
+      "zone": "EGAT",
+      "gas_day": "2026-08-11",
+      "utilization_pct": 104.1,
+      "outage_adjusted": true,
+      "deviation_from_seasonal_normal_pct": 4.0,
+      "n_prior_years": 1,
+      "actual_flow_e3m3d": 154000.0,
+      "effective_capability_e3m3d": 148000.0,
+      "facilities": [
+        "Otter Lake"
+      ]
+    },
+    {
+      "zone": "OSDA",
+      "gas_day": "2026-08-11",
+      "utilization_pct": 97.8,
+      "outage_adjusted": true,
+      "deviation_from_seasonal_normal_pct": 8.1,
+      "n_prior_years": 1,
+      "actual_flow_e3m3d": 88000.0,
       "effective_capability_e3m3d": 90000.0,
       "facilities": [
         "Otter Lake"
