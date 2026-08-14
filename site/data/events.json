@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-13T12:47:20+00:00",
+  "generated_at": "2026-08-14T12:43:08+00:00",
   "events": [
     {
       "facility": "Otter Lake",
@@ -7,9 +7,9 @@
       "zone": "AB/BC",
       "start_date": "2026-08-05",
       "end_date": "2026-08-12",
-      "avg_utilization_pct_during": 92.0,
-      "avg_capability_reduction_pct": 29.4,
-      "avg_deviation_from_seasonal_normal_pct": 8.4,
+      "avg_utilization_pct_during": 94.7,
+      "avg_capability_reduction_pct": 29.0,
+      "avg_deviation_from_seasonal_normal_pct": 11.2,
       "n_prior_years_for_seasonal_normal": 1
     },
     {
@@ -40,9 +40,9 @@
       "zone": "OSDA",
       "start_date": "2026-08-05",
       "end_date": "2026-08-12",
-      "avg_utilization_pct_during": 98.6,
-      "avg_capability_reduction_pct": 7.6,
-      "avg_deviation_from_seasonal_normal_pct": 8.9,
+      "avg_utilization_pct_during": 98.5,
+      "avg_capability_reduction_pct": 7.4,
+      "avg_deviation_from_seasonal_normal_pct": 8.8,
       "n_prior_years_for_seasonal_normal": 1
     },
     {
@@ -51,9 +51,9 @@
       "zone": "EGAT",
       "start_date": "2026-08-05",
       "end_date": "2026-08-12",
-      "avg_utilization_pct_during": 104.6,
+      "avg_utilization_pct_during": 104.3,
       "avg_capability_reduction_pct": 6.3,
-      "avg_deviation_from_seasonal_normal_pct": 4.6,
+      "avg_deviation_from_seasonal_normal_pct": 4.2,
       "n_prior_years_for_seasonal_normal": 1
     },
     {
@@ -95,9 +95,9 @@
       "zone": "USJR",
       "start_date": "2026-08-05",
       "end_date": "2026-08-12",
-      "avg_utilization_pct_during": 97.4,
+      "avg_utilization_pct_during": 97.6,
       "avg_capability_reduction_pct": 3.9,
-      "avg_deviation_from_seasonal_normal_pct": 5.6,
+      "avg_deviation_from_seasonal_normal_pct": 5.9,
       "n_prior_years_for_seasonal_normal": 1
     }
   ]
