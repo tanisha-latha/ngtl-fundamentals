@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-14T12:43:08+00:00",
+  "generated_at": "2026-08-15T12:19:17+00:00",
   "facilities": [
     {
       "facility": "Wolf Lake A2",
@@ -19,8 +19,8 @@
     },
     {
       "facility": "Otter Lake",
-      "days_active": 37,
-      "total_impact_e3m3d": 1605000.0,
+      "days_active": 38,
+      "total_impact_e3m3d": 1636000.0,
       "zones": [
         "AB/BC",
         "EGAT",
@@ -31,7 +31,7 @@
         "Compressor Station Maintenance"
       ],
       "first_seen": "2025-03-31",
-      "last_seen": "2026-08-12",
+      "last_seen": "2026-08-13",
       "firm_risk_events": 6
     },
     {
