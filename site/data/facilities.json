@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-16T12:19:37+00:00",
+  "generated_at": "2026-08-17T12:23:50+00:00",
   "facilities": [
     {
       "facility": "Wolf Lake A2",
@@ -149,6 +149,23 @@
       "firm_risk_events": 0
     },
     {
+      "facility": "Meikle River C",
+      "days_active": 11,
+      "total_impact_e3m3d": 499000.0,
+      "zones": [
+        "AB/BC",
+        "EGAT",
+        "OSDA",
+        "USJR"
+      ],
+      "activity_types": [
+        "Compressor Station Maintenance"
+      ],
+      "first_seen": "2025-09-08",
+      "last_seen": "2026-08-15",
+      "firm_risk_events": 8
+    },
+    {
       "facility": "Berland River B2",
       "days_active": 14,
       "total_impact_e3m3d": 475000.0,
@@ -163,23 +180,6 @@
       "first_seen": "2025-11-10",
       "last_seen": "2025-11-23",
       "firm_risk_events": 0
-    },
-    {
-      "facility": "Meikle River C",
-      "days_active": 10,
-      "total_impact_e3m3d": 463000.0,
-      "zones": [
-        "AB/BC",
-        "EGAT",
-        "OSDA",
-        "USJR"
-      ],
-      "activity_types": [
-        "Compressor Station Maintenance"
-      ],
-      "first_seen": "2025-09-08",
-      "last_seen": "2026-08-08",
-      "firm_risk_events": 8
     },
     {
       "facility": "Berland River",

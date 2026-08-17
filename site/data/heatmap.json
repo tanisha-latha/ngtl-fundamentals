@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-16T12:19:37+00:00",
+  "generated_at": "2026-08-17T12:23:50+00:00",
   "zones": [
     "AB/BC",
     "EGAT",
@@ -8,7 +8,7 @@
   ],
   "date_range": {
     "start": "2025-01-30",
-    "end": "2026-08-14"
+    "end": "2026-08-15"
   },
   "cells": [
     {
@@ -27706,6 +27706,58 @@
       "effective_capability_e3m3d": 90000.0,
       "facilities": [
         "Otter Lake"
+      ]
+    },
+    {
+      "zone": "USJR",
+      "gas_day": "2026-08-15",
+      "utilization_pct": 98.9,
+      "outage_adjusted": true,
+      "deviation_from_seasonal_normal_pct": 7.1,
+      "n_prior_years": 1,
+      "actual_flow_e3m3d": 360000.0,
+      "effective_capability_e3m3d": 364000.0,
+      "facilities": [
+        "Meikle River C"
+      ]
+    },
+    {
+      "zone": "AB/BC",
+      "gas_day": "2026-08-15",
+      "utilization_pct": 66.7,
+      "outage_adjusted": true,
+      "deviation_from_seasonal_normal_pct": -16.9,
+      "n_prior_years": 1,
+      "actual_flow_e3m3d": 58000.0,
+      "effective_capability_e3m3d": 87000.0,
+      "facilities": [
+        "Meikle River C"
+      ]
+    },
+    {
+      "zone": "EGAT",
+      "gas_day": "2026-08-15",
+      "utilization_pct": 104.1,
+      "outage_adjusted": true,
+      "deviation_from_seasonal_normal_pct": 4.0,
+      "n_prior_years": 1,
+      "actual_flow_e3m3d": 154000.0,
+      "effective_capability_e3m3d": 148000.0,
+      "facilities": [
+        "Meikle River C"
+      ]
+    },
+    {
+      "zone": "OSDA",
+      "gas_day": "2026-08-15",
+      "utilization_pct": 100.0,
+      "outage_adjusted": true,
+      "deviation_from_seasonal_normal_pct": 10.3,
+      "n_prior_years": 1,
+      "actual_flow_e3m3d": 87000.0,
+      "effective_capability_e3m3d": 87000.0,
+      "facilities": [
+        "Meikle River C"
       ]
     }
   ]
