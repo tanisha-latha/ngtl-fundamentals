@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-17T12:23:50+00:00",
+  "generated_at": "2026-08-18T12:25:44+00:00",
   "events": [
     {
       "facility": "Otter Lake",
@@ -98,6 +98,17 @@
       "avg_utilization_pct_during": 97.6,
       "avg_capability_reduction_pct": 3.9,
       "avg_deviation_from_seasonal_normal_pct": 5.9,
+      "n_prior_years_for_seasonal_normal": 1
+    },
+    {
+      "facility": "Burton Creek A3",
+      "activity_type": "Compressor Station Maintenance",
+      "zone": "AB/BC",
+      "start_date": "2026-08-16",
+      "end_date": "2026-08-21",
+      "avg_utilization_pct_during": 67.8,
+      "avg_capability_reduction_pct": 1.1,
+      "avg_deviation_from_seasonal_normal_pct": -15.8,
       "n_prior_years_for_seasonal_normal": 1
     }
   ]

@@ -101,6 +101,12 @@
       "month": 5,
       "avg_utilization_pct": 87.19470043521602,
       "price_gj": 1.16
+    },
+    {
+      "year": 2026,
+      "month": 6,
+      "avg_utilization_pct": 89.22612154824022,
+      "price_gj": 1.37
     }
   ],
   "by_zone_monthly": [
@@ -224,6 +230,13 @@
       "price_gj": 1.16
     },
     {
+      "zone": "AB/BC",
+      "year": 2026,
+      "month": 6,
+      "avg_utilization_pct": 72.6858668044255,
+      "price_gj": 1.37
+    },
+    {
       "zone": "EGAT",
       "year": 2025,
       "month": 1,
@@ -341,6 +354,13 @@
       "month": 5,
       "avg_utilization_pct": 111.92102713102257,
       "price_gj": 1.16
+    },
+    {
+      "zone": "EGAT",
+      "year": 2026,
+      "month": 6,
+      "avg_utilization_pct": 103.64023798341375,
+      "price_gj": 1.37
     },
     {
       "zone": "OSDA",
@@ -462,6 +482,13 @@
       "price_gj": 1.16
     },
     {
+      "zone": "OSDA",
+      "year": 2026,
+      "month": 6,
+      "avg_utilization_pct": 89.0871235091975,
+      "price_gj": 1.37
+    },
+    {
       "zone": "USJR",
       "year": 2025,
       "month": 1,
@@ -579,12 +606,19 @@
       "month": 5,
       "avg_utilization_pct": 90.56084964409736,
       "price_gj": 1.16
+    },
+    {
+      "zone": "USJR",
+      "year": 2026,
+      "month": 6,
+      "avg_utilization_pct": 91.49125789592414,
+      "price_gj": 1.37
     }
   ],
-  "correlation": 0.676,
-  "n_months": 17,
+  "correlation": 0.664,
+  "n_months": 18,
   "statistically_meaningful": false,
   "min_meaningful_months": 24,
   "note": "Correlation is shown with n = number of months with both a utilization average and a published AER reference price. With n below 24 (two years), this is not statistically meaningful and should be read as directional at most.",
-  "generated_at": "2026-08-17T12:23:50+00:00"
+  "generated_at": "2026-08-18T12:25:44+00:00"
 }

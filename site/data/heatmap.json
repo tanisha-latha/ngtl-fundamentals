@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-17T12:23:50+00:00",
+  "generated_at": "2026-08-18T12:25:44+00:00",
   "zones": [
     "AB/BC",
     "EGAT",
@@ -8,7 +8,7 @@
   ],
   "date_range": {
     "start": "2025-01-30",
-    "end": "2026-08-15"
+    "end": "2026-08-16"
   },
   "cells": [
     {
@@ -27750,6 +27750,58 @@
     {
       "zone": "OSDA",
       "gas_day": "2026-08-15",
+      "utilization_pct": 100.0,
+      "outage_adjusted": true,
+      "deviation_from_seasonal_normal_pct": 10.3,
+      "n_prior_years": 1,
+      "actual_flow_e3m3d": 87000.0,
+      "effective_capability_e3m3d": 87000.0,
+      "facilities": [
+        "Meikle River C"
+      ]
+    },
+    {
+      "zone": "USJR",
+      "gas_day": "2026-08-16",
+      "utilization_pct": 95.9,
+      "outage_adjusted": true,
+      "deviation_from_seasonal_normal_pct": 4.1,
+      "n_prior_years": 1,
+      "actual_flow_e3m3d": 349000.0,
+      "effective_capability_e3m3d": 364000.0,
+      "facilities": [
+        "Meikle River C"
+      ]
+    },
+    {
+      "zone": "AB/BC",
+      "gas_day": "2026-08-16",
+      "utilization_pct": 67.8,
+      "outage_adjusted": true,
+      "deviation_from_seasonal_normal_pct": -15.8,
+      "n_prior_years": 1,
+      "actual_flow_e3m3d": 59000.0,
+      "effective_capability_e3m3d": 87000.0,
+      "facilities": [
+        "Meikle River C"
+      ]
+    },
+    {
+      "zone": "EGAT",
+      "gas_day": "2026-08-16",
+      "utilization_pct": 104.7,
+      "outage_adjusted": true,
+      "deviation_from_seasonal_normal_pct": 4.7,
+      "n_prior_years": 1,
+      "actual_flow_e3m3d": 155000.0,
+      "effective_capability_e3m3d": 148000.0,
+      "facilities": [
+        "Meikle River C"
+      ]
+    },
+    {
+      "zone": "OSDA",
+      "gas_day": "2026-08-16",
       "utilization_pct": 100.0,
       "outage_adjusted": true,
       "deviation_from_seasonal_normal_pct": 10.3,
