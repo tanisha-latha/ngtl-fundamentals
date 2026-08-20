@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-19T12:25:33+00:00",
+  "generated_at": "2026-08-20T12:28:05+00:00",
   "zones": [
     "AB/BC",
     "EGAT",
@@ -8,7 +8,7 @@
   ],
   "date_range": {
     "start": "2025-01-30",
-    "end": "2026-08-17"
+    "end": "2026-08-18"
   },
   "cells": [
     {
@@ -27854,6 +27854,59 @@
     {
       "zone": "OSDA",
       "gas_day": "2026-08-17",
+      "utilization_pct": 98.9,
+      "outage_adjusted": true,
+      "deviation_from_seasonal_normal_pct": 9.2,
+      "n_prior_years": 1,
+      "actual_flow_e3m3d": 86000.0,
+      "effective_capability_e3m3d": 87000.0,
+      "facilities": [
+        "Meikle River C"
+      ]
+    },
+    {
+      "zone": "USJR",
+      "gas_day": "2026-08-18",
+      "utilization_pct": 97.8,
+      "outage_adjusted": true,
+      "deviation_from_seasonal_normal_pct": 6.0,
+      "n_prior_years": 1,
+      "actual_flow_e3m3d": 356000.0,
+      "effective_capability_e3m3d": 364000.0,
+      "facilities": [
+        "Meikle River C"
+      ]
+    },
+    {
+      "zone": "AB/BC",
+      "gas_day": "2026-08-18",
+      "utilization_pct": 68.4,
+      "outage_adjusted": true,
+      "deviation_from_seasonal_normal_pct": -15.2,
+      "n_prior_years": 1,
+      "actual_flow_e3m3d": 52000.0,
+      "effective_capability_e3m3d": 76000.0,
+      "facilities": [
+        "Burton Creek A3",
+        "Meikle River C"
+      ]
+    },
+    {
+      "zone": "EGAT",
+      "gas_day": "2026-08-18",
+      "utilization_pct": 100.7,
+      "outage_adjusted": true,
+      "deviation_from_seasonal_normal_pct": 0.6,
+      "n_prior_years": 1,
+      "actual_flow_e3m3d": 149000.0,
+      "effective_capability_e3m3d": 148000.0,
+      "facilities": [
+        "Meikle River C"
+      ]
+    },
+    {
+      "zone": "OSDA",
+      "gas_day": "2026-08-18",
       "utilization_pct": 98.9,
       "outage_adjusted": true,
       "deviation_from_seasonal_normal_pct": 9.2,
