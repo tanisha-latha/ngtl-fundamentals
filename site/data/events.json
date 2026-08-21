@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-20T12:28:05+00:00",
+  "generated_at": "2026-08-21T12:27:37+00:00",
   "events": [
     {
       "facility": "Otter Lake",
@@ -24,6 +24,17 @@
       "n_prior_years_for_seasonal_normal": 1
     },
     {
+      "facility": "Latornell A1",
+      "activity_type": "Compressor Station Maintenance",
+      "zone": "AB/BC",
+      "start_date": "2026-08-17",
+      "end_date": "2026-08-21",
+      "avg_utilization_pct_during": 65.5,
+      "avg_capability_reduction_pct": 9.5,
+      "avg_deviation_from_seasonal_normal_pct": -18.0,
+      "n_prior_years_for_seasonal_normal": 1
+    },
+    {
       "facility": "Meikle River C",
       "activity_type": "Compressor Station Maintenance",
       "zone": "OSDA",
@@ -35,14 +46,14 @@
       "n_prior_years_for_seasonal_normal": 1
     },
     {
-      "facility": "Latornell A1",
+      "facility": "Burton Creek A3",
       "activity_type": "Compressor Station Maintenance",
       "zone": "AB/BC",
-      "start_date": "2026-08-17",
+      "start_date": "2026-08-16",
       "end_date": "2026-08-21",
-      "avg_utilization_pct_during": 64.1,
+      "avg_utilization_pct_during": 66.1,
       "avg_capability_reduction_pct": 7.4,
-      "avg_deviation_from_seasonal_normal_pct": -19.5,
+      "avg_deviation_from_seasonal_normal_pct": -17.5,
       "n_prior_years_for_seasonal_normal": 1
     },
     {
@@ -57,6 +68,17 @@
       "n_prior_years_for_seasonal_normal": 1
     },
     {
+      "facility": "Latornell A1",
+      "activity_type": "Compressor Station Maintenance",
+      "zone": "EGAT",
+      "start_date": "2026-08-17",
+      "end_date": "2026-08-21",
+      "avg_utilization_pct_during": 100.3,
+      "avg_capability_reduction_pct": 6.3,
+      "avg_deviation_from_seasonal_normal_pct": 0.2,
+      "n_prior_years_for_seasonal_normal": 1
+    },
+    {
       "facility": "Otter Lake",
       "activity_type": "Compressor Station Maintenance",
       "zone": "EGAT",
@@ -65,17 +87,6 @@
       "avg_utilization_pct_during": 104.3,
       "avg_capability_reduction_pct": 6.3,
       "avg_deviation_from_seasonal_normal_pct": 4.2,
-      "n_prior_years_for_seasonal_normal": 1
-    },
-    {
-      "facility": "Latornell A1",
-      "activity_type": "Compressor Station Maintenance",
-      "zone": "EGAT",
-      "start_date": "2026-08-17",
-      "end_date": "2026-08-21",
-      "avg_utilization_pct_during": 101.4,
-      "avg_capability_reduction_pct": 6.3,
-      "avg_deviation_from_seasonal_normal_pct": 1.3,
       "n_prior_years_for_seasonal_normal": 1
     },
     {
@@ -101,25 +112,14 @@
       "n_prior_years_for_seasonal_normal": 1
     },
     {
-      "facility": "Burton Creek A3",
-      "activity_type": "Compressor Station Maintenance",
-      "zone": "AB/BC",
-      "start_date": "2026-08-16",
-      "end_date": "2026-08-21",
-      "avg_utilization_pct_during": 65.3,
-      "avg_capability_reduction_pct": 5.3,
-      "avg_deviation_from_seasonal_normal_pct": -18.2,
-      "n_prior_years_for_seasonal_normal": 1
-    },
-    {
       "facility": "Latornell A1",
       "activity_type": "Compressor Station Maintenance",
       "zone": "USJR",
       "start_date": "2026-08-17",
       "end_date": "2026-08-21",
-      "avg_utilization_pct_during": 96.3,
+      "avg_utilization_pct_during": 94.9,
       "avg_capability_reduction_pct": 4.2,
-      "avg_deviation_from_seasonal_normal_pct": 4.5,
+      "avg_deviation_from_seasonal_normal_pct": 3.1,
       "n_prior_years_for_seasonal_normal": 1
     },
     {

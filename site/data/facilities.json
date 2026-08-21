@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-20T12:28:05+00:00",
+  "generated_at": "2026-08-21T12:27:37+00:00",
   "facilities": [
     {
       "facility": "Wolf Lake A2",
@@ -933,8 +933,8 @@
     },
     {
       "facility": "Burton Creek A3",
-      "days_active": 4,
-      "total_impact_e3m3d": 54000.0,
+      "days_active": 5,
+      "total_impact_e3m3d": 66000.0,
       "zones": [
         "AB/BC"
       ],
@@ -942,7 +942,7 @@
         "Compressor Station Maintenance"
       ],
       "first_seen": "2025-11-25",
-      "last_seen": "2026-08-18",
+      "last_seen": "2026-08-19",
       "firm_risk_events": 1
     },
     {
