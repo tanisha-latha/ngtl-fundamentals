@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-25T12:29:03+00:00",
+  "generated_at": "2026-08-26T12:31:57+00:00",
   "events": [
     {
       "facility": "Otter Lake",
@@ -68,6 +68,17 @@
       "n_prior_years_for_seasonal_normal": 1
     },
     {
+      "facility": "Goodfish",
+      "activity_type": "Compressor Station Maintenance",
+      "zone": "OSDA",
+      "start_date": "2026-08-24",
+      "end_date": "2026-08-28",
+      "avg_utilization_pct_during": 94.4,
+      "avg_capability_reduction_pct": 7.3,
+      "avg_deviation_from_seasonal_normal_pct": 4.7,
+      "n_prior_years_for_seasonal_normal": 1
+    },
+    {
       "facility": "Latornell A1",
       "activity_type": "Compressor Station Maintenance",
       "zone": "EGAT",
@@ -76,6 +87,17 @@
       "avg_utilization_pct_during": 100.2,
       "avg_capability_reduction_pct": 6.3,
       "avg_deviation_from_seasonal_normal_pct": 0.1,
+      "n_prior_years_for_seasonal_normal": 1
+    },
+    {
+      "facility": "Meikle River C",
+      "activity_type": "Compressor Station Maintenance",
+      "zone": "EGAT",
+      "start_date": "2026-08-04",
+      "end_date": "2026-08-08",
+      "avg_utilization_pct_during": 104.6,
+      "avg_capability_reduction_pct": 6.3,
+      "avg_deviation_from_seasonal_normal_pct": 4.5,
       "n_prior_years_for_seasonal_normal": 1
     },
     {
@@ -90,14 +112,14 @@
       "n_prior_years_for_seasonal_normal": 1
     },
     {
-      "facility": "Meikle River C",
+      "facility": "Goodfish",
       "activity_type": "Compressor Station Maintenance",
       "zone": "EGAT",
-      "start_date": "2026-08-04",
-      "end_date": "2026-08-08",
-      "avg_utilization_pct_during": 104.6,
+      "start_date": "2026-08-24",
+      "end_date": "2026-08-28",
+      "avg_utilization_pct_during": 110.8,
       "avg_capability_reduction_pct": 6.3,
-      "avg_deviation_from_seasonal_normal_pct": 4.5,
+      "avg_deviation_from_seasonal_normal_pct": 10.7,
       "n_prior_years_for_seasonal_normal": 1
     },
     {
@@ -142,6 +164,28 @@
       "avg_utilization_pct_during": 97.6,
       "avg_capability_reduction_pct": 3.9,
       "avg_deviation_from_seasonal_normal_pct": 5.9,
+      "n_prior_years_for_seasonal_normal": 1
+    },
+    {
+      "facility": "Goodfish",
+      "activity_type": "Compressor Station Maintenance",
+      "zone": "USJR",
+      "start_date": "2026-08-24",
+      "end_date": "2026-08-28",
+      "avg_utilization_pct_during": 95.9,
+      "avg_capability_reduction_pct": 3.2,
+      "avg_deviation_from_seasonal_normal_pct": 4.1,
+      "n_prior_years_for_seasonal_normal": 1
+    },
+    {
+      "facility": "Goodfish",
+      "activity_type": "Compressor Station Maintenance",
+      "zone": "AB/BC",
+      "start_date": "2026-08-24",
+      "end_date": "2026-08-28",
+      "avg_utilization_pct_during": 59.8,
+      "avg_capability_reduction_pct": 1.1,
+      "avg_deviation_from_seasonal_normal_pct": -23.8,
       "n_prior_years_for_seasonal_normal": 1
     }
   ]

@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-25T12:29:03+00:00",
+  "generated_at": "2026-08-26T12:31:57+00:00",
   "zones": [
     "AB/BC",
     "EGAT",
@@ -8,7 +8,7 @@
   ],
   "date_range": {
     "start": "2025-01-30",
-    "end": "2026-08-23"
+    "end": "2026-08-24"
   },
   "cells": [
     {
@@ -28138,6 +28138,58 @@
       "actual_flow_e3m3d": 84000.0,
       "effective_capability_e3m3d": 96000.0,
       "facilities": []
+    },
+    {
+      "zone": "USJR",
+      "gas_day": "2026-08-24",
+      "utilization_pct": 95.9,
+      "outage_adjusted": true,
+      "deviation_from_seasonal_normal_pct": 4.1,
+      "n_prior_years": 1,
+      "actual_flow_e3m3d": 353000.0,
+      "effective_capability_e3m3d": 368000.0,
+      "facilities": [
+        "Goodfish"
+      ]
+    },
+    {
+      "zone": "AB/BC",
+      "gas_day": "2026-08-24",
+      "utilization_pct": 59.8,
+      "outage_adjusted": true,
+      "deviation_from_seasonal_normal_pct": -23.8,
+      "n_prior_years": 1,
+      "actual_flow_e3m3d": 52000.0,
+      "effective_capability_e3m3d": 87000.0,
+      "facilities": [
+        "Goodfish"
+      ]
+    },
+    {
+      "zone": "EGAT",
+      "gas_day": "2026-08-24",
+      "utilization_pct": 110.8,
+      "outage_adjusted": true,
+      "deviation_from_seasonal_normal_pct": 10.7,
+      "n_prior_years": 1,
+      "actual_flow_e3m3d": 164000.0,
+      "effective_capability_e3m3d": 148000.0,
+      "facilities": [
+        "Goodfish"
+      ]
+    },
+    {
+      "zone": "OSDA",
+      "gas_day": "2026-08-24",
+      "utilization_pct": 94.4,
+      "outage_adjusted": true,
+      "deviation_from_seasonal_normal_pct": 4.7,
+      "n_prior_years": 1,
+      "actual_flow_e3m3d": 84000.0,
+      "effective_capability_e3m3d": 89000.0,
+      "facilities": [
+        "Goodfish"
+      ]
     }
   ]
 }
