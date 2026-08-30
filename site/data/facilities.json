@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-29T15:57:06+00:00",
+  "generated_at": "2026-08-30T15:44:35+00:00",
   "facilities": [
     {
       "facility": "Wolf Lake A2",
@@ -388,6 +388,23 @@
       "firm_risk_events": 0
     },
     {
+      "facility": "Goodfish",
+      "days_active": 11,
+      "total_impact_e3m3d": 246000.0,
+      "zones": [
+        "AB/BC",
+        "EGAT",
+        "OSDA",
+        "USJR"
+      ],
+      "activity_types": [
+        "Compressor Station Maintenance"
+      ],
+      "first_seen": "2025-04-06",
+      "last_seen": "2026-08-28",
+      "firm_risk_events": 3
+    },
+    {
       "facility": "Crawling Valley",
       "days_active": 21,
       "total_impact_e3m3d": 238000.0,
@@ -399,6 +416,22 @@
       ],
       "first_seen": "2025-06-02",
       "last_seen": "2026-07-17",
+      "firm_risk_events": 0
+    },
+    {
+      "facility": "Emerson Creek A1",
+      "days_active": 17,
+      "total_impact_e3m3d": 236000.0,
+      "zones": [
+        "AB/BC",
+        "EGAT",
+        "USJR"
+      ],
+      "activity_types": [
+        "Compressor Station Maintenance"
+      ],
+      "first_seen": "2025-12-15",
+      "last_seen": "2026-07-12",
       "firm_risk_events": 0
     },
     {
@@ -416,22 +449,6 @@
       "first_seen": "2025-08-11",
       "last_seen": "2025-08-15",
       "firm_risk_events": 2
-    },
-    {
-      "facility": "Emerson Creek A1",
-      "days_active": 17,
-      "total_impact_e3m3d": 236000.0,
-      "zones": [
-        "AB/BC",
-        "EGAT",
-        "USJR"
-      ],
-      "activity_types": [
-        "Compressor Station Maintenance"
-      ],
-      "first_seen": "2025-12-15",
-      "last_seen": "2026-07-12",
-      "firm_risk_events": 0
     },
     {
       "facility": "Burton Creek",
@@ -474,23 +491,6 @@
       "first_seen": "2025-06-23",
       "last_seen": "2026-04-24",
       "firm_risk_events": 0
-    },
-    {
-      "facility": "Goodfish",
-      "days_active": 10,
-      "total_impact_e3m3d": 216000.0,
-      "zones": [
-        "AB/BC",
-        "EGAT",
-        "OSDA",
-        "USJR"
-      ],
-      "activity_types": [
-        "Compressor Station Maintenance"
-      ],
-      "first_seen": "2025-04-06",
-      "last_seen": "2026-08-27",
-      "firm_risk_events": 3
     },
     {
       "facility": "NPS 42 Foothills Pipeline Zone 6",
