@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-30T15:44:35+00:00",
+  "generated_at": "2026-08-31T18:27:53+00:00",
   "events": [
     {
       "facility": "Otter Lake",
@@ -79,6 +79,28 @@
       "n_prior_years_for_seasonal_normal": 1
     },
     {
+      "facility": "Goodfish",
+      "activity_type": "Compressor Station Maintenance",
+      "zone": "EGAT",
+      "start_date": "2026-08-24",
+      "end_date": "2026-08-28",
+      "avg_utilization_pct_during": 104.9,
+      "avg_capability_reduction_pct": 6.3,
+      "avg_deviation_from_seasonal_normal_pct": 4.8,
+      "n_prior_years_for_seasonal_normal": 1
+    },
+    {
+      "facility": "Otter Lake",
+      "activity_type": "Compressor Station Maintenance",
+      "zone": "EGAT",
+      "start_date": "2026-08-05",
+      "end_date": "2026-08-12",
+      "avg_utilization_pct_during": 104.3,
+      "avg_capability_reduction_pct": 6.3,
+      "avg_deviation_from_seasonal_normal_pct": 4.2,
+      "n_prior_years_for_seasonal_normal": 1
+    },
+    {
       "facility": "Latornell A1",
       "activity_type": "Compressor Station Maintenance",
       "zone": "EGAT",
@@ -98,28 +120,6 @@
       "avg_utilization_pct_during": 104.6,
       "avg_capability_reduction_pct": 6.3,
       "avg_deviation_from_seasonal_normal_pct": 4.5,
-      "n_prior_years_for_seasonal_normal": 1
-    },
-    {
-      "facility": "Otter Lake",
-      "activity_type": "Compressor Station Maintenance",
-      "zone": "EGAT",
-      "start_date": "2026-08-05",
-      "end_date": "2026-08-12",
-      "avg_utilization_pct_during": 104.3,
-      "avg_capability_reduction_pct": 6.3,
-      "avg_deviation_from_seasonal_normal_pct": 4.2,
-      "n_prior_years_for_seasonal_normal": 1
-    },
-    {
-      "facility": "Goodfish",
-      "activity_type": "Compressor Station Maintenance",
-      "zone": "EGAT",
-      "start_date": "2026-08-24",
-      "end_date": "2026-08-28",
-      "avg_utilization_pct_during": 104.9,
-      "avg_capability_reduction_pct": 6.3,
-      "avg_deviation_from_seasonal_normal_pct": 4.8,
       "n_prior_years_for_seasonal_normal": 1
     },
     {
@@ -175,6 +175,17 @@
       "avg_utilization_pct_during": 95.4,
       "avg_capability_reduction_pct": 3.2,
       "avg_deviation_from_seasonal_normal_pct": 3.7,
+      "n_prior_years_for_seasonal_normal": 1
+    },
+    {
+      "facility": "Didsbury",
+      "activity_type": "Compressor Station Maintenance",
+      "zone": "EGAT",
+      "start_date": "2026-08-29",
+      "end_date": "2026-08-31",
+      "avg_utilization_pct_during": 107.8,
+      "avg_capability_reduction_pct": 2.5,
+      "avg_deviation_from_seasonal_normal_pct": 7.7,
       "n_prior_years_for_seasonal_normal": 1
     },
     {
