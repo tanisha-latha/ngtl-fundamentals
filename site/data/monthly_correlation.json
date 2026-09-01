@@ -620,5 +620,5 @@
   "statistically_meaningful": false,
   "min_meaningful_months": 24,
   "note": "Correlation is shown with n = number of months with both a utilization average and a published AER reference price. With n below 24 (two years), this is not statistically meaningful and should be read as directional at most.",
-  "generated_at": "2026-08-31T18:27:53+00:00"
+  "generated_at": "2026-09-01T15:46:59+00:00"
 }

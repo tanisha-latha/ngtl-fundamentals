@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-31T18:27:53+00:00",
+  "generated_at": "2026-09-01T15:46:59+00:00",
   "events": [
     {
       "facility": "Otter Lake",
@@ -90,6 +90,17 @@
       "n_prior_years_for_seasonal_normal": 1
     },
     {
+      "facility": "Meikle River C",
+      "activity_type": "Compressor Station Maintenance",
+      "zone": "EGAT",
+      "start_date": "2026-08-04",
+      "end_date": "2026-08-08",
+      "avg_utilization_pct_during": 104.6,
+      "avg_capability_reduction_pct": 6.3,
+      "avg_deviation_from_seasonal_normal_pct": 4.5,
+      "n_prior_years_for_seasonal_normal": 1
+    },
+    {
       "facility": "Otter Lake",
       "activity_type": "Compressor Station Maintenance",
       "zone": "EGAT",
@@ -98,6 +109,17 @@
       "avg_utilization_pct_during": 104.3,
       "avg_capability_reduction_pct": 6.3,
       "avg_deviation_from_seasonal_normal_pct": 4.2,
+      "n_prior_years_for_seasonal_normal": 1
+    },
+    {
+      "facility": "Knight",
+      "activity_type": "Compressor Station Maintenance",
+      "zone": "EGAT",
+      "start_date": "2026-08-30",
+      "end_date": "2026-09-03",
+      "avg_utilization_pct_during": 102.7,
+      "avg_capability_reduction_pct": 6.3,
+      "avg_deviation_from_seasonal_normal_pct": 2.6,
       "n_prior_years_for_seasonal_normal": 1
     },
     {
@@ -112,17 +134,6 @@
       "n_prior_years_for_seasonal_normal": 1
     },
     {
-      "facility": "Meikle River C",
-      "activity_type": "Compressor Station Maintenance",
-      "zone": "EGAT",
-      "start_date": "2026-08-04",
-      "end_date": "2026-08-08",
-      "avg_utilization_pct_during": 104.6,
-      "avg_capability_reduction_pct": 6.3,
-      "avg_deviation_from_seasonal_normal_pct": 4.5,
-      "n_prior_years_for_seasonal_normal": 1
-    },
-    {
       "facility": "Schrader Creek",
       "activity_type": "Compressor Station Maintenance",
       "zone": "EGAT",
@@ -131,6 +142,17 @@
       "avg_utilization_pct_during": 104.1,
       "avg_capability_reduction_pct": 5.7,
       "avg_deviation_from_seasonal_normal_pct": 1.5,
+      "n_prior_years_for_seasonal_normal": 1
+    },
+    {
+      "facility": "Didsbury",
+      "activity_type": "Compressor Station Maintenance",
+      "zone": "EGAT",
+      "start_date": "2026-08-29",
+      "end_date": "2026-08-31",
+      "avg_utilization_pct_during": 105.2,
+      "avg_capability_reduction_pct": 4.4,
+      "avg_deviation_from_seasonal_normal_pct": 5.2,
       "n_prior_years_for_seasonal_normal": 1
     },
     {
@@ -178,14 +200,14 @@
       "n_prior_years_for_seasonal_normal": 1
     },
     {
-      "facility": "Didsbury",
+      "facility": "Knight",
       "activity_type": "Compressor Station Maintenance",
-      "zone": "EGAT",
-      "start_date": "2026-08-29",
+      "zone": "USJR",
+      "start_date": "2026-08-30",
       "end_date": "2026-08-31",
-      "avg_utilization_pct_during": 107.8,
-      "avg_capability_reduction_pct": 2.5,
-      "avg_deviation_from_seasonal_normal_pct": 7.7,
+      "avg_utilization_pct_during": 96.5,
+      "avg_capability_reduction_pct": 2.9,
+      "avg_deviation_from_seasonal_normal_pct": 4.7,
       "n_prior_years_for_seasonal_normal": 1
     },
     {
@@ -197,6 +219,17 @@
       "avg_utilization_pct_during": 64.4,
       "avg_capability_reduction_pct": 1.1,
       "avg_deviation_from_seasonal_normal_pct": -19.2,
+      "n_prior_years_for_seasonal_normal": 1
+    },
+    {
+      "facility": "Knight",
+      "activity_type": "Compressor Station Maintenance",
+      "zone": "AB/BC",
+      "start_date": "2026-08-30",
+      "end_date": "2026-09-03",
+      "avg_utilization_pct_during": 82.8,
+      "avg_capability_reduction_pct": 1.1,
+      "avg_deviation_from_seasonal_normal_pct": -0.8,
       "n_prior_years_for_seasonal_normal": 1
     }
   ]
