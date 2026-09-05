@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-04T15:27:48+00:00",
+  "generated_at": "2026-09-05T14:15:42+00:00",
   "facilities": [
     {
       "facility": "Wolf Lake A2",
@@ -308,6 +308,22 @@
       "firm_risk_events": 1
     },
     {
+      "facility": "Knight",
+      "days_active": 10,
+      "total_impact_e3m3d": 352000.0,
+      "zones": [
+        "AB/BC",
+        "EGAT",
+        "USJR"
+      ],
+      "activity_types": [
+        "Compressor Station Maintenance"
+      ],
+      "first_seen": "2025-08-11",
+      "last_seen": "2026-09-03",
+      "firm_risk_events": 2
+    },
+    {
       "facility": "NPS 30 Western Alberta System Mainline",
       "days_active": 10,
       "total_impact_e3m3d": 350000.0,
@@ -322,22 +338,6 @@
       "first_seen": "2026-07-18",
       "last_seen": "2026-07-27",
       "firm_risk_events": 0
-    },
-    {
-      "facility": "Knight",
-      "days_active": 9,
-      "total_impact_e3m3d": 328000.0,
-      "zones": [
-        "AB/BC",
-        "EGAT",
-        "USJR"
-      ],
-      "activity_types": [
-        "Compressor Station Maintenance"
-      ],
-      "first_seen": "2025-08-11",
-      "last_seen": "2026-09-02",
-      "firm_risk_events": 2
     },
     {
       "facility": "Pipestone Creek",
@@ -372,6 +372,20 @@
       "firm_risk_events": 0
     },
     {
+      "facility": "Didsbury",
+      "days_active": 23,
+      "total_impact_e3m3d": 279000.0,
+      "zones": [
+        "EGAT"
+      ],
+      "activity_types": [
+        "Compressor Station Maintenance"
+      ],
+      "first_seen": "2025-06-16",
+      "last_seen": "2026-09-03",
+      "firm_risk_events": 0
+    },
+    {
       "facility": "Alces River",
       "days_active": 9,
       "total_impact_e3m3d": 276000.0,
@@ -386,20 +400,6 @@
       "first_seen": "2025-02-08",
       "last_seen": "2025-08-22",
       "firm_risk_events": 2
-    },
-    {
-      "facility": "Didsbury",
-      "days_active": 22,
-      "total_impact_e3m3d": 268000.0,
-      "zones": [
-        "EGAT"
-      ],
-      "activity_types": [
-        "Compressor Station Maintenance"
-      ],
-      "first_seen": "2025-06-16",
-      "last_seen": "2026-09-02",
-      "firm_risk_events": 0
     },
     {
       "facility": "Latornell",
