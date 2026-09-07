@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-06T14:39:24+00:00",
+  "generated_at": "2026-09-07T16:52:59+00:00",
   "facilities": [
     {
       "facility": "Wolf Lake A2",
@@ -356,6 +356,22 @@
       "firm_risk_events": 0
     },
     {
+      "facility": "Alces River",
+      "days_active": 11,
+      "total_impact_e3m3d": 298000.0,
+      "zones": [
+        "AB/BC",
+        "EGAT",
+        "USJR"
+      ],
+      "activity_types": [
+        "Compressor Station Maintenance"
+      ],
+      "first_seen": "2025-02-08",
+      "last_seen": "2026-09-05",
+      "firm_risk_events": 2
+    },
+    {
       "facility": "Gold Creek",
       "days_active": 10,
       "total_impact_e3m3d": 298000.0,
@@ -372,25 +388,9 @@
       "firm_risk_events": 0
     },
     {
-      "facility": "Alces River",
-      "days_active": 10,
-      "total_impact_e3m3d": 287000.0,
-      "zones": [
-        "AB/BC",
-        "EGAT",
-        "USJR"
-      ],
-      "activity_types": [
-        "Compressor Station Maintenance"
-      ],
-      "first_seen": "2025-02-08",
-      "last_seen": "2026-09-04",
-      "firm_risk_events": 2
-    },
-    {
       "facility": "Didsbury",
-      "days_active": 24,
-      "total_impact_e3m3d": 284000.0,
+      "days_active": 25,
+      "total_impact_e3m3d": 289000.0,
       "zones": [
         "EGAT"
       ],
@@ -398,7 +398,7 @@
         "Compressor Station Maintenance"
       ],
       "first_seen": "2025-06-16",
-      "last_seen": "2026-09-04",
+      "last_seen": "2026-09-05",
       "firm_risk_events": 0
     },
     {
