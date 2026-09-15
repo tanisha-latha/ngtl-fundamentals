@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-14T17:16:23+00:00",
+  "generated_at": "2026-09-15T15:55:56+00:00",
   "facilities": [
     {
       "facility": "Wolf Lake A2",
@@ -263,8 +263,8 @@
     },
     {
       "facility": "Alces River",
-      "days_active": 18,
-      "total_impact_e3m3d": 375000.0,
+      "days_active": 19,
+      "total_impact_e3m3d": 386000.0,
       "zones": [
         "AB/BC",
         "EGAT",
@@ -274,7 +274,7 @@
         "Compressor Station Maintenance"
       ],
       "first_seen": "2025-02-08",
-      "last_seen": "2026-09-12",
+      "last_seen": "2026-09-13",
       "firm_risk_events": 2
     },
     {
@@ -950,8 +950,8 @@
     },
     {
       "facility": "Woodenhouse C3",
-      "days_active": 7,
-      "total_impact_e3m3d": 60000.0,
+      "days_active": 8,
+      "total_impact_e3m3d": 64000.0,
       "zones": [
         "AB/BC",
         "EGAT",
@@ -962,7 +962,7 @@
         "Compressor Station Maintenance"
       ],
       "first_seen": "2026-03-09",
-      "last_seen": "2026-09-12",
+      "last_seen": "2026-09-13",
       "firm_risk_events": 1
     },
     {

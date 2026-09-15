@@ -227,5 +227,5 @@
     }
   ],
   "note": "Categorized directly from the source's own 'Type of Restriction' field on each outage record -- not inferred or modeled. 'firm_risk' means the source explicitly flagged potential impact to FT-R or FT-D; 'no_firm_impact' means the source explicitly said none was anticipated; 'unclassified' means the field was blank in the source, which is common for local receipt/delivery laterals rather than mainline segments.",
-  "generated_at": "2026-09-14T17:16:23+00:00"
+  "generated_at": "2026-09-15T15:55:56+00:00"
 }
