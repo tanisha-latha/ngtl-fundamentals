@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-16T15:47:48+00:00",
+  "generated_at": "2026-09-18T15:28:34+00:00",
   "events": [
     {
       "facility": "Otter Lake",
@@ -43,6 +43,17 @@
       "avg_utilization_pct_during": 99.6,
       "avg_capability_reduction_pct": 8.8,
       "avg_deviation_from_seasonal_normal_pct": 9.9,
+      "n_prior_years_for_seasonal_normal": 1
+    },
+    {
+      "facility": "Alces River",
+      "activity_type": "Compressor Station Maintenance",
+      "zone": "AB/BC",
+      "start_date": "2026-09-08",
+      "end_date": "2026-10-02",
+      "avg_utilization_pct_during": 72.9,
+      "avg_capability_reduction_pct": 7.9,
+      "avg_deviation_from_seasonal_normal_pct": -10.4,
       "n_prior_years_for_seasonal_normal": 1
     },
     {
@@ -112,17 +123,6 @@
       "n_prior_years_for_seasonal_normal": 1
     },
     {
-      "facility": "Goodfish",
-      "activity_type": "Compressor Station Maintenance",
-      "zone": "EGAT",
-      "start_date": "2026-08-24",
-      "end_date": "2026-08-28",
-      "avg_utilization_pct_during": 104.9,
-      "avg_capability_reduction_pct": 6.3,
-      "avg_deviation_from_seasonal_normal_pct": 4.8,
-      "n_prior_years_for_seasonal_normal": 1
-    },
-    {
       "facility": "Otter Lake",
       "activity_type": "Compressor Station Maintenance",
       "zone": "EGAT",
@@ -131,6 +131,17 @@
       "avg_utilization_pct_during": 104.3,
       "avg_capability_reduction_pct": 6.3,
       "avg_deviation_from_seasonal_normal_pct": 4.2,
+      "n_prior_years_for_seasonal_normal": 1
+    },
+    {
+      "facility": "Goodfish",
+      "activity_type": "Compressor Station Maintenance",
+      "zone": "EGAT",
+      "start_date": "2026-08-24",
+      "end_date": "2026-08-28",
+      "avg_utilization_pct_during": 104.9,
+      "avg_capability_reduction_pct": 6.3,
+      "avg_deviation_from_seasonal_normal_pct": 4.8,
       "n_prior_years_for_seasonal_normal": 1
     },
     {
@@ -169,12 +180,12 @@
     {
       "facility": "Alces River",
       "activity_type": "Compressor Station Maintenance",
-      "zone": "AB/BC",
+      "zone": "EGAT",
       "start_date": "2026-09-08",
       "end_date": "2026-10-02",
-      "avg_utilization_pct_during": 70.2,
-      "avg_capability_reduction_pct": 4.7,
-      "avg_deviation_from_seasonal_normal_pct": -13.2,
+      "avg_utilization_pct_during": 102.1,
+      "avg_capability_reduction_pct": 4.4,
+      "avg_deviation_from_seasonal_normal_pct": 5.3,
       "n_prior_years_for_seasonal_normal": 1
     },
     {
@@ -207,7 +218,7 @@
       "end_date": "2026-09-21",
       "avg_utilization_pct_during": 85.7,
       "avg_capability_reduction_pct": 4.1,
-      "avg_deviation_from_seasonal_normal_pct": 0.5,
+      "avg_deviation_from_seasonal_normal_pct": 0.4,
       "n_prior_years_for_seasonal_normal": 1
     },
     {
@@ -219,17 +230,6 @@
       "avg_utilization_pct_during": 97.6,
       "avg_capability_reduction_pct": 3.9,
       "avg_deviation_from_seasonal_normal_pct": 5.9,
-      "n_prior_years_for_seasonal_normal": 1
-    },
-    {
-      "facility": "Alces River",
-      "activity_type": "Compressor Station Maintenance",
-      "zone": "EGAT",
-      "start_date": "2026-09-08",
-      "end_date": "2026-10-02",
-      "avg_utilization_pct_during": 101.9,
-      "avg_capability_reduction_pct": 3.7,
-      "avg_deviation_from_seasonal_normal_pct": 5.1,
       "n_prior_years_for_seasonal_normal": 1
     },
     {
@@ -266,6 +266,17 @@
       "n_prior_years_for_seasonal_normal": 1
     },
     {
+      "facility": "Alces River",
+      "activity_type": "Compressor Station Maintenance",
+      "zone": "USJR",
+      "start_date": "2026-09-08",
+      "end_date": "2026-09-30",
+      "avg_utilization_pct_during": 93.0,
+      "avg_capability_reduction_pct": 2.4,
+      "avg_deviation_from_seasonal_normal_pct": 2.0,
+      "n_prior_years_for_seasonal_normal": 1
+    },
+    {
       "facility": "Knight",
       "activity_type": "Compressor Station Maintenance",
       "zone": "AB/BC",
@@ -274,17 +285,6 @@
       "avg_utilization_pct_during": 84.4,
       "avg_capability_reduction_pct": 1.8,
       "avg_deviation_from_seasonal_normal_pct": 0.9,
-      "n_prior_years_for_seasonal_normal": 1
-    },
-    {
-      "facility": "Alces River",
-      "activity_type": "Compressor Station Maintenance",
-      "zone": "USJR",
-      "start_date": "2026-09-08",
-      "end_date": "2026-09-30",
-      "avg_utilization_pct_during": 92.7,
-      "avg_capability_reduction_pct": 1.6,
-      "avg_deviation_from_seasonal_normal_pct": 1.7,
       "n_prior_years_for_seasonal_normal": 1
     },
     {

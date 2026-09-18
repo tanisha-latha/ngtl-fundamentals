@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-16T15:47:48+00:00",
+  "generated_at": "2026-09-18T15:28:34+00:00",
   "facilities": [
     {
       "facility": "Wolf Lake A2",
@@ -149,6 +149,22 @@
       "firm_risk_events": 8
     },
     {
+      "facility": "Alces River",
+      "days_active": 22,
+      "total_impact_e3m3d": 527000.0,
+      "zones": [
+        "AB/BC",
+        "EGAT",
+        "USJR"
+      ],
+      "activity_types": [
+        "Compressor Station Maintenance"
+      ],
+      "first_seen": "2025-02-08",
+      "last_seen": "2026-09-16",
+      "firm_risk_events": 2
+    },
+    {
       "facility": "NPS 36 Grande Prairie Mainline",
       "days_active": 24,
       "total_impact_e3m3d": 513000.0,
@@ -229,20 +245,18 @@
       "firm_risk_events": 0
     },
     {
-      "facility": "Alces River",
-      "days_active": 20,
-      "total_impact_e3m3d": 433000.0,
+      "facility": "Elko",
+      "days_active": 25,
+      "total_impact_e3m3d": 409000.0,
       "zones": [
-        "AB/BC",
-        "EGAT",
-        "USJR"
+        "AB/BC"
       ],
       "activity_types": [
         "Compressor Station Maintenance"
       ],
-      "first_seen": "2025-02-08",
-      "last_seen": "2026-09-14",
-      "firm_risk_events": 2
+      "first_seen": "2025-08-06",
+      "last_seen": "2026-09-16",
+      "firm_risk_events": 1
     },
     {
       "facility": "Nordegg B",
@@ -276,20 +290,6 @@
       "first_seen": "2025-02-10",
       "last_seen": "2026-04-17",
       "firm_risk_events": 0
-    },
-    {
-      "facility": "Elko",
-      "days_active": 23,
-      "total_impact_e3m3d": 375000.0,
-      "zones": [
-        "AB/BC"
-      ],
-      "activity_types": [
-        "Compressor Station Maintenance"
-      ],
-      "first_seen": "2025-08-06",
-      "last_seen": "2026-09-14",
-      "firm_risk_events": 1
     },
     {
       "facility": "Leismer East",
@@ -689,6 +689,22 @@
       "firm_risk_events": 0
     },
     {
+      "facility": "Latornell A1",
+      "days_active": 3,
+      "total_impact_e3m3d": 141000.0,
+      "zones": [
+        "AB/BC",
+        "EGAT",
+        "USJR"
+      ],
+      "activity_types": [
+        "Compressor Station Maintenance"
+      ],
+      "first_seen": "2026-09-14",
+      "last_seen": "2026-09-16",
+      "firm_risk_events": 1
+    },
+    {
       "facility": "Jenner",
       "days_active": 14,
       "total_impact_e3m3d": 134000.0,
@@ -805,20 +821,6 @@
       "firm_risk_events": 0
     },
     {
-      "facility": "Crowsnest",
-      "days_active": 5,
-      "total_impact_e3m3d": 100000.0,
-      "zones": [
-        "AB/BC"
-      ],
-      "activity_types": [
-        "Compressor Station Maintenance"
-      ],
-      "first_seen": "2025-06-09",
-      "last_seen": "2025-06-13",
-      "firm_risk_events": 0
-    },
-    {
       "facility": "Hidden Lake North B2",
       "days_active": 2,
       "total_impact_e3m3d": 100000.0,
@@ -832,6 +834,20 @@
       ],
       "first_seen": "2025-10-07",
       "last_seen": "2025-10-08",
+      "firm_risk_events": 0
+    },
+    {
+      "facility": "Crowsnest",
+      "days_active": 5,
+      "total_impact_e3m3d": 100000.0,
+      "zones": [
+        "AB/BC"
+      ],
+      "activity_types": [
+        "Compressor Station Maintenance"
+      ],
+      "first_seen": "2025-06-09",
+      "last_seen": "2025-06-13",
       "firm_risk_events": 0
     },
     {
@@ -907,6 +923,23 @@
       "firm_risk_events": 0
     },
     {
+      "facility": "Woodenhouse C3",
+      "days_active": 11,
+      "total_impact_e3m3d": 76000.0,
+      "zones": [
+        "AB/BC",
+        "EGAT",
+        "OSDA",
+        "USJR"
+      ],
+      "activity_types": [
+        "Compressor Station Maintenance"
+      ],
+      "first_seen": "2026-03-09",
+      "last_seen": "2026-09-16",
+      "firm_risk_events": 1
+    },
+    {
       "facility": "Clearwater A6",
       "days_active": 10,
       "total_impact_e3m3d": 70000.0,
@@ -935,23 +968,6 @@
       "firm_risk_events": 0
     },
     {
-      "facility": "Woodenhouse C3",
-      "days_active": 9,
-      "total_impact_e3m3d": 68000.0,
-      "zones": [
-        "AB/BC",
-        "EGAT",
-        "OSDA",
-        "USJR"
-      ],
-      "activity_types": [
-        "Compressor Station Maintenance"
-      ],
-      "first_seen": "2026-03-09",
-      "last_seen": "2026-09-14",
-      "firm_risk_events": 1
-    },
-    {
       "facility": "Burton Creek A3",
       "days_active": 5,
       "total_impact_e3m3d": 66000.0,
@@ -963,22 +979,6 @@
       ],
       "first_seen": "2025-11-25",
       "last_seen": "2026-08-19",
-      "firm_risk_events": 1
-    },
-    {
-      "facility": "Latornell A1",
-      "days_active": 1,
-      "total_impact_e3m3d": 47000.0,
-      "zones": [
-        "AB/BC",
-        "EGAT",
-        "USJR"
-      ],
-      "activity_types": [
-        "Compressor Station Maintenance"
-      ],
-      "first_seen": "2026-09-14",
-      "last_seen": "2026-09-14",
       "firm_risk_events": 1
     },
     {

@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-16T15:47:48+00:00",
+  "generated_at": "2026-09-18T15:28:34+00:00",
   "zones": [
     "AB/BC",
     "EGAT",
@@ -8,7 +8,7 @@
   ],
   "date_range": {
     "start": "2025-01-30",
-    "end": "2026-09-14"
+    "end": "2026-09-16"
   },
   "cells": [
     {
@@ -29268,6 +29268,118 @@
       "deviation_from_seasonal_normal_pct": -1.4,
       "n_prior_years": 1,
       "actual_flow_e3m3d": 78000.0,
+      "effective_capability_e3m3d": 93000.0,
+      "facilities": [
+        "Woodenhouse C3"
+      ]
+    },
+    {
+      "zone": "USJR",
+      "gas_day": "2026-09-15",
+      "utilization_pct": 94.8,
+      "outage_adjusted": true,
+      "deviation_from_seasonal_normal_pct": 3.8,
+      "n_prior_years": 1,
+      "actual_flow_e3m3d": 344000.0,
+      "effective_capability_e3m3d": 363000.0,
+      "facilities": [
+        "Alces River",
+        "Latornell A1"
+      ]
+    },
+    {
+      "zone": "USJR",
+      "gas_day": "2026-09-16",
+      "utilization_pct": 93.4,
+      "outage_adjusted": true,
+      "deviation_from_seasonal_normal_pct": 2.4,
+      "n_prior_years": 1,
+      "actual_flow_e3m3d": 339000.0,
+      "effective_capability_e3m3d": 363000.0,
+      "facilities": [
+        "Alces River",
+        "Latornell A1"
+      ]
+    },
+    {
+      "zone": "AB/BC",
+      "gas_day": "2026-09-15",
+      "utilization_pct": 83.3,
+      "outage_adjusted": true,
+      "deviation_from_seasonal_normal_pct": 0.0,
+      "n_prior_years": 1,
+      "actual_flow_e3m3d": 60000.0,
+      "effective_capability_e3m3d": 72000.0,
+      "facilities": [
+        "Alces River",
+        "Elko",
+        "Latornell A1"
+      ]
+    },
+    {
+      "zone": "AB/BC",
+      "gas_day": "2026-09-16",
+      "utilization_pct": 81.9,
+      "outage_adjusted": true,
+      "deviation_from_seasonal_normal_pct": -1.4,
+      "n_prior_years": 1,
+      "actual_flow_e3m3d": 59000.0,
+      "effective_capability_e3m3d": 72000.0,
+      "facilities": [
+        "Alces River",
+        "Elko",
+        "Latornell A1"
+      ]
+    },
+    {
+      "zone": "EGAT",
+      "gas_day": "2026-09-15",
+      "utilization_pct": 102.0,
+      "outage_adjusted": true,
+      "deviation_from_seasonal_normal_pct": 5.3,
+      "n_prior_years": 1,
+      "actual_flow_e3m3d": 151000.0,
+      "effective_capability_e3m3d": 148000.0,
+      "facilities": [
+        "Alces River",
+        "Latornell A1"
+      ]
+    },
+    {
+      "zone": "EGAT",
+      "gas_day": "2026-09-16",
+      "utilization_pct": 103.4,
+      "outage_adjusted": true,
+      "deviation_from_seasonal_normal_pct": 6.6,
+      "n_prior_years": 1,
+      "actual_flow_e3m3d": 153000.0,
+      "effective_capability_e3m3d": 148000.0,
+      "facilities": [
+        "Alces River",
+        "Latornell A1"
+      ]
+    },
+    {
+      "zone": "OSDA",
+      "gas_day": "2026-09-15",
+      "utilization_pct": 84.9,
+      "outage_adjusted": true,
+      "deviation_from_seasonal_normal_pct": -0.3,
+      "n_prior_years": 1,
+      "actual_flow_e3m3d": 79000.0,
+      "effective_capability_e3m3d": 93000.0,
+      "facilities": [
+        "Woodenhouse C3"
+      ]
+    },
+    {
+      "zone": "OSDA",
+      "gas_day": "2026-09-16",
+      "utilization_pct": 86.0,
+      "outage_adjusted": true,
+      "deviation_from_seasonal_normal_pct": 0.8,
+      "n_prior_years": 1,
+      "actual_flow_e3m3d": 80000.0,
       "effective_capability_e3m3d": 93000.0,
       "facilities": [
         "Woodenhouse C3"
