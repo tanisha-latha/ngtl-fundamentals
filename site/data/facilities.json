@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-18T15:28:34+00:00",
+  "generated_at": "2026-09-19T15:03:45+00:00",
   "facilities": [
     {
       "facility": "Wolf Lake A2",
@@ -150,8 +150,8 @@
     },
     {
       "facility": "Alces River",
-      "days_active": 22,
-      "total_impact_e3m3d": 527000.0,
+      "days_active": 23,
+      "total_impact_e3m3d": 574000.0,
       "zones": [
         "AB/BC",
         "EGAT",
@@ -161,7 +161,7 @@
         "Compressor Station Maintenance"
       ],
       "first_seen": "2025-02-08",
-      "last_seen": "2026-09-16",
+      "last_seen": "2026-09-17",
       "firm_risk_events": 2
     },
     {
@@ -246,8 +246,8 @@
     },
     {
       "facility": "Elko",
-      "days_active": 25,
-      "total_impact_e3m3d": 409000.0,
+      "days_active": 26,
+      "total_impact_e3m3d": 426000.0,
       "zones": [
         "AB/BC"
       ],
@@ -255,7 +255,7 @@
         "Compressor Station Maintenance"
       ],
       "first_seen": "2025-08-06",
-      "last_seen": "2026-09-16",
+      "last_seen": "2026-09-17",
       "firm_risk_events": 1
     },
     {
@@ -551,6 +551,22 @@
       "firm_risk_events": 0
     },
     {
+      "facility": "Latornell A1",
+      "days_active": 4,
+      "total_impact_e3m3d": 188000.0,
+      "zones": [
+        "AB/BC",
+        "EGAT",
+        "USJR"
+      ],
+      "activity_types": [
+        "Compressor Station Maintenance"
+      ],
+      "first_seen": "2026-09-14",
+      "last_seen": "2026-09-17",
+      "firm_risk_events": 1
+    },
+    {
       "facility": "NPS 48 Grande Prairie Mainline Loop 2",
       "days_active": 4,
       "total_impact_e3m3d": 184000.0,
@@ -643,20 +659,6 @@
       "firm_risk_events": 0
     },
     {
-      "facility": "NPS 24/30 North Lateral Loop 2",
-      "days_active": 8,
-      "total_impact_e3m3d": 152000.0,
-      "zones": [
-        "OSDA"
-      ],
-      "activity_types": [
-        "Pipeline Maintenance"
-      ],
-      "first_seen": "2025-09-22",
-      "last_seen": "2025-09-29",
-      "firm_risk_events": 0
-    },
-    {
       "facility": "Meikle River B2",
       "days_active": 7,
       "total_impact_e3m3d": 152000.0,
@@ -670,6 +672,20 @@
       ],
       "first_seen": "2026-07-11",
       "last_seen": "2026-07-17",
+      "firm_risk_events": 0
+    },
+    {
+      "facility": "NPS 24/30 North Lateral Loop 2",
+      "days_active": 8,
+      "total_impact_e3m3d": 152000.0,
+      "zones": [
+        "OSDA"
+      ],
+      "activity_types": [
+        "Pipeline Maintenance"
+      ],
+      "first_seen": "2025-09-22",
+      "last_seen": "2025-09-29",
       "firm_risk_events": 0
     },
     {
@@ -687,22 +703,6 @@
       "first_seen": "2025-08-26",
       "last_seen": "2026-04-09",
       "firm_risk_events": 0
-    },
-    {
-      "facility": "Latornell A1",
-      "days_active": 3,
-      "total_impact_e3m3d": 141000.0,
-      "zones": [
-        "AB/BC",
-        "EGAT",
-        "USJR"
-      ],
-      "activity_types": [
-        "Compressor Station Maintenance"
-      ],
-      "first_seen": "2026-09-14",
-      "last_seen": "2026-09-16",
-      "firm_risk_events": 1
     },
     {
       "facility": "Jenner",
@@ -909,6 +909,23 @@
       "firm_risk_events": 0
     },
     {
+      "facility": "Woodenhouse C3",
+      "days_active": 12,
+      "total_impact_e3m3d": 80000.0,
+      "zones": [
+        "AB/BC",
+        "EGAT",
+        "OSDA",
+        "USJR"
+      ],
+      "activity_types": [
+        "Compressor Station Maintenance"
+      ],
+      "first_seen": "2026-03-09",
+      "last_seen": "2026-09-17",
+      "firm_risk_events": 1
+    },
+    {
       "facility": "Winchell Lake A2",
       "days_active": 6,
       "total_impact_e3m3d": 78000.0,
@@ -921,23 +938,6 @@
       "first_seen": "2025-11-08",
       "last_seen": "2025-11-13",
       "firm_risk_events": 0
-    },
-    {
-      "facility": "Woodenhouse C3",
-      "days_active": 11,
-      "total_impact_e3m3d": 76000.0,
-      "zones": [
-        "AB/BC",
-        "EGAT",
-        "OSDA",
-        "USJR"
-      ],
-      "activity_types": [
-        "Compressor Station Maintenance"
-      ],
-      "first_seen": "2026-03-09",
-      "last_seen": "2026-09-16",
-      "firm_risk_events": 1
     },
     {
       "facility": "Clearwater A6",

@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-18T15:28:34+00:00",
+  "generated_at": "2026-09-19T15:03:45+00:00",
   "events": [
     {
       "facility": "Otter Lake",
@@ -35,6 +35,17 @@
       "n_prior_years_for_seasonal_normal": 1
     },
     {
+      "facility": "Alces River",
+      "activity_type": "Compressor Station Maintenance",
+      "zone": "AB/BC",
+      "start_date": "2026-09-08",
+      "end_date": "2026-10-02",
+      "avg_utilization_pct_during": 74.0,
+      "avg_capability_reduction_pct": 9.0,
+      "avg_deviation_from_seasonal_normal_pct": -9.4,
+      "n_prior_years_for_seasonal_normal": 1
+    },
+    {
       "facility": "Meikle River C",
       "activity_type": "Compressor Station Maintenance",
       "zone": "OSDA",
@@ -43,17 +54,6 @@
       "avg_utilization_pct_during": 99.6,
       "avg_capability_reduction_pct": 8.8,
       "avg_deviation_from_seasonal_normal_pct": 9.9,
-      "n_prior_years_for_seasonal_normal": 1
-    },
-    {
-      "facility": "Alces River",
-      "activity_type": "Compressor Station Maintenance",
-      "zone": "AB/BC",
-      "start_date": "2026-09-08",
-      "end_date": "2026-10-02",
-      "avg_utilization_pct_during": 72.9,
-      "avg_capability_reduction_pct": 7.9,
-      "avg_deviation_from_seasonal_normal_pct": -10.4,
       "n_prior_years_for_seasonal_normal": 1
     },
     {
@@ -184,8 +184,8 @@
       "start_date": "2026-09-08",
       "end_date": "2026-10-02",
       "avg_utilization_pct_during": 102.1,
-      "avg_capability_reduction_pct": 4.4,
-      "avg_deviation_from_seasonal_normal_pct": 5.3,
+      "avg_capability_reduction_pct": 4.7,
+      "avg_deviation_from_seasonal_normal_pct": 5.4,
       "n_prior_years_for_seasonal_normal": 1
     },
     {
@@ -218,7 +218,7 @@
       "end_date": "2026-09-21",
       "avg_utilization_pct_during": 85.7,
       "avg_capability_reduction_pct": 4.1,
-      "avg_deviation_from_seasonal_normal_pct": 0.4,
+      "avg_deviation_from_seasonal_normal_pct": 0.5,
       "n_prior_years_for_seasonal_normal": 1
     },
     {
@@ -271,9 +271,9 @@
       "zone": "USJR",
       "start_date": "2026-09-08",
       "end_date": "2026-09-30",
-      "avg_utilization_pct_during": 93.0,
-      "avg_capability_reduction_pct": 2.4,
-      "avg_deviation_from_seasonal_normal_pct": 2.0,
+      "avg_utilization_pct_during": 93.1,
+      "avg_capability_reduction_pct": 2.6,
+      "avg_deviation_from_seasonal_normal_pct": 2.2,
       "n_prior_years_for_seasonal_normal": 1
     },
     {
