@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-19T15:03:45+00:00",
+  "generated_at": "2026-09-20T15:07:37+00:00",
   "facilities": [
     {
       "facility": "Wolf Lake A2",
@@ -150,8 +150,8 @@
     },
     {
       "facility": "Alces River",
-      "days_active": 23,
-      "total_impact_e3m3d": 574000.0,
+      "days_active": 24,
+      "total_impact_e3m3d": 606000.0,
       "zones": [
         "AB/BC",
         "EGAT",
@@ -161,7 +161,7 @@
         "Compressor Station Maintenance"
       ],
       "first_seen": "2025-02-08",
-      "last_seen": "2026-09-17",
+      "last_seen": "2026-09-18",
       "firm_risk_events": 2
     },
     {
@@ -479,6 +479,22 @@
       "firm_risk_events": 0
     },
     {
+      "facility": "Latornell A1",
+      "days_active": 5,
+      "total_impact_e3m3d": 220000.0,
+      "zones": [
+        "AB/BC",
+        "EGAT",
+        "USJR"
+      ],
+      "activity_types": [
+        "Compressor Station Maintenance"
+      ],
+      "first_seen": "2026-09-14",
+      "last_seen": "2026-09-18",
+      "firm_risk_events": 1
+    },
+    {
       "facility": "Moyie",
       "days_active": 9,
       "total_impact_e3m3d": 219000.0,
@@ -549,22 +565,6 @@
       "first_seen": "2026-04-08",
       "last_seen": "2026-04-12",
       "firm_risk_events": 0
-    },
-    {
-      "facility": "Latornell A1",
-      "days_active": 4,
-      "total_impact_e3m3d": 188000.0,
-      "zones": [
-        "AB/BC",
-        "EGAT",
-        "USJR"
-      ],
-      "activity_types": [
-        "Compressor Station Maintenance"
-      ],
-      "first_seen": "2026-09-14",
-      "last_seen": "2026-09-17",
-      "firm_risk_events": 1
     },
     {
       "facility": "NPS 48 Grande Prairie Mainline Loop 2",
@@ -910,8 +910,8 @@
     },
     {
       "facility": "Woodenhouse C3",
-      "days_active": 12,
-      "total_impact_e3m3d": 80000.0,
+      "days_active": 13,
+      "total_impact_e3m3d": 84000.0,
       "zones": [
         "AB/BC",
         "EGAT",
@@ -922,7 +922,7 @@
         "Compressor Station Maintenance"
       ],
       "first_seen": "2026-03-09",
-      "last_seen": "2026-09-17",
+      "last_seen": "2026-09-18",
       "firm_risk_events": 1
     },
     {
