@@ -4,7 +4,7 @@ A small data system I built to watch TC Energy's NGTL gas pipeline: how full eac
 
 I built it as a portfolio project for a gas trading fundamentals internship. Everything in it comes from free public sources listed below. No employer data, no paid terminals, no proprietary feeds.
 
-A [GitHub Actions workflow](.github/workflows/daily_pipeline.yml) adds any new gas days to the database and commits the result, so the commit history is the data history. It ran daily until October 2026 and is paused for now, so I run it by hand from the Actions tab.
+A [GitHub Actions workflow](.github/workflows/daily_pipeline.yml) adds any new gas days to the database and commits the result, so the commit history is the data history. It ran daily until late September 2026, when the fetch step started failing. The schedule is paused until I fix that, and I run it by hand from the Actions tab.
 
 ## Why utilization
 
