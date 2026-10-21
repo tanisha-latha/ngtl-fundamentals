@@ -1,9 +1,10 @@
 name: Daily NGTL pipeline
 
 on:
-  schedule:
-    # 12:00 UTC — after NGTL's overnight publication of the prior gas day.
-    - cron: "0 12 * * *"
+  # daily schedule paused while the fetch step is failing. run it by hand from the Actions tab.
+  # to turn it back on, uncomment the two lines below.
+  # schedule:
+  #   - cron: "0 12 * * *"
   workflow_dispatch: {}
 
 permissions:
